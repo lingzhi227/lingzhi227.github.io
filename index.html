@@ -9,7 +9,7 @@
         function showPage(pageId) {
             document.getElementById('work').style.display = 'none';
             document.getElementById('log').style.display = 'none';
-            document.getElementById('personal').style.display = 'none';
+            document.getElementById('life').style.display = 'none';
             document.getElementById(pageId).style.display = 'block';
         }
         window.onload = function() {
@@ -22,7 +22,7 @@
         <h1>Lingzhi Yang</h1>
         <p>I am a Computational Applied Math PhD student @ Stony Brook University</p>
         <nav>
-            <a href="#" onclick="showPage('work')">Work</a> | <a href="#" onclick="showPage('log')">Log</a> | <a href="#" onclick="showPage('personal')">Personal Life</a>
+            <a href="#" onclick="showPage('work')">Work</a> | <a href="#" onclick="showPage('log')">Log</a> | <a href="#" onclick="showPage('life')">Life</a>
         </nav>
     </header>
 
@@ -33,7 +33,7 @@
 
         <h3>Research Projects</h3>
         <ul>
-            <li>Systolic Algorithm Design on Cerebras System Language</li>
+            <li>Systolic Algorithm Design, using Cerebras System Language</li>
             <li>Algebraic Reasoning of Algorithms</li>
             <li>Software-defined Hardware through Compiler Development and Language Design</li>
             <li>Neural Circuit Dynamics and Mathematical Modeling of Brain Micro-circuits</li>
@@ -56,8 +56,8 @@
         </div>
     </section>
 
-    <section id="personal" style="display: none;">
-        <h2>Personal Life</h2>
+    <section id="life" style="display: none;">
+        <h2>Life</h2>
         <h3>Current Projects</h3>
         <ul>
             <li>
