@@ -10,6 +10,7 @@
             document.getElementById('work').style.display = 'none';
             document.getElementById('log').style.display = 'none';
             document.getElementById('life').style.display = 'none';
+            document.getElementById('trip').style.display = 'none';
             document.getElementById(pageId).style.display = 'block';
         }
         window.onload = function() {
@@ -22,7 +23,7 @@
         <h1>Lingzhi Yang</h1>
         <p>I am a Computational Applied Math PhD student @ Stony Brook University</p>
         <nav>
-            <a href="#" onclick="showPage('work')">Work</a> | <a href="#" onclick="showPage('log')">Log</a> | <a href="#" onclick="showPage('life')">Life</a>
+            <a href="#" onclick="showPage('work')">Work</a> | <a href="#" onclick="showPage('log')">Log</a> | <a href="#" onclick="showPage('life')">Life</a> | <a href="#" onclick="showPage('trip')">Trip</a>
         </nav>
     </header>
 
@@ -41,16 +42,22 @@
 
     <section id="log" style="display: none;">
         <div id="log-entries">
-            <!-- Example Log Entries -->
             <article>
-                <h2><a href="#">Title of Article 1</a></h2>
-                <p>Summary of the first article. This is a short paragraph that gives an overview of the content of the article.</p>
+                <h2><a href="#">10/20/2024 Systolic literature review</a></h2>
+                <p>A detailed overview of recent literature on systolic array architectures and their applications in efficient algorithm design.</p>
             </article>
             <article>
-                <h2><a href="#">Title of Article 2</a></h2>
-                <p>Summary of the second article. This is a short paragraph that gives an overview of the content of the article.</p>
+                <h2><a href="#">10/10/2024 Testing ALCF AI Accelerators</a></h2>
+                <p>An account of testing advanced AI accelerators at the Argonne Leadership Computing Facility, focusing on performance benchmarks and scalability.</p>
             </article>
-            <!-- More articles will be dynamically loaded from the 'log' folder -->
+            <article>
+                <h2><a href="#">08/16 #Software-defined-hardware is powerful thinking</a></h2>
+                <p>An exploration of software-defined hardware concepts and why this approach can be a game-changer in designing efficient systems.</p>
+            </article>
+            <article>
+                <h2><a href="#">08/13/2024 An algebraic model for on-chip fast communication</a></h2>
+                <p>A proposal for an algebraic model to optimize on-chip communication, aiming at reducing latency and improving data throughput.</p>
+            </article>
         </div>
     </section>
 
@@ -132,6 +139,15 @@
             </li>
         </ul>
         <p>For more details on my personal projects, visit my <a href="https://lingzhiyang.notion.site/Topics-c64eb2755b334b8f85e50f7f1e18b85c?pvs=4">Notion Notebook</a>.</p>
+    </section>
+
+    <section id="trip" style="display: none;">
+        <h2>Trip Plans</h2>
+        <ul>
+            <li>Date1 - Location1</li>
+            <li>Date2 - Location2</li>
+            <li>Date3 - Location3</li>
+        </ul>
     </section>
 
     <footer>
