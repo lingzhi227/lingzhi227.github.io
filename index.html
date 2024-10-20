@@ -8,6 +8,7 @@
     <script>
         function showPage(pageId) {
             document.getElementById('work').style.display = 'none';
+            document.getElementById('log').style.display = 'none';
             document.getElementById('personal').style.display = 'none';
             document.getElementById(pageId).style.display = 'block';
         }
@@ -21,15 +22,16 @@
         <h1>Lingzhi Yang</h1>
         <p>PhD Student, Computational Applied Math, Stony Brook University</p>
         <nav>
-            <a href="#" onclick="showPage('work')">Work</a> | <a href="#" onclick="showPage('personal')">Life</a>
+            <a href="#" onclick="showPage('work')">Work</a> | <a href="#" onclick="showPage('log')">Log</a> | <a href="#" onclick="showPage('personal')">Personal Life</a>
         </nav>
     </header>
 
     <section id="work">
-        <h2>Research Interests</h2>
+        <h2>Work</h2>
+        <h3>Research Interests</h3>
         <p>Efficient Processing of Partial Differential Equations (PDE)</p>
 
-        <h2>Research Projects</h2>
+        <h3>Research Projects</h3>
         <ul>
             <li>Systolic Algorithm Design on Cerebras System Language</li>
             <li>Algebraic Reasoning of Algorithms</li>
@@ -38,8 +40,25 @@
         </ul>
     </section>
 
+    <section id="log" style="display: none;">
+        <h2>Log</h2>
+        <div id="log-entries">
+            <!-- Example Log Entries -->
+            <article>
+                <h3><a href="#">Title of Article 1</a></h3>
+                <p>Summary of the first article. This is a short paragraph that gives an overview of the content of the article.</p>
+            </article>
+            <article>
+                <h3><a href="#">Title of Article 2</a></h3>
+                <p>Summary of the second article. This is a short paragraph that gives an overview of the content of the article.</p>
+            </article>
+            <!-- More articles will be dynamically loaded from the 'log' folder -->
+        </div>
+    </section>
+
     <section id="personal" style="display: none;">
-        <h2>Current Projects</h2>
+        <h2>Personal Life</h2>
+        <h3>Current Projects</h3>
         <ul>
             <li>
                 <strong>Mechanical Engineering:</strong>
@@ -99,7 +118,7 @@
                 </ul>
             </li>
         </ul>
-        <p>For more details on my personal projects, visit my <a href="https://lingzhiyang.notion.site/Topics-c64eb2755b334b8f85e50f7f1e18b85c?pvs=4">Notion Notebook</a>.</p>
+        <p>For more details on my personal projects, visit my <a href="https://www.notion.so">Notion Notebook</a>.</p>
     </section>
 
     <footer>
