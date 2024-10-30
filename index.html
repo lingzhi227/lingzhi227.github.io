@@ -10,16 +10,17 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #121212; /* Dark background */
+            color: #E0E0E0; /* Light text for readability */
         }
 
         #main-container {
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #1E1E1E; /* Darker container for contrast */
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         header {
@@ -27,6 +28,7 @@
             margin-bottom: 30px;
         }
 
+        /* Navbar styling */
         nav {
             text-align: center;
             margin-bottom: 20px;
@@ -35,11 +37,12 @@
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #007BFF;
+            color: #BB86FC; /* Purple color for links */
             font-weight: bold;
         }
 
         nav a:hover {
+            color: #82AAFF; /* Light blue highlight on hover */
             text-decoration: underline;
         }
 
@@ -48,7 +51,8 @@
         }
 
         h2 {
-            border-bottom: 2px solid #007BFF;
+            color: #BB86FC; /* Purple heading color */
+            border-bottom: 2px solid #BB86FC; /* Purple underline */
             padding-bottom: 10px;
             margin-bottom: 20px;
             font-size: 1.5em;
@@ -61,6 +65,7 @@
 
         ul li {
             margin-bottom: 5px;
+            color: #E0E0E0; /* Light text color for list items */
         }
 
         ul ul {
@@ -77,14 +82,16 @@
             display: block;
             margin-top: 15px;
             margin-bottom: 10px;
+            color: #BB86FC; /* Purple for section headings in lists */
         }
 
         a.publication-link {
-            color: #007BFF;
+            color: #82AAFF; /* Light blue for publication links */
             text-decoration: none;
         }
 
         a.publication-link:hover {
+            color: #BB86FC; /* Purple on hover */
             text-decoration: underline;
         }
 
@@ -92,7 +99,7 @@
             text-align: center;
             margin-top: 30px;
             font-size: 0.9em;
-            color: #777;
+            color: #888; /* Slightly darker text for footer */
         }
     </style>
     <script>
@@ -113,7 +120,7 @@
         <header>
             <h1>Lingzhi Yang</h1>
             <p>Computational Applied Math PhD Student @ Stony Brook University</p>
-            <p>Exascallab [<a href="https://you.stonybrook.edu/exascallab/" target="_blank">link</a>], Institute for Advanced Computational Science [<a href="https://iacs.stonybrook.edu/" target="_blank">link</a>]</p>
+            <p>Exascallab [<a href="https://you.stonybrook.edu/exascallab/" target="_blank" class="publication-link">link</a>], Institute for Advanced Computational Science [<a href="https://iacs.stonybrook.edu/" target="_blank" class="publication-link">link</a>]</p>
             <nav>
                 <a href="#" onclick="showPage('work')">Work</a> |
                 <a href="#" onclick="showPage('log')">Log</a> |
@@ -124,7 +131,7 @@
 
         <section id="work">
             <h2>Research Interests</h2>
-            <p>Efficient processing of numerical PDE on heterogeneous architectures. I am a member of Prof. Barbara Chapman's Exascallab [<a href="https://you.stonybrook.edu/exascallab/" target="_blank">link</a>]</p>
+            <p>Efficient processing of numerical PDE on heterogeneous architectures. I am a member of Prof. Barbara Chapman's Exascallab [<a href="https://you.stonybrook.edu/exascallab/" target="_blank" class="publication-link">link</a>]</p>
 
             <h2>Research Projects</h2>
             <ul>

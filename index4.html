@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingzhi Yang | Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        #main-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        ul ul {
+            list-style-type: circle;
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        ul li + li {
+            margin-top: 5px;
+        }
+
+        ul li strong {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        a.publication-link {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a.publication-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+    <script>
+        function showPage(pageId) {
+            document.getElementById('work').style.display = 'none';
+            document.getElementById('log').style.display = 'none';
+            document.getElementById('life').style.display = 'none';
+            document.getElementById('network').style.display = 'none';
+            document.getElementById(pageId).style.display = 'block';
+        }
+        window.onload = function() {
+            showPage('work');
+        };
+    </script>
+</head>
+<body>
+    <div id="main-container">
+        <header>
+            <h1>Lingzhi Yang</h1>
+            <p>Computational Applied Math PhD Student @ Stony Brook University</p>
+            <p>Exascallab [<a href="https://you.stonybrook.edu/exascallab/" target="_blank">link</a>], Institute for Advanced Computational Science [<a href="https://iacs.stonybrook.edu/" target="_blank">link</a>]</p>
+            <nav>
+                <a href="#" onclick="showPage('work')">Work</a> |
+                <a href="#" onclick="showPage('log')">Log</a> |
+                <a href="#" onclick="showPage('life')">Life</a> |
+                <a href="#" onclick="showPage('network')">Network</a>
+            </nav>
+        </header>
+
+        <section id="work">
+            <h2>Research Interests</h2>
+            <p>Efficient processing of numerical PDE on heterogeneous architectures. I am a member of Prof. Barbara Chapman's Exascallab [<a href="https://you.stonybrook.edu/exascallab/" target="_blank">link</a>]</p>
+
+            <h2>Research Projects</h2>
+            <ul>
+                <li>Systolic Algorithm Design, using Cerebras System Language</li>
+                <li>Algebraic Reasoning of Algorithms</li>
+                <li>Software-defined Hardware through Compiler Development and Language Design</li>
+                <li>Neural Circuit Dynamics and Mathematical Modeling of Brain Micro-circuits</li>
+            </ul>
+        </section>
+
+        <section id="log" style="display: none;">
+            <h2>Logs</h2>
+            <h3>Computer Architecture</h3>
+            <ul>
+                <li><a href="https://www.darpa.mil/program/software-defined-hardware" target="_blank" class="publication-link">08/16/2024 Software-defined hardware concepts</a><br> - Exploration of software-defined hardware and its potential in efficient system design.</li>
+                <li><a href="https://www.asml.com/en/technology/lithography-principles/mechanics-and-mechatronics" target="_blank" class="publication-link">08/01/2024 Are all modern hardware software defined?</a></li>
+                <li><a href="https://lingzhi.gitbook.io/hpc-co-design" target="_blank" target="_blank" target="_blank" class="publication-link">11/30/2023 Modern Practice of Software-Hardware Co-design</a></li>
+                <li><a href="#" class="publication-link">11/27/2023 Review of HPC hardware</a></li>
+                <li><a href="#" class="publication-link">10/20/2023 Review of Scientific Computing on Supercomputer</a></li>
+                <li><a href="#" class="publication-link">08/01/2023 Fused CNN on FPGA</a></li>
+                <li><a href="#" class="publication-link">03/15/2023 CT on FPGA</a></li>            
+            </ul>
+            <h3>Computational Applied Math</h3>
+            <ul>
+                <li><a href="https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/698365/1/bt_Louis_Schnyder.pdf" target="_blank" class="publication-link">10/27/2024 Rebuild MPI on Wafer Scale Integration</a></li>
+                <li><a href="https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2024/cadence-expands-system-ip-portfolio-with-network-on-chip-to.html" target="_blank" class="publication-link">10/26/2024 Review of Formal Verification, Compiler for NoC development</a></li>
+                <li><a href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=8df2ed6ca843e864b02d5a782ff9c46d41fb58a7" target="_blank" class="publication-link">10/20/2024 Systolic literature review</a><br> - Overview of classic literature on systolic array architectures and their applications in programming Network-on-chip architecture.</li>
+                <li><a href="https://www.eecs.harvard.edu/~htk/publication/1983-elliptic-problem-solvers-kung-lin.pdf" target="_blank" class="publication-link">08/13/2024 An algebraic model for on-chip fast communication</a><br> - Proposal for an algebraic model to optimize on-chip communication.</li>
+                <li><a href="https://sdk.cerebras.net/" target="_blank" class="publication-link">12/30/2023 Cerebras CSL language and SDK</a></li>
+            </ul>
+            <h3>AI for Science</h3>
+            <ul>
+                <li><a href="log/2024_10_10_Testing_Argonne_National_Lab_AI_Accelerators.md" target="_blank" class="publication-link">10/10/2024 Testing Argonne National Lab AI Accelerators</a><br> - An account of testing advanced AI accelerators at the Argonne Leadership Computing Facility, focusing on programmability, performance, and application in AI4Sci.</li>
+                <li><a href="https://docs.google.com/document/d/1ibMw3VAGydUIPNILNIYxCAwpngwhpC3ZHFv9hFyUQ64/edit?usp=sharing" target="_blank" class="publication-link">06/10/2024 Neurosymbolic Programming @MIT</a></li>
+            </ul>
+        </section>
+
+        <section id="life" style="display: none;">
+            <h2>Current Projects</h2>
+            <ul>
+                <li>
+                    <strong>Mathematics in Context:</strong>
+                    <ul>
+                        <li>Mathematics in Material</li>
+                        <li>Mathematics of Neuron</li>
+                        <li>Algebraic Structure of Computer Language</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Create Mathematics:</strong>
+                    <ul>
+                        <li>Algebra of Metal</li>
+                        <li>Dynamics of Wave</li>
+                        <li>Discrete Model of Supercomputer</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Mechatronics:</strong>
+                    <ul>
+                        <li>Building a Computer Cluster</li>
+                        <li><a href="https://www.jstage.jst.go.jp/article/ieejjia/11/2/11_21006010/_pdf" target="_blank" class="publication-link">Nano precision controller instruction set</a></li>
+                        <li>Waveguide and beamform</li>
+                        <li>Autonomous Vehicle</li>
+                        <li>Home Upgrade</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Advanced Manufacturing Reading:</strong>
+                    <ul>
+                        <li>Industrial Process and Management</li>
+                        <li>Social aspect: accounting and law</li>
+                        <li>What will happen when you scale up?</li>
+                        <li>Virtualization and autonomous factory</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Nano Physics:</strong>
+                    <ul>
+                        <li>Materials Science</li>
+                        <li>Materials Engineering</li>
+                        <li>Simulation Software Engineering</li>
+                        <li>Military Tech</li>
+                        <li>High Frequency Droplet generator</li>
+                        <li>Coating</li>
+                        <li>Computational Lithography</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bio Science & Engineering:</strong>
+                    <ul>
+                        <li>Synthetic Bio</li>
+                        <li>Shark skin</li>
+                        <li>Spider silk</li>
+                        <li>Living machine: bio-film, bacteria computer</li>
+                        <li>Extreme biology and outer space biology</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Sports Biophysics and Optimization:</strong>
+                    <ul>
+                        <li>Neural Science of Body Control</li>
+                        <li>Basketball</li>
+                        <li>Swimming</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Design:</strong>
+                    <ul>
+                        <li>Architecture</li>
+                        <li>Transportation</li>
+                        <li>Industrial Design</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>US & West Science Technology Policy:</strong>
+                    <ul>
+                        <li>US Academy Structure</li>
+                        <li>Semi Industrial Policy</li>
+                        <li>DARPA research</li>
+                        <li>Netherland research</li>
+                        <li>Japanese Korea Taiwan research</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Strange Historical Facts:</strong>
+                    <ul>
+                        <li>HARs of human gene</li>
+                        <li>How did all other homo sapiens extinct despite the evolution advantage against primitive animals?</li>
+                        <li>Origin of Human Intelligence: from the DRD4 Novelty-Seeking Gene to the Hellenistic Period of Egypt</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Sociology of Knowledge:</strong>
+                    <ul>
+                        <li>Personal Knowledge and Symbolic boundary</li>
+                        <li>Social structure: human constructed or on-its-own?</li>
+                        <li>Case Study: evolutionary structure of PRC Universities</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Analytic Philosophy:</strong>
+                    <ul>
+                        <li>Phenomenology</li>
+                        <li>Language and Object</li>
+                        <li>Language and Theory</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Towards an Animal-friendly society:</strong>
+                    <ul>
+                        <li>Intelligence of Animals</li>
+                        <li>Communicate with animals via large-animal-language-model</li>
+                        <li>Schools for animals</li>
+                        <li>Types of advantage from animal gene, body, intelligence</li>
+                        <li>Human-animal cooperation</li>
+                        <li>Urban Infrastructure for human-animal overlapping</li>
+                        <li>Animal transportation</li>
+                        <li>Entertainment for Animals</li>
+                    </ul>
+                </li>
+                <li><strong><a href="https://lingzhiyang.notion.site/Who-Designed-Quantum-Field-Theory-QFT-11a4bd0aabbc80708355dd5c9d733ff5?pvs=4" target="_blank" target="_blank" target="_blank" class="publication-link">Study Black hole by traveling close to it</a>.</strong></li>
+                <li><strong>Galactic Empire: What if humans lost the spirit of scientific investigation again?</strong></li>
+            </ul>
+            <p>For more details on my personal projects, visit my <a href="https://lingzhiyang.notion.site/Topics-c64eb2755b334b8f85e50f7f1e18b85c?pvs=4" target="_blank" target="_blank" class="publication-link">Notion Notebook</a>.</p>
+        </section>
+
+        <section id="network" style="display: none;">
+            <h2>Trips</h2>
+            <ul>
+                <li>2024-8-1 - research, Houston</li>
+                <li>2024-6-10 - conference, Boston, Salem</li>
+                <li>2023-3-17 - friend, Chicago</li>
+                <li>2022-6-10 - friend, California major cities,etc</li>
+                <li>2022-5-20 - investigation, Villages around New York State</li>
+                <li>2022-3-17 - friend, Evanston, Chicago</li>
+                <li>Date1 - Location1</li>
+                <li>Date2 - Location2</li>
+                <li>Date3 - Location3</li>
+            </ul>
+            <h2>Social Media</h2>
+            <ul>
+                <li><a href="https://github.com/lingzhi227" target="_blank">Github for Radio, mechatronics, mathematics, Robotics</a></li>
+                <li><a href="https://1drv.ms/o/s!AlXVQnB2LjbliqNEQUUGgBDl_NRnvQ?e=Bagejk" target="_blank">Onenote for brainstorming</a></li>
+                <li><a href="https://www.pinterest.com/lingzhi227/" target="_blank">Pinterest for aesthetics & ideas & books</a></li>
+                <li><a href="https://www.imdb.com/user/ur99739195/" target="_blank">Imdb for movies</a></li>
+                <li><a href="https://listen.tidal.com/user/189812633" target="_blank">Tidal for musics</a></li>
+                <li><a href="https://steamcommunity.com/profiles/76561199088536724/" target="_blank">Steam for virtual</a></li>
+                <li><a href="https://www.youtube.com/@electricsteam227" target="_blank">Youtube for life moments</a></li>
+                <li><a href="https://x.com/Fx_Gx_Rx" target="_blank">Twitter for fun</a></li>  
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Lingzhi Yang</p>
+        </footer>
+    </div>
+</body>
+</html>
