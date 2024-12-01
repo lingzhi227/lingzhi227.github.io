@@ -114,7 +114,7 @@
             document.getElementById('work').style.display = 'none';
             document.getElementById('log').style.display = 'none';
             document.getElementById('life').style.display = 'none';
-            document.getElementById('network').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
             document.getElementById(pageId).style.display = 'block';
         }
         window.onload = function() {
@@ -128,11 +128,12 @@
             <h1>Lingzhi Yang</h1>
             <p>Computational Applied Math PhD Student @ Stony Brook University</p>
             <p>Exascallab [<a href="https://you.stonybrook.edu/exascallab/" target="_blank" class="publication-link">link</a>], Institute for Advanced Computational Science [<a href="https://iacs.stonybrook.edu/" target="_blank" class="publication-link">link</a>]</p>
+            
             <nav>
                 <a href="#" onclick="showPage('work')">Work</a> |
                 <a href="#" onclick="showPage('log')">Log</a> |
                 <a href="#" onclick="showPage('life')">Life</a> |
-                <a href="#" onclick="showPage('network')">Network</a>
+                <a href="#" onclick="showPage('contact')">Contact</a>
             </nav>
         </header>
 
@@ -146,8 +147,6 @@
                 <li>Software-defined Hardware through Compiler Development and Language Design</li>
                 <li>Neural Circuit Dynamics and Mathematical Modeling of Brain Micro-circuits</li>
             </ul>
-            <h2>Routine</h2>
-            <p><a href="https://calendar.google.com/calendar/embed?src=lingzhi.yang%40stonybrook.edu&ctz=America%2FNew_York" target="_blank" class="publication-link"> calendar</a>, meet by invite to this email: <a href="lingzhi.yang@stonybrook.edu" target="_blank" class="publication-link"> lingzhi.yang@stonybrook.edu</a></p>
         </section>
 
         <section id="log" style="display: none;">
@@ -215,6 +214,16 @@
                 </ul>
                 <h3>Language</h3>
                 <ul>
+                    <h4>Dataflow</h4>
+                    <ul>
+                        <li>[CS2] 10/27/2024 <a href="https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/698365/1/bt_Louis_Schnyder.pdf" target="_blank" class="publication-link"> Rebuild MPI on Wafer Scale Integration</a></li>
+                        <li>[CS2] 12/30/2023 <a href="https://sdk.cerebras.net/" target="_blank" class="publication-link"> Cerebras CSL language and SDK</a></li>
+                        <li>[Reviews] 2024 <a href="https://www.anandtech.com/show/16006/hot-chips-2020-live-blog-cerebras-wse-programming-300pm-ptCS1" target="_blank" class="publication-link">Cerebras Software hardware codesign</a> - <a href="https://cerebras.ai/blog/supporting-pytorch-on-the-cerebras-wafer-scale-engine/" target="_blank" class="publication-link">Graph Compiler</a></li>
+                        <li>[Reviews] 2024 <a href="https://dl.acm.org/doi/pdf/10.1145/3470496.3527405" target="_blank" class="publication-link"> Groq Software Defined Tensor Streaming Processor</a></li>
+                        <li>[Reviews] 2024 <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10476453" target="_blank" class="publication-link"> SambaNova RDA language (Stanford)</a></li>
+                        <li>[Reviews] 2024 <a href="https://dl.acm.org/doi/pdf/10.1145/3694715.3695955" target="_blank" class="publication-link"> GraphCore Compiler (UIUC)</a></li> 
+                        <li>[Reviews] 1985 <a href="https://en.wikipedia.org/wiki/Lucid_(programming_language)" target="_blank" class="publication-link">Lucid</a></li>
+                    </ul>
                     <h4>Stream</h4>
                     <ul>
                         <li>[Reviews] 2015 <a href="https://github.com/RaftLib/RaftLib" target="_blank" class="publication-link"> RaftLib (C++)</a></li>
@@ -227,21 +236,12 @@
                         <li>[Reviews] 2010  <a href="https://ieeexplore.ieee.org/abstract/document/5558637" target="_blank" class="publication-link">Feldspar on Dataflow architecture</a></li>
                         <li>[Reviews] 1977 <a href="https://dl.acm.org/doi/pdf/10.1145/359576.359579" target="_blank" class="publication-link"> Theoretical</a></li>
                     </ul>
-                    <h4>Dataflow</h4>
+                    <h4>Formal Method</h4>
                     <ul>
-                        <li>[CS2] 10/27/2024 <a href="https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/698365/1/bt_Louis_Schnyder.pdf" target="_blank" class="publication-link"> Rebuild MPI on Wafer Scale Integration</a></li>
-                        <li>[CS2] 12/30/2023 <a href="https://sdk.cerebras.net/" target="_blank" class="publication-link"> Cerebras CSL language and SDK</a></li>
-                        <li>[Reviews] 2024 <a href="https://www.anandtech.com/show/16006/hot-chips-2020-live-blog-cerebras-wse-programming-300pm-ptCS1" target="_blank" class="publication-link">Cerebras Software hardware codesign</a> - <a href="https://cerebras.ai/blog/supporting-pytorch-on-the-cerebras-wafer-scale-engine/" target="_blank" class="publication-link">Graph Compiler</a></li>
-                        <li>[Reviews] 2024 <a href="https://dl.acm.org/doi/pdf/10.1145/3470496.3527405" target="_blank" class="publication-link"> Groq Software Defined Tensor Streaming Processor</a></li>
-                        <li>[Reviews] 2024 <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10476453" target="_blank" class="publication-link"> SambaNova RDA language (Stanford)</a></li>
-                        <li>[Reviews] 2024 <a href="https://dl.acm.org/doi/pdf/10.1145/3694715.3695955" target="_blank" class="publication-link"> GraphCore Compiler (UIUC)</a></li> 
-                        <li>[Reviews] 1985 <a href="https://en.wikipedia.org/wiki/Lucid_(programming_language)" target="_blank" class="publication-link">Lucid</a></li>
-                    </ul>
-                    <h4>Formal Modeling</h4>
-                    <ul>
-                        <li>[Reviews] 10/26/2024 <a href="https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2024/cadence-expands-system-ip-portfolio-with-network-on-chip-to.html" target="_blank" class="publication-link"> Cadence Compiler for NoC development</a></li>
-                        <li>[Concepts] 09/13/2024 <a href="https://www.synopsys.com/verification.html" target="_blank" class="publication-link">Synopsys Formal Verification</a></li>
-                        <li>[Research] 08/13/2024 (1990) <a href="http://theory.stanford.edu/~rvg/process.html" target="_blank" class="publication-link">Process Algebra</a></li>
+                        <li>[Reviews] 08/13/2024 (1990) <a href="http://theory.stanford.edu/~rvg/process.html" target="_blank" class="publication-link">Process Algebra</a></li>
+                        <li>[Reviews] 11/30/2024 (2018) <a href="https://link.springer.com/book/10.1007/978-3-319-10575-8" target="_blank" class="publication-link">Model Checking</a></li>
+                        <li>[Reviews] 11/30/2024 (1998) <a href="https://users.ece.cmu.edu/~koopman/des_s99/formal_methods/" target="_blank" class="publication-link">Formal Method General</a></li>
+                        <li>[Reviews] 11/30/2024 <a href="https://books.google.com.pk/books?id=KJ-NAgAAQBAJ" target="_blank" class="publication-link">Formal Language Theory</a></li>
                     </ul>
                 </ul>
                 <h3>Machine</h3>
@@ -251,6 +251,11 @@
                         <li>[Concepts] 11/23/2024 <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10460211" target="_blank" class="publication-link"> Waferscale hardware </a></li>
                         <li>[Concepts] 11/16/2024 <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1663617" target="_blank" class="publication-link">Systolic, Wavefront and MIMD architecture</a></li>
                         <li>[Reviews] 10/20/2024 <a href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=8df2ed6ca843e864b02d5a782ff9c46d41fb58a7" target="_blank" class="publication-link"> Systolic Array literature review</a><br> - Overview of classic literature on systolic array architectures and their applications in programming Network-on-chip architecture.</li>
+                    </ul>
+                    <h4>Formal Verification</h4>
+                    <ul>
+                        <li>[Case] 10/26/2024 <a href="https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2024/cadence-expands-system-ip-portfolio-with-network-on-chip-to.html" target="_blank" class="publication-link"> Cadence Compiler for NoC development</a></li>
+                        <li>[Case] 09/13/2024 <a href="https://www.synopsys.com/verification.html" target="_blank" class="publication-link">Synopsys Formal Verification</a></li>
                     </ul>
                     <h4>Software-Hardware Codesign</h4>
                     <ul>
@@ -271,11 +276,8 @@
         </section>
 
         <section id="life" style="display: none;">
-            <h2>Current Projects</h2>
+            <h2>Library Projects</h2>
             <p>For more details on my personal projects, visit my <a href="https://lingzhiyang.notion.site/Topics-c64eb2755b334b8f85e50f7f1e18b85c?pvs=4" target="_blank" target="_blank" class="publication-link">Notion Notebook</a>.</p>
-        </section>
-
-        <section id="network" style="display: none;">
             <h2>Trips</h2>
             <ul>
                 <li>2024-8-1 - research, Houston</li>
@@ -284,14 +286,10 @@
                 <li>2022-6-10 - friend, California major cities,etc</li>
                 <li>2022-5-20 - investigation, Villages around New York State</li>
                 <li>2022-3-17 - friend, Evanston, Chicago</li>
-                <li>Date1 - Location1</li>
-                <li>Date2 - Location2</li>
-                <li>Date3 - Location3</li>
             </ul>
             <h2>Social Media</h2>
             <ul>
                 <li><a href="https://github.com/lingzhi227" target="_blank">Github for Radio, mechatronics, mathematics, Robotics</a></li>
-                <!-- <li><a href="https://lingzhiyang.notion.site/Diaries-1334bd0aabbc80738c59c4e621036e60?pvs=4" target="_blank">Notion for diaries</a></li>   -->
                 <li><a href="https://www.pinterest.com/lingzhi227/" target="_blank">Pinterest for aesthetics & ideas & books</a></li>
                 <li><a href="https://www.imdb.com/user/ur99739195/" target="_blank">Imdb for movies</a></li>
                 <li><a href="https://listen.tidal.com/user/189812633" target="_blank">Tidal for musics</a></li>
@@ -299,6 +297,12 @@
                 <li><a href="https://www.youtube.com/@electricsteam227" target="_blank">Youtube for life moments</a></li>
                 <li><a href="https://x.com/Fx_Gx_Rx" target="_blank">Twitter for fun</a></li>
             </ul>
+        </section>
+
+        <section id="contact" style="display: none;">
+            <h2>Calendar</h2>
+            <p><a href="https://calendar.google.com/calendar/embed?src=lingzhi.yang%40stonybrook.edu&ctz=America%2FNew_York" target="_blank" class="publication-link"> calendar</a>, meet by invite to this email: <a href="lingzhi.yang@stonybrook.edu" target="_blank" class="publication-link"> lingzhi.yang@stonybrook.edu</a></p>
+
         </section>
 
         <footer>
