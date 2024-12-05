@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Content Browser</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  /* Left Sidebar */
+  .sidebar {
+    background-color: black;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    justify-content: flex-start;
+    position: fixed;
+    height: 100%;
+  }
+
+  .sidebar h2 {
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #BB86FC;
+    margin-bottom: 20px;
+  }
+
+  .sidebar a {
+    font-family: monospace;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+
+  /* Active link style */
+  .sidebar a.active {
+    color: #888888;
+  }
+
+  /* Social Media Links */
+  .social-media {
+    margin-top: auto;
+    font-family: monospace;
+    max-width: 180px;
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .social-media ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .social-media ul li {
+    margin: 5px 0;
+  }
+
+  .social-media ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    word-wrap: break-word;
+  }
+
+  .social-media ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Main Content Area */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    margin-left: 220px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .image-container {
+    margin-right: 20px;
+  }
+
+  /* All images have the same width, no frame */
+  .image-container img {
+    width: 300px; 
+    height: auto;
+  }
+
+  .text-container {
+    font-family: monospace;
+    max-width: 400px;
+    text-align: left;
+  }
+
+  p {
+    line-height: 1.5em;
+  }
+
+  /* Hide all category sections initially */
+  .category-section {
+    display: none;
+  }
+
+  /* Show the default category (Concepts) by default */
+  #concepts-section {
+    display: block;
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- Left Sidebar with Category Links -->
+  <div class="sidebar">
+    <h2>Category</h2>
+    <div>
+      <!-- Navigation Links to Different Categories (Pages) -->
+      <a onclick="showCategory('concepts-section', this)" class="active">Concepts</a>
+      <a onclick="showCategory('devices-section', this)">Devices</a>
+      <a onclick="showCategory('biospecies-section', this)">Biospecies</a>
+      <a onclick="showCategory('book-reviews-section', this)">Book reviews</a>
+      <a onclick="showCategory('country-reviews-section', this)">Country reviews</a>
+      <a onclick="showCategory('cities-reviews-section', this)">Cities reviews</a>
+      <a onclick="showCategory('companies-reviews-section', this)">Companies reviews</a>
+      <a onclick="showCategory('personality-classification-section', this)">Personality Classification</a>
+    </div>
+
+    <!-- Social Media Links at the bottom of the sidebar -->
+    <div class="social-media">
+    <h2>Social Media</h2>
+      <ul>
+        <li><a href="https://www.pinterest.com/lingzhi227/" target="_blank">Pinterest for aesthetics & ideas & books</a></li>
+        <li><a href="https://www.imdb.com/user/ur99739195/" target="_blank">Imdb for movies</a></li>
+        <li><a href="https://listen.tidal.com/user/189812633" target="_blank">Tidal for musics</a></li>
+        <li><a href="https://steamcommunity.com/profiles/76561199088536724/" target="_blank">Steam for virtual</a></li>
+        <li><a href="https://www.youtube.com/@electricsteam227" target="_blank">Youtube for life moments</a></li>
+        <li><a href="https://x.com/Fx_Gx_Rx" target="_blank">Twitter for fun</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    
+    <!-- Concepts Section -->
+    <div id="concepts-section" class="category-section">
+      <!-- First Picture and its Description -->
+      <div class="container">
+        <div class="image-container">
+          <img src="pic/Star%20Wars_%20Tales%20Of%20The%20Jedi%20icon.jpg" alt="A descriptive image">
+        </div>
+        <div class="text-container">
+          <p>
+            This intriguing image, captured at a spontaneous moment in the late afternoon light, 
+            reveals a delicate interplay of shapes, colors, and subtle textures that, when observed closely, 
+            conveys an underlying narrative of natural harmony, where the gentle curve of each petal, 
+            the irregular pattern of leaves, and the graceful dance of light and shadow evoke a timeless sense 
+            of quiet wonder, inspiring the viewer to reflect on the fragile balance of life, the constant flux 
+            of growth and decay, and the profound complexity underlying the seemingly simple forms that 
+            populate our world, ensuring that anyone who contemplates this composition might momentarily 
+            transcend the ordinary boundaries of thought and emotion, embracing a richer perception and a deeper 
+            appreciation of the delicate tapestry that weaves itself silently through nature's gentle hand, 
+            resonating quietly beneath every subtle nuance of and radiant beauty, existence.
+          </p>
+        </div>
+      </div>
+
+      <!-- Second Picture and its Description (with date/time at the start) -->
+      <div class="container">
+        <div class="image-container">
+          <img src="pic/Star_Trek.jpg" alt="A descriptive image">
+        </div>
+        <div class="text-container">
+          <p>
+            2024-12-05 10:30 - This captivating image, with its fluid forms and high-contrast composition, 
+            invites the viewer to ponder the interplay of light and darkness, the dynamic tension between 
+            motion and stillness, and the ephemeral nature of perception as shapes dissolve into shadows, 
+            suggesting the passage of time and the transformation of meaning that occurs when we dare 
+            to look beyond the surface, allowing our minds to drift into the realm of abstraction, 
+            where familiar patterns fade and creativity thrives in the quiet spaces left behind by the 
+            conventional, ultimately urging us to recognize that in every fleeting moment and every subtle 
+            variation of tone and texture, we may find both new questions and new insights, silently 
+            whispering that nothing is ever entirely as it seems.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book Reviews Section -->
+    <div id="book-reviews-section" class="category-section">
+      <!-- Placeholder example of a picture and description -->
+      <div class="container">
+        <div class="image-container">
+          <img src="pic/example_book.jpg" alt="A descriptive book image">
+        </div>
+        <div class="text-container">
+          <p>
+            2024-12-05 10:31 - In this cover illustration, subtle textures and muted tones invite a 
+            contemplative gaze, where the interplay of page and print suggests countless narratives 
+            waiting to be discovered, each whispering a secret in the silent turns of paper and ink.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Companies Reviews Section -->
+    <div id="companies-reviews-section" class="category-section">
+      <!-- Placeholder -->
+      <div class="container">
+        <div class="image-container">
+          <img src="pic/example_company.jpg" alt="A descriptive company logo image">
+        </div>
+        <div class="text-container">
+          <p>
+            2024-12-05 10:32 - A stark, minimalist logo hints at corporate ethos, blending geometric precision 
+            and subtle color gradients, urging a moment of reflection upon the evolving relationship 
+            between industry and innovation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Country Reviews Section -->
+    <div id="country-reviews-section" class="category-section">
+      <!-- Placeholder -->
+      <div class="container">
+        <div class="image-container">
+          <img src="pic/example_country.jpg" alt="A descriptive landscape">
+        </div>
+        <div class="text-container">
+          <p>
+            2024-12-05 10:33 - Rolling landscapes unfold beneath a tranquil sky, revealing a tapestry of 
+            cultural heritage and natural wonders, prompting quiet meditations on the intricate identities 
+            woven into every border and horizon.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cities Reviews Section -->
+    <div id="cities-reviews-section" class="category-section">
+      <!-- Placeholder -->
+      <div class="container">
+        <div class="image-container">
+          <img src="pic/city_Houston.JPEG" alt="research Houston">
+        </div>
+        <div class="text-container">
+          <p>
+            2024-08-01 10:34 - research Houston
+          </p>
+        </div>
+      </div>
+      <!-- Placeholder -->
+      <div class="container">
+        <div class="image-container">
+          <img src="pic/example_city.jpg" alt="A descriptive cityscape">
+        </div>
+        <div class="text-container">
+          <p>
+            2024-12-05 10:34 - Lights shimmer against glass and steel, each tower a silent sentinel of human ambition, 
+            as crowded streets hum with stories of commerce, culture, and ceaseless reinvention.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personality Classification Section -->
+    <div id="personality-classification-section" class="category-section">
+      <!-- Placeholder -->
+      <div class="container">
+        <div class="image-container">
+          <img src="pic/example_personality.jpg" alt="A descriptive conceptual image">
+        </div>
+        <div class="text-container">
+          <p>
+            2024-12-05 10:35 - Abstract shapes overlap in vibrant layers, symbolizing the multifaceted nature 
+            of the human psyche, where emotion, thought, and instinct interweave to form identities as unique 
+            and complex as galaxies.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Biospecies Section -->
+    <div id="biospecies-section" class="category-section">
+      <!-- Placeholder -->
+      <div class="container">
+        <div class="image-container">
+          <img src="pic/example_biospecies.jpg" alt="A descriptive biological image">
+        </div>
+        <div class="text-container">
+          <p>
+            2024-12-05 10:36 - Under the microscope’s lens, life’s building blocks reveal themselves as tiny, 
+            intricate universes of cellular artistry, whispering that diversity and adaptation are the chords 
+            in Earth’s ancient symphony.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Devices Section -->
+    <div id="devices-section" class="category-section">
+      <!-- Placeholder -->
+      <div class="container">
+        <div class="image-container">
+          <img src="pic/example_device.jpg" alt="A descriptive gadget image">
+        </div>
+        <div class="text-container">
+          <p>
+            2024-12-05 10:37 - Sleek lines and glowing interfaces beckon the curious mind to explore functions 
+            that promise convenience, connectivity, and control, marking each device as a subtle instrument 
+            of modern evolution.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+function showCategory(categoryId, linkElement) {
+  // Hide all category sections
+  var sections = document.getElementsByClassName('category-section');
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].style.display = 'none';
+  }
+  
+  // Show the selected category section
+  document.getElementById(categoryId).style.display = 'block';
+
+  // Remove active class from all links
+  var links = document.querySelectorAll('.sidebar a');
+  links.forEach(function(link) {
+    link.classList.remove('active');
+  });
+
+  // Add active class to the clicked link
+  linkElement.classList.add('active');
+}
+</script>
+
+</body>
+</html>
