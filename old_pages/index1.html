@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingzhi Yang | Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Dark background */
+            color: #E0E0E0; /* Light text for readability */
+        }
+
+        #main-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #1E1E1E; /* Darker container for contrast */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Navbar styling */
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #BB86FC; /* Purple color for links */
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #82AAFF; /* Light blue highlight on hover */
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #BB86FC; /* Purple heading color */
+            border-bottom: 2px solid #BB86FC; /* Purple underline */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        h3 {
+            color: #BB86FC; /* Purple heading color */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+            color: #E0E0E0; /* Light text color for list items */
+        }
+
+        ul ul {
+            list-style-type: circle;
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        ul li + li {
+            margin-top: 5px;
+        }
+
+        ul li strong {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #BB86FC; /* Purple for section headings in lists */
+        }
+
+        a.publication-link {
+            color: #82AAFF; /* Light blue for publication links */
+            text-decoration: none;
+        }
+
+        a.publication-link:hover {
+            color: #BB86FC; /* Purple on hover */
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888; /* Slightly darker text for footer */
+        }
+    </style>
+    <script>
+        function showPage(pageId) {
+            document.getElementById('work').style.display = 'none';
+            document.getElementById('log').style.display = 'none';
+            document.getElementById('life').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+            document.getElementById(pageId).style.display = 'block';
+        }
+        window.onload = function() {
+            showPage('work');
+        };
+    </script>
+</head>
+<body>
+    <div id="main-container">
+        <header>
+            <h1>Lingzhi Yang</h1>
+            <p>Computational Applied Math PhD Student @ Stony Brook University</p>
+            <p>Exascallab [<a href="https://you.stonybrook.edu/exascallab/" target="_blank" class="publication-link">link</a>], Institute for Advanced Computational Science [<a href="https://iacs.stonybrook.edu/" target="_blank" class="publication-link">link</a>]</p>
+            
+            <nav>
+                <a href="#" onclick="showPage('work')">Work</a> |
+                <a href="#" onclick="showPage('log')">Log</a> |
+                <a href="#" onclick="showPage('contact')">Contact</a> |
+                <a href="#" onclick="showPage('life')">Life</a>
+            </nav>
+        </header>
+
+        <section id="work">
+            <h2>Research Interests</h2>
+            <p>Efficient processing of numerical PDE on heterogeneous architectures. I am a member of Prof. Barbara Chapman's Exascallab </p>
+            <h2>Research Projects</h2>
+            <ul>
+                <li><a href="http://theory.stanford.edu/~rvg/process.html" target="_blank" class="publication-link">Algebraic Reasoning of Algorithms</a></li>
+                <li><a href="https://www.sciencedirect.com/science/article/abs/pii/B9780125460804500091" target="_blank" class="publication-link">Systolic Algorithm</a> Design, using <a href="https://sdk.cerebras.net/" target="_blank" class="publication-link">Cerebras System Language</a></li>
+                <li>Software-defined Hardware through Compiler Development and Language Design</li>
+                <li><a href="https://www.nature.com/subjects/neural-circuit/nature" target="_blank" class="publication-link">Neural Circuit Dynamics</a> and <a href="https://mitpress.mit.edu/9780262041997/theoretical-neuroscience/" target="_blank" class="publication-link">Mathematical Modeling</a> of <a href="https://global.oup.com/academic/product/handbook-of-brain-microcircuits-9780190636111" target="_blank" class="publication-link">Brain Micro-circuits</a> </li>
+            </ul>
+        </section>
+
+        <section id="log" style="display: none;">
+            <!-- <h2>Paper Weekly Progress</h2>
+            <ul>
+                <h3>Paper forth and fifth</h3>
+                <ul>
+                    <li>05/16/2025-08/15/2025 market the tool to industry</li> 
+                    <li>01/16/2025-05/15/2025 really build the tool</li> 
+                    <li>11/16/2024-01/15/2025 learn how to build the tool</li> 
+                    <li>09/16/2024-11/15/2024 build abstract layer tool demo</li> 
+                </ul>
+                <h3>Paper second and third</h3>
+                <ul>
+                    <li> 03/01/2025-05/15/2025 Theoretical: Common instruction sets, theories, abstract layer tools </li> 
+                    <li> 01/01/2025-04/15/2025 The similar process as first, but much faster </li> 
+                </ul>
+                <h3>Paper first</h3>
+                <ul>
+                    <li> 12/31/2024 Submit the paper to Journal </li>
+                    <li> 11/05/2024-12/10/2024 Reaching out to advisors, Performance evaluation, several optimization, experiments on others, write out the paper </li>
+                    <li> 10/20/2024-11/04/2024 Reaching out to programmers, First code that run </li>
+                    <li> 09/26/2024-10/20/2024 Pick up the right code sample, builtin, literature review for target optimization </li>
+                    <li> 08/15/2024-09/25/2024 Reaching out to researchers, First Literature Reviews </li>
+                    <li> 07/15/2024-08/15/2024 Reaching out to researchers, Target ideas to Architecture </li>
+                    <li> 06/10/2024-07/15/2024 Deep read, Generate ideas </li>
+                </ul>            
+            </ul> -->
+            <h2>Text-to-Action Product</h2>
+            <ul>
+                <li><a href="https://github.com/lingzhi227/CSL_GPTFlow.git"target="_blank" class="publication-link"> GPT flow</a></li>
+                <li><a href="https://github.com/lingzhi227/CSL_FusedLayer.git"target="_blank" class="publication-link"> Convolution Layer Fusion by CSL language</a></li><li><a href="https://github.com/lingzhi227/CSL_SystolicLib.git"target="_blank" class="publication-link"> A Systolic DSP library</a></li>
+                <li><a href="https://github.com/lingzhi227/CS2_Functional_Programming.git"target="_blank" class="publication-link"> A functional programming dsl and compiler</a></li>
+                <li><a href="https://github.com/lingzhi227/CSL_tutorial.git"target="_blank" class="publication-link"> CSL Tutorial Q&A</a></li>
+                <li>A sensor-array-systolic-array cluster level DSP architecture</li>
+                <li><a href="https://github.com/lingzhi227/Communication_Algebra.git"target="_blank" class="publication-link"> A EDA toolkit for dataflow architecture formal verification</a></li>
+            </ul>
+            <h2>Research Progress</h2>
+            <ul>
+                <!-- <h3>Notes</h3>
+                <ul>
+                    <li>Code repo <a href="https://github.com/lingzhi227" target="_blank" class="publication-link">Github</a></li>
+                    <li>Reading <a href="https://lingzhiyang.notion.site/Notes-1504bd0aabbc80bcb959d4dff0d1fb99" target="_blank" class="publication-link">notion notes</a></li>
+                    <li>Scribble <a href="https://1drv.ms/o/s!AlXVQnB2LjbliqNEcTzv0Pk1D4Fpng?e=X5OgAB" target="_blank" class="publication-link">Onenote</a></li>
+                </ul> -->
+
+                <h3>Action</h3>
+                <ul>
+                    <h4>Waferscale Computing</h4>
+                    <ul>
+                        <li>[Reviews] 10/27/2024 <a href="https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/698365/1/bt_Louis_Schnyder.pdf" target="_blank" class="publication-link"> Rebuild MPI on Wafer Scale Engine</a></li>
+                        <li>[Reviews] 05/10/2024 (2021) <a href="https://cerebras.ai/blog/supercharge-your-hpc-research-with-the-cerebras-sdk"target="_blank" class="publication-link"> Waferscale RTM</a></li>
+                    </ul>
+                    <h4>AI</h4>
+                    <ul>
+                        <li>[Reviews] 11/14/2024 (2023) <a href="https://cerebras.ai/blog/unlocking-high-resolution-computer-vision-with-wafer-scale-technology"target="_blank" class="publication-link"> CNN on CS2</a></li>
+                        <li>[Project] <a href="https://www.alcf.anl.gov/alcf-resources" target="_blank" class="publication-link">10/10/2024 Testing Argonne National Lab AI Accelerators</a><br> - An account of testing advanced AI accelerators at the Argonne Leadership Computing Facility, focusing on programmability, performance, and application in AI4Sci.</li>
+                        <li>[Reviews] <a href="https://docs.google.com/document/d/1ibMw3VAGydUIPNILNIYxCAwpngwhpC3ZHFv9hFyUQ64/edit?usp=sharing" target="_blank" class="publication-link">06/10/2024 Neurosymbolic Programming @MIT</a></li>
+                    </ul>
+                    <h4>Computational Math</h4>
+                    <ul>
+                        <li>[Project] 12/30/2022 <a href="https://epubs.siam.org/doi/10.1137/1.9781611974997" target="_blank" class="publication-link"> First Order Method in Optimziation</a></li>
+                        <li>[Project] 12/30/2020 <a href="https://www.amazon.com/Introduction-Differential-Engineers-Mechanical-Engineering/dp/0486488160" target="_blank" class="publication-link"> Lie Group Optimziation</a></li>
+                    </ul>
+                    <h4>Systolic Algorithms</h4>
+                    <ul>
+                        <li>[Reviews]  - Coming - Review of 2D mesh Systolic Array application</li>
+                        <li>[Concept] 11/14/2024 Micro benchmark Systolic Matrix Multiplication</li>
+                        <li>[Reviews] 11/13/2024 Review of Systolic version Computational Math Kernels: QR, FFT, FEM, Convolution Neural Net</li>
+                        <li>[Reviews] 11/05/2024 (1987) <a href="https://www.proquest.com/docview/303557431?pq-origsite=gscholar&fromopenview=true" target="_blank" class="publication-link">Compile Systolic Array</a></li>
+                        <li>[Concept] 08/09/2024 (1983) <a href="https://www.eecs.harvard.edu/~htk/publication/1983-elliptic-problem-solvers-kung-lin.pdf" target="_blank" class="publication-link"> An algebraic model for on-chip fast communication</a><br> - Proposal for an algebraic model to optimize on-chip communication.</li>
+                    </ul>
+                    
+                </ul>
+                <h3>Language</h3>
+                <ul>
+                    <h4>New Language</h4>
+                    <ul>
+                        <li>[Reviews] 12/03/2024 <a href="http://dsl.design/" target="_blank" class="publication-link">Domain Specific Language</a></li>
+                    </ul>
+                    <h4>Dataflow</h4>
+                    <ul>
+                        <li>[CS2] 11/15/2023 <a href="https://sdk.cerebras.net/" target="_blank" class="publication-link"> Cerebras CSL language and SDK</a></li>
+                        <li>[Reviews] 2024 <a href="https://www.anandtech.com/show/16006/hot-chips-2020-live-blog-cerebras-wse-programming-300pm-ptCS1" target="_blank" class="publication-link">Cerebras Software hardware codesign</a> - <a href="https://cerebras.ai/blog/supporting-pytorch-on-the-cerebras-wafer-scale-engine/" target="_blank" class="publication-link">Graph Compiler</a></li>
+                        <li>[Reviews] 2024 <a href="https://dl.acm.org/doi/pdf/10.1145/3470496.3527405" target="_blank" class="publication-link"> Groq Software Defined Tensor Streaming Processor</a></li>
+                        <li>[Reviews] 2024 <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10476453" target="_blank" class="publication-link"> SambaNova RDA language (Stanford)</a></li>
+                        <li>[Reviews] 2024 <a href="https://dl.acm.org/doi/pdf/10.1145/3694715.3695955" target="_blank" class="publication-link"> GraphCore Compiler (UIUC)</a></li> 
+                        <li>[Reviews] 1985 <a href="https://en.wikipedia.org/wiki/Lucid_(programming_language)" target="_blank" class="publication-link">Lucid</a></li>
+                    </ul>
+                    <h4>Stream</h4>
+                    <ul>
+                        <li>[Reviews] 2015 <a href="https://github.com/RaftLib/RaftLib" target="_blank" class="publication-link"> RaftLib (C++)</a></li>
+                        <li>[Reviews] 2013 <a href="https://dl.acm.org/doi/pdf/10.1145/2400682.2400712" target="_blank" class="publication-link"> OpenStream (OMP)</a></li>
+                        <li>[Reviews] 2006 <a href="https://groups.csail.mit.edu/cag/streamit/papers/streamit-cookbook.pdf" target="_blank" class="publication-link"> Streamit (MIT)</a></li>
+                    </ul>
+                    <h4>Functional</h4>
+                    <ul>
+                        <li>[Reviews] 2020s <a href="https://nostarch.com/learn-physics-functional-programming" target="_blank" class="publication-link">Functional Physics</a></li>
+                        <li>[Reviews] 2020s <a href="https://futhark-lang.org/" target="_blank" class="publication-link">Futhark (CPU/GPU)</a></li>
+                        <li>[Reviews] 2010  <a href="https://ieeexplore.ieee.org/abstract/document/5558637" target="_blank" class="publication-link">Feldspar on Dataflow architecture</a></li>
+                        <li>[Reviews] 1977 <a href="https://dl.acm.org/doi/pdf/10.1145/359576.359579" target="_blank" class="publication-link"> Theoretical</a></li>
+                    </ul>
+                    <h4>Formal Method</h4>
+                    <ul>
+                        <li>[Reviews] 08/13/2024 (1990) <a href="http://theory.stanford.edu/~rvg/process.html" target="_blank" class="publication-link">Process Algebra</a></li>
+                        <li>[Reviews] 11/30/2024 (2018) <a href="https://link.springer.com/book/10.1007/978-3-319-10575-8" target="_blank" class="publication-link">Model Checking</a></li>
+                        <li>[Reviews] 11/30/2024 (1998) <a href="https://users.ece.cmu.edu/~koopman/des_s99/formal_methods/" target="_blank" class="publication-link">Formal Method General</a></li>
+                        <li>[Reviews] 11/30/2024 <a href="https://books.google.com.pk/books?id=KJ-NAgAAQBAJ" target="_blank" class="publication-link">Formal Language Theory</a></li>
+                    </ul>
+                </ul>
+                <h3>Machine</h3>
+                <ul>
+                    <h4>MIMD architecture</h4>
+                    <ul>
+                        <li>[Concept] 11/23/2024 <a href="https://ieeexplore.ieee.org/abstract/document/10460211" target="_blank" class="publication-link"> Waferscale hardware </a></li>
+                        <li>[Concept] 11/16/2024 <a href="https://ieeexplore.ieee.org/abstract/document/1675922" target="_blank" class="publication-link">Systolic, Wavefront and MIMD architecture</a></li>
+                        <li>[Reviews] 10/20/2024 <a href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=8df2ed6ca843e864b02d5a782ff9c46d41fb58a7" target="_blank" class="publication-link"> Systolic Array literature review</a><br> - Overview of classic literature on systolic array architectures and their applications in programming Network-on-chip architecture.</li>
+                    </ul>
+                    <h4>Formal Verification</h4>
+                    <ul>
+                        <li>[Case] 10/26/2024 <a href="https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2024/cadence-expands-system-ip-portfolio-with-network-on-chip-to.html" target="_blank" class="publication-link"> Cadence Compiler for NoC development</a></li>
+                        <li>[Case] 09/13/2024 <a href="https://www.synopsys.com/verification.html" target="_blank" class="publication-link">Synopsys Formal Verification</a></li>
+                    </ul>
+                    <h4>Software-Hardware Codesign</h4>
+                    <ul>
+                        <li>[Concept] 08/16/2024 <a href="https://www.darpa.mil/program/software-defined-hardware" target="_blank" class="publication-link"> Software-defined hardware concepts</a><br> - Exploration of software-defined hardware and its potential in efficient system design.</li>
+                        <li>[Concept] 08/01/2024 <a href="https://www.asml.com/en/technology/lithography-principles/mechanics-and-mechatronics" target="_blank" class="publication-link"> Are all modern hardware software defined?</a></li>
+                        <li>[Reviews] 11/30/2023 <a href="https://lingzhi.gitbook.io/hpc-co-design"target="_blank" class="publication-link"> Modern Practice of Software-Hardware Co-design</a></li>
+                        <li>[Reviews] 11/27/2023 Review of HPC hardware</li>
+                        <li>[Reviews] 10/20/2023 Review of Scientific Computing on Supercomputer</li>  
+                    </ul>
+                    <h4>FPGA</h4>
+                    <ul>
+                        <li>[Project] 08/01/2023 Fused CNN on FPGA</li>
+                        <li>[Project] 03/15/2023 CT on FPGA</li>   
+                    </ul>
+                </ul>
+
+            </ul>
+        </section>
+
+        <section id="contact" style="display: none;">
+            <h2>Calendar</h2>
+            <p><a href="https://calendar.google.com/calendar/embed?src=lingzhi.yang%40stonybrook.edu&ctz=America%2FNew_York" target="_blank" class="publication-link">Calendar</a>, meet by invite to this email: <a href="mailto:lingzhi.yang@stonybrook.edu">lingzhi.yang@stonybrook.edu</a></p>
+
+        </section>
+
+        <section id="life" style="display: none;">
+            <h2>Trips</h2>
+            <ul>
+                <li>2024-8-1 - research, Houston</li>
+                <li>2024-6-10 - conference, Boston, Salem</li>
+                <li>2023-3-17 - friend, Chicago</li>
+                <li>2022-6-10 - friend, California major cities,etc</li>
+                <li>2022-5-20 - investigation, Villages around New York State</li>
+                <li>2022-3-17 - friend, Evanston, Chicago</li>
+            </ul>
+            <h2>Social Media</h2>
+            <ul>
+                <li><a href="https://www.pinterest.com/lingzhi227/" target="_blank">Pinterest for aesthetics & ideas & books</a></li>
+                <li><a href="https://www.imdb.com/user/ur99739195/" target="_blank">Imdb for movies</a></li>
+                <li><a href="https://listen.tidal.com/user/189812633" target="_blank">Tidal for musics</a></li>
+                <li><a href="https://steamcommunity.com/profiles/76561199088536724/" target="_blank">Steam for virtual</a></li>
+                <li><a href="https://www.youtube.com/@electricsteam227" target="_blank">Youtube for life moments</a></li>
+                <li><a href="https://x.com/Fx_Gx_Rx" target="_blank">Twitter for fun</a></li>
+            </ul>
+            <h2>Library Project</h2>
+            <p>For more details on my personal projects, visit my <a href="https://lingzhiyang.notion.site/Topics-c64eb2755b334b8f85e50f7f1e18b85c?pvs=4" target="_blank" target="_blank" class="publication-link">Notion Notebook</a>.</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Lingzhi Yang</p>
+        </footer>
+    </div>
+</body>
+</html>
