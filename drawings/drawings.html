@@ -1,0 +1,25 @@
+<canvas id="myCanvas" width="200" height="200" style="border:1px solid #000;"></canvas>
+<script>
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  // 画一个红色矩形
+  ctx.fillStyle = "red";
+  ctx.fillRect(10, 10, 50, 50);
+
+  // 画一条带箭头的线可以通过绘制线条和在终点绘制三角形来模拟
+  ctx.beginPath();
+  ctx.moveTo(50, 150);
+  ctx.lineTo(150, 150);
+  ctx.strokeStyle = "black";
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // 手动画箭头的三角形部分
+  ctx.beginPath();
+  ctx.moveTo(150, 150);
+  ctx.lineTo(140, 145);
+  ctx.lineTo(140, 155);
+  ctx.closePath();
+  ctx.fillStyle = "black";
+  ctx.fill();
+</script>
