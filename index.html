@@ -112,6 +112,7 @@
     <script>
         function showPage(pageId) {
             document.getElementById('work').style.display = 'none';
+            document.getElementById('life').style.display = 'none';
             document.getElementById(pageId).style.display = 'block';
         }
         window.onload = function() {
@@ -126,14 +127,17 @@
             <p>Computational Applied Math PhD Student @ Stony Brook University</p>
             <p><a href="https://you.stonybrook.edu/exascallab/" target="_blank" class="publication-link">Exascallab</a>,  <a href="https://iacs.stonybrook.edu/" target="_blank" class="publication-link">Institute for Advanced Computational Science</a></p>
             
+            <a href="#" onclick="showPage('work')">Work</a> |
+            <a href="#" onclick="showPage('life')">Life</a> 
+
             <!-- <nav>
-                <a href="#" onclick="showPage('work')">Work</a>
+                
                 document.getElementById('log').style.display = 'none';
-                document.getElementById('life').style.display = 'none';
+                
                 document.getElementById('contact').style.display = 'none';
                 <a href="#" onclick="showPage('log')">Log</a> |
                 <a href="#" onclick="showPage('contact')">Contact</a> |
-                <a href="#" onclick="showPage('life')">Life</a> 
+                
                 -->
             <!-- </nav> -->
         </header>
