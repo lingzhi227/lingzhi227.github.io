@@ -39,11 +39,17 @@
             text-decoration: none;
             color: #BB86FC; /* Purple color for links */
             font-weight: bold;
+            font-size: 1.2em; /* Increase font size */
+            display: inline-block;
+            padding: 10px 20px; /* Add padding for better look */
+            border-radius: 5px; /* Rounded edges */
+            background-color: #1E1E1E; /* Match container background */
         }
 
         nav a:hover {
             color: #82AAFF; /* Light blue highlight on hover */
-            text-decoration: underline;
+            text-decoration: none; /* No underline */
+            background-color: #2A2A2A; /* Slightly lighter background on hover */
         }
 
         section {
@@ -126,19 +132,10 @@
             <h1>Lingzhi Yang</h1>
             <p>Computational Applied Math PhD Student @ Stony Brook University</p>
             <p><a href="https://you.stonybrook.edu/exascallab/" target="_blank" class="publication-link">Exascallab</a>,  <a href="https://iacs.stonybrook.edu/" target="_blank" class="publication-link">Institute for Advanced Computational Science</a></p>
-            
-            <a href="#" onclick="showPage('work')">Work</a> |
-            <a href="#" onclick="showPage('life')">Life</a> 
-
-            <!-- <nav>
-                
-                document.getElementById('log').style.display = 'none';
-                document.getElementById('contact').style.display = 'none';
-                <a href="#" onclick="showPage('log')">Log</a> |
-                <a href="#" onclick="showPage('contact')">Contact</a> |
-                
-                -->
-            <!-- </nav> -->
+            <nav>
+                <a href="#" onclick="showPage('work')">Work</a>
+                <a href="#" onclick="showPage('life')">Life</a> 
+            </nav>
         </header>
 
         <section id="work">
@@ -152,7 +149,6 @@
                 <li><a href="https://www.nature.com/subjects/neural-circuit/nature" target="_blank" class="publication-link">Neural Circuit Dynamics</a> and <a href="https://mitpress.mit.edu/9780262041997/theoretical-neuroscience/" target="_blank" class="publication-link">Mathematical Modeling</a> of <a href="https://global.oup.com/academic/product/handbook-of-brain-microcircuits-9780190636111" target="_blank" class="publication-link">Brain Micro-circuits</a> </li>
             </ul> -->
             <!-- <h2>Research Progress</h2> -->
-            <h2>Dataflow on MIMD machine</h2>
                 <h3>Chapter 1: Mathematical Model of Concurrent Computing</h3>
                 <ul>
                     <li>Formal Models</li>
@@ -160,13 +156,13 @@
                     <li>Algebraic Graph</li>
                     <li>Process Algebra</li>
                 </ul>    
-                <h3>Chapter 2: Modeling Recent MIMD</h3>
+                <h3>Chapter 2: Recent MIMD</h3>
                 <ul>
                     <li>Application Specific MIMD Clusters</li>
                     <li>Waferscale MIMD Architecture</li>
                     <li>Digital Neuromorphic Architecture</li>
                 </ul>
-                <h3>Chapter 3: (Text)Language Design</h3>
+                <h3>Chapter 3: (Text)Language</h3>
                 <ul>
                     <li>Model Driven Software Engineering</li>
                     <li>Language</li>
@@ -175,7 +171,7 @@
                     <li>Custom instruction set</li>
                     <li>Backend</li>
                 </ul>
-                <h3>Chapter 4: (to)Programming Model</h3>
+                <h3>Chapter 4: (to)Programming</h3>
                 <ul>
                     <li>Software-Defined-Hardware Methodology</li>
                     <li>MIMD Programming</li>
