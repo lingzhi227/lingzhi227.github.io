@@ -119,11 +119,10 @@
         function showPage(pageId) {
             document.getElementById('life').style.display = 'none';
             document.getElementById('work').style.display = 'none';
-            document.getElementById('ai').style.display = 'none';
             document.getElementById(pageId).style.display = 'block';
         }
         window.onload = function() {
-            showPage('ai');
+            showPage('work');
         };
     </script>
 </head>
@@ -134,31 +133,12 @@
             <p>Computational Applied Math PhD Student @ Stony Brook University</p>
             <p><a href="https://you.stonybrook.edu/exascallab/" target="_blank" class="publication-link">Exascallab</a>,  <a href="https://iacs.stonybrook.edu/" target="_blank" class="publication-link">Institute for Advanced Computational Science</a></p>
             <nav>
-                <a href="#" onclick="showPage('ai')">AI</a>
-                <a href="#" onclick="showPage('work')">HPC</a>
+                <a href="#" onclick="showPage('work')">Work</a>
                 <a href="#" onclick="showPage('life')">Life</a> 
             </nav>
         </header>
 
-        <section id="ai">
-            <h3>AI Research</h3>
-            <ul>
-                <li>Reasoning model</li>
-                <li>Task Management</li>
-            </ul> 
-            <h3>AI Multimodal</h3>
-            <ul>
-                <li>Audio Language Model</li>
-                <li>Vision Language Model</li>
-            </ul>
-            <h3>AI for Science</h3>
-            <ul>
-                <li>HPC-coder</li>
-                <li>GeneLLM</li>
-            </ul>
-        </section>
-
-        <section id="work" style="display: none;">
+        <section id="work">
                 <h3>Section 1 Recent MIMD</h3>
                 <ul>
                     <li>Application Specific MIMD Clusters</li>
