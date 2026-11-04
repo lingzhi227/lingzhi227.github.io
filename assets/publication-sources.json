@@ -61,15 +61,15 @@
     "status": "Under review at ICLR 2027",
     "description": "Selects and reweights complementary token-level corrections so a smaller supervision budget can approximate the combined learning signal of full-response teacher feedback.",
     "link": "https://openreview.net/forum?id=JHUnaQnSCq",
-    "image": "assets/images/paper-cord.png",
+    "image": "assets/images/paper-cord-figure3.png",
     "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/48038_CoRD_On_Policy_Distillat.pdf",
-    "source_page_1_based": 2,
-    "source_figure": "Figure 1",
+    "source_page_1_based": 4,
+    "source_figure": "Figure 3",
     "crop_points_top_left_xyxy": [
       108,
       81,
       505,
-      187
+      247
     ],
     "source_page_points": [
       612,
@@ -78,7 +78,7 @@
     "render_dpi": 300,
     "image_pixels": [
       1200,
-      321
+      502
     ],
     "authors_omitted": true,
     "topic": "On-policy distillation · Efficient supervision"
