@@ -3,7 +3,7 @@
     "id": "milestone",
     "title": "Milestone-Aware On-Policy Distillation for Long-Horizon Reasoning",
     "status": "Under review at AAAI 2027",
-    "description": "Allocates teacher supervision to the earliest stalled-progress regions of student reasoning trajectories using semantic milestones from verified solutions.",
+    "description": "Uses solution milestones to locate where a model's reasoning stalls, then concentrates teacher feedback on those steps to make long-horizon reasoning training more efficient.",
     "link": "https://github.com/lingzhi227/presentations/blob/main/5222_Milestone_Aware_On_Policy.pdf",
     "image": "assets/images/paper-milestone.png",
     "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/5222_Milestone_Aware_On_Policy.pdf",
@@ -24,13 +24,14 @@
       1200,
       758
     ],
-    "authors_omitted": true
+    "authors_omitted": true,
+    "topic": "Long-horizon reasoning · On-policy distillation"
   },
   {
     "id": "shapley",
     "title": "Shapley-Guided Rollout Selection for Reinforcement Learning with Verifiable Rewards",
     "status": "Under review at ICLR 2027",
-    "description": "Selects complementary rollouts by their Shapley contribution to preserving the full group's learning direction under a fixed update budget.",
+    "description": "Uses Shapley values to select a small, complementary set of rollouts, preserving the full group's learning direction while reducing the number of responses used in policy updates.",
     "link": "https://openreview.net/forum?id=4XXzK2ixu4",
     "image": "assets/images/paper-shapley.png",
     "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/3043_Shapley_Guided_Rollout_Se.pdf",
@@ -51,13 +52,14 @@
       1200,
       532
     ],
-    "authors_omitted": true
+    "authors_omitted": true,
+    "topic": "Agentic RL · Rollout selection"
   },
   {
     "id": "cord",
     "title": "CoRD: On-Policy Distillation via Correction Reconstruction",
     "status": "Under review at ICLR 2027",
-    "description": "Selects complementary token corrections and reconstructs their aggregate learning signal to make on-policy distillation more efficient.",
+    "description": "Selects and reweights complementary token-level corrections so a smaller supervision budget can approximate the combined learning signal of full-response teacher feedback.",
     "link": "https://openreview.net/forum?id=JHUnaQnSCq",
     "image": "assets/images/paper-cord.png",
     "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/48038_CoRD_On_Policy_Distillat.pdf",
@@ -78,13 +80,14 @@
       1200,
       321
     ],
-    "authors_omitted": true
+    "authors_omitted": true,
+    "topic": "On-policy distillation · Efficient supervision"
   },
   {
     "id": "view",
     "title": "View-Decomposed On-Policy Distillation for Robust Reasoning in Large Language Models",
     "status": "Under review at ICLR 2027",
-    "description": "Distills shared teacher predictions across prompt variations to preserve useful uncertainty while reducing prompt-sensitive reasoning.",
+    "description": "Compares teacher predictions across different wordings of the same task, retaining shared guidance and useful uncertainty to make student reasoning less sensitive to prompt wording.",
     "link": "https://openreview.net/forum?id=uRLcqKPXl9",
     "image": "assets/images/paper-view.png",
     "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/47011_View_Decomposed_On_Polic.pdf",
@@ -105,13 +108,14 @@
       1200,
       463
     ],
-    "authors_omitted": true
+    "authors_omitted": true,
+    "topic": "Robust reasoning · Prompt consistency"
   },
   {
     "id": "forgetting",
     "title": "Learning Not to Forget How to Improve: Meta-Forgetting in Self-Evolving Agents",
     "status": "Under review at ICLR 2027",
-    "description": "Uses Improvement Function Replay to retain an agent's ability to improve itself while adapting to new tasks.",
+    "description": "Studies how agents can lose the ability to improve themselves, and uses Improvement Function Replay to preserve effective improvement strategies while adapting to new tasks.",
     "link": "https://openreview.net/forum?id=eIJH6HV9LZ",
     "image": "assets/images/paper-forgetting.png",
     "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/47996_Learning_Not_to_Forget_H.pdf",
@@ -132,6 +136,7 @@
       1200,
       343
     ],
-    "authors_omitted": true
+    "authors_omitted": true,
+    "topic": "Self-evolving agents · Anti-forgetting"
   }
 ]
