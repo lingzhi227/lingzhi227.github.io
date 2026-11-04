@@ -1,0 +1,137 @@
+[
+  {
+    "id": "milestone",
+    "title": "Milestone-Aware On-Policy Distillation for Long-Horizon Reasoning",
+    "status": "Under review at AAAI 2027",
+    "description": "Allocates teacher supervision to the earliest stalled-progress regions of student reasoning trajectories using semantic milestones from verified solutions.",
+    "link": "https://github.com/lingzhi227/presentations/blob/main/5222_Milestone_Aware_On_Policy.pdf",
+    "image": "assets/images/paper-milestone.png",
+    "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/5222_Milestone_Aware_On_Policy.pdf",
+    "source_page_1_based": 1,
+    "source_figure": "Figure 1",
+    "crop_points_top_left_xyxy": [
+      319,
+      210,
+      558,
+      361
+    ],
+    "source_page_points": [
+      612,
+      792
+    ],
+    "render_dpi": 300,
+    "image_pixels": [
+      1200,
+      758
+    ],
+    "authors_omitted": true
+  },
+  {
+    "id": "shapley",
+    "title": "Shapley-Guided Rollout Selection for Reinforcement Learning with Verifiable Rewards",
+    "status": "Under review at ICLR 2027",
+    "description": "Selects complementary rollouts by their Shapley contribution to preserving the full group's learning direction under a fixed update budget.",
+    "link": "https://openreview.net/forum?id=4XXzK2ixu4",
+    "image": "assets/images/paper-shapley.png",
+    "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/3043_Shapley_Guided_Rollout_Se.pdf",
+    "source_page_1_based": 3,
+    "source_figure": "Figure 1",
+    "crop_points_top_left_xyxy": [
+      108,
+      81,
+      505,
+      257
+    ],
+    "source_page_points": [
+      612,
+      792
+    ],
+    "render_dpi": 300,
+    "image_pixels": [
+      1200,
+      532
+    ],
+    "authors_omitted": true
+  },
+  {
+    "id": "cord",
+    "title": "CoRD: On-Policy Distillation via Correction Reconstruction",
+    "status": "Under review at ICLR 2027",
+    "description": "Selects complementary token corrections and reconstructs their aggregate learning signal to make on-policy distillation more efficient.",
+    "link": "https://openreview.net/forum?id=JHUnaQnSCq",
+    "image": "assets/images/paper-cord.png",
+    "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/48038_CoRD_On_Policy_Distillat.pdf",
+    "source_page_1_based": 2,
+    "source_figure": "Figure 1",
+    "crop_points_top_left_xyxy": [
+      108,
+      81,
+      505,
+      187
+    ],
+    "source_page_points": [
+      612,
+      792
+    ],
+    "render_dpi": 300,
+    "image_pixels": [
+      1200,
+      321
+    ],
+    "authors_omitted": true
+  },
+  {
+    "id": "view",
+    "title": "View-Decomposed On-Policy Distillation for Robust Reasoning in Large Language Models",
+    "status": "Under review at ICLR 2027",
+    "description": "Distills shared teacher predictions across prompt variations to preserve useful uncertainty while reducing prompt-sensitive reasoning.",
+    "link": "https://openreview.net/forum?id=uRLcqKPXl9",
+    "image": "assets/images/paper-view.png",
+    "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/47011_View_Decomposed_On_Polic.pdf",
+    "source_page_1_based": 2,
+    "source_figure": "Figure 1",
+    "crop_points_top_left_xyxy": [
+      126,
+      81,
+      486,
+      220
+    ],
+    "source_page_points": [
+      612,
+      792
+    ],
+    "render_dpi": 300,
+    "image_pixels": [
+      1200,
+      463
+    ],
+    "authors_omitted": true
+  },
+  {
+    "id": "forgetting",
+    "title": "Learning Not to Forget How to Improve: Meta-Forgetting in Self-Evolving Agents",
+    "status": "Under review at ICLR 2027",
+    "description": "Uses Improvement Function Replay to retain an agent's ability to improve itself while adapting to new tasks.",
+    "link": "https://openreview.net/forum?id=eIJH6HV9LZ",
+    "image": "assets/images/paper-forgetting.png",
+    "source_pdf": "https://raw.githubusercontent.com/lingzhi227/presentations/main/47996_Learning_Not_to_Forget_H.pdf",
+    "source_page_1_based": 1,
+    "source_figure": "Figure 1",
+    "crop_points_top_left_xyxy": [
+      112,
+      501,
+      501,
+      612
+    ],
+    "source_page_points": [
+      612,
+      792
+    ],
+    "render_dpi": 300,
+    "image_pixels": [
+      1200,
+      343
+    ],
+    "authors_omitted": true
+  }
+]

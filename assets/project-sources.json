@@ -1,0 +1,52 @@
+{
+  "retrieved_on": "2026-11-04",
+  "projects": [
+    {
+      "id": "bioworkflow-gym",
+      "name": "BioWorkflow-Gym",
+      "url": "https://github.com/lingzhi227/BioWorkflow-Gym",
+      "image": "assets/images/project-bioworkflow-gym.png",
+      "image_source": "https://raw.githubusercontent.com/lingzhi227/BioWorkflow-Gym/main/docs/images/agent-built-galaxy-workflow.png",
+      "image_type": "Existing repository screenshot",
+      "image_note": "Unmodified screenshot of an agent-built Hi-C workflow in Galaxy's workflow editor; native 642 × 342 resolution retained.",
+      "alt": "Agent-built Galaxy workflow graph for Hi-C contact-map generation and assembly curation.",
+      "description": "A native macOS workspace and research system for constructing, executing, and evaluating long-horizon bioinformatics workflows with agents."
+    },
+    {
+      "id": "bioworkflow-bench",
+      "name": "BioWorkflow-Bench",
+      "repository_name": "Extended-BioAgentBench",
+      "url": "https://github.com/lingzhi227/Extended-BioAgentBench",
+      "image": "assets/images/project-bioworkflow-bench.png",
+      "image_source": "https://github.com/lingzhi227/Extended-BioAgentBench#extended-bioagentbench",
+      "image_type": "Cropped browser screenshot",
+      "image_note": "Genuine GitHub README screenshot captured with CUA. No image assets exist in the repository. Display name follows the user's requested BioWorkflow-Bench name; source screenshot retains the repository's title.",
+      "alt": "BioWorkflow-Bench repository overview describing a growing benchmark of complex bioinformatics workflows.",
+      "description": "An expanding benchmark of multi-tool bioinformatics tasks, spanning six domains with branching workflow graphs and reproducible reference pipelines."
+    },
+    {
+      "id": "csl",
+      "name": "CSL-LLM SDK",
+      "url": "https://github.com/lingzhi227/csl-llm-sdk",
+      "image": "assets/images/project-csl.png",
+      "image_source": "https://github.com/lingzhi227/csl-llm-sdk#1-qwen-project-design",
+      "source_code": "https://raw.githubusercontent.com/lingzhi227/csl-llm-sdk/main/README.md",
+      "image_type": "Screenshot of the repository's exact Mermaid diagram",
+      "image_note": "First README diagram, rendered locally with Mermaid 10.9.4 and captured via CUA because GitHub's Mermaid embed did not load. Diagram content and connections are unchanged. Describes the historical staged Qwen design, not a claim about all current model implementations.",
+      "alt": "CSL-LLM SDK architecture: model planning, handwritten CSL, compilation, runtime execution, and reference validation.",
+      "description": "Handwritten CSL kernels, persistent model state, and on-wafer communication for open language-model inference on Cerebras WSE-3."
+    },
+    {
+      "id": "dataflow",
+      "name": "MIMD Dataflow / Pragma HLS",
+      "url": "https://github.com/lingzhi227/MIMD_dataflow",
+      "image": "assets/images/project-dataflow.png",
+      "image_source": "https://github.com/lingzhi227/MIMD_dataflow#project-design",
+      "source_code": "https://raw.githubusercontent.com/lingzhi227/MIMD_dataflow/main/README.md",
+      "image_type": "Screenshot of the repository's exact Mermaid diagram",
+      "image_note": "Project design Mermaid diagram rendered locally with Mermaid 10.9.4 and captured via CUA because GitHub's Mermaid embed did not load. Diagram content and connections are unchanged.",
+      "alt": "Pragma HLS compiler pipeline from C++ tensor programs through spatial planning and generated CSL to numerical and protocol validation.",
+      "description": "A research compiler that maps restricted C++ tensor programs to spatial computation graphs and generated CSL, with explicit placement, communication, and buffer-lifetime checks."
+    }
+  ]
+}
