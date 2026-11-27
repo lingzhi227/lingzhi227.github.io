@@ -7,8 +7,14 @@
       "url": null,
       "image": null,
       "placeholder": true,
-      "period": "Fall 2026",
-      "description": "Research on disaggregated decoding across heterogeneous GPU and dataflow AI accelerators, integrating SRAM-based decoding with GPU-hosted workloads as infrastructure for long-horizon agents."
+      "period": "2026 Fall",
+      "description": "Run prefill on an 8-GPU NVIDIA H200 SXM system and autoregressive decoding on Cerebras WSE-3. Develop the execution path between GPU prefill and CSL decoding, focusing on request handoff and state transfer for long-horizon agents. Optimization targets: prefill–decode coordination overhead, token latency, and throughput under concurrent requests.",
+      "description_bullets": [
+        "Run prefill on an 8-GPU NVIDIA H200 SXM system and autoregressive decoding on Cerebras WSE-3.",
+        "Develop the execution path between GPU prefill and CSL decoding, focusing on request handoff and state transfer for long-horizon agents.",
+        "Optimization targets: prefill–decode coordination overhead, token latency, and throughput under concurrent requests."
+      ],
+      "implementation_details_source": "User-provided project details, 2026-11-26"
     },
     {
       "id": "kv-cache",
@@ -16,8 +22,28 @@
       "url": null,
       "image": null,
       "placeholder": true,
-      "period": "Summer 2026",
-      "description": "Research on long-context KV-cache management for large-scale computer-use agents, connecting accelerator-level memory management with the persistent execution and memory needs of long-horizon agents."
+      "period": "2026 Summer",
+      "description": "Tested KV-cache scheduling for 50 concurrent long-horizon agents on an 8-GPU NVIDIA H200 system. Focus on cache allocation and residency across agent sessions, balancing memory pressure, context reuse, and reliable continuation of long-running computer-use tasks.",
+      "description_bullets": [
+        "Tested KV-cache scheduling for 50 concurrent long-horizon agents on an 8-GPU NVIDIA H200 system.",
+        "Focus on cache allocation and residency across agent sessions, balancing memory pressure, context reuse, and reliable continuation of long-running computer-use tasks."
+      ],
+      "implementation_details_source": "User-provided project details, 2026-11-26"
+    },
+    {
+      "id": "distributed-rollouts",
+      "name": "Distributed RL Rollout Acceleration on a 256-GPU Compute Cluster",
+      "url": null,
+      "image": null,
+      "placeholder": true,
+      "period": "2026 Spring",
+      "description": "Tested distributed RL rollouts on 256 NVIDIA A100 80GB GPUs at NERSC. Built a Go task-scheduling layer around vLLM and speculative decoding to coordinate rollout execution across the cluster. Optimization targets: balanced load, lower GPU idle time, and stable execution under variable rollout lengths.",
+      "description_bullets": [
+        "Tested distributed RL rollouts on 256 NVIDIA A100 80GB GPUs at NERSC.",
+        "Built a Go task-scheduling layer around vLLM and speculative decoding to coordinate rollout execution across the cluster.",
+        "Optimization targets: balanced load, lower GPU idle time, and stable execution under variable rollout lengths."
+      ],
+      "implementation_details_source": "User-provided project details, 2026-11-26"
     },
     {
       "id": "bioworkflow-gym",
@@ -28,8 +54,13 @@
       "image_type": "Existing repository screenshot",
       "image_note": "Unmodified screenshot of an agent-built Hi-C workflow in Galaxy's workflow editor; native 642 × 342 resolution retained.",
       "alt": "Agent-built Galaxy workflow graph for Hi-C contact-map generation and assembly curation.",
-      "description": "Built a Python/BioBlend environment on NERSC for training and evaluating long-horizon agents on peer-reviewed Galaxy IWC workflows. Ran 50 concurrent secure rollouts lasting 1.5–2 hours each. Weight-free skill evolution improved the composite workflow score from 33/100 to 51/100 (+54.5%), measuring graph completion, execution completion, and result correctness.",
-      "period": "Spring 2026"
+      "description": "Built a Python/BioBlend training and evaluation environment on NERSC for agents executing peer-reviewed Galaxy IWC workflows. Ran 50 concurrent secure rollouts lasting 1.5–2 hours each. Weight-free skill evolution improved the composite workflow score from 33/100 to 51/100 (+54.5%), covering graph completion, execution completion, and result correctness.",
+      "period": "2025 Fall",
+      "description_bullets": [
+        "Built a Python/BioBlend training and evaluation environment on NERSC for agents executing peer-reviewed Galaxy IWC workflows.",
+        "Ran 50 concurrent secure rollouts lasting 1.5–2 hours each.",
+        "Weight-free skill evolution improved the composite workflow score from 33/100 to 51/100 (+54.5%), covering graph completion, execution completion, and result correctness."
+      ]
     },
     {
       "id": "bioworkflow-bench",
@@ -41,19 +72,14 @@
       "image_type": "Cropped browser screenshot",
       "image_note": "Genuine GitHub README screenshot captured with CUA. No image assets exist in the repository. Display name follows the user's requested BioWorkflow-Bench name; source screenshot retains the repository's title.",
       "alt": "BioWorkflow-Bench repository overview describing a growing benchmark of complex bioinformatics workflows.",
-      "description": "Built Python dataset tooling and Docker/Conda reference pipelines for reproducible bioinformatics evaluation on real public data. Added 71 tasks across six domains, covering branching workflows up to depth 8 with 16+ CLI tools, with reference outputs for assessing pipeline completion and biological result correctness.",
-      "period": "Spring 2026",
+      "description": "Built Python dataset tooling and Docker/Conda reference pipelines for reproducible evaluation on real public bioinformatics data. Added 71 tasks across six domains, including branching workflows up to depth 8 with 16+ CLI tools, with reference outputs for checking pipeline completion and biological correctness.",
+      "period": "2025 Fall",
       "description_source": "https://github.com/lingzhi227/Extended-BioAgentBench/blob/main/README.md",
-      "description_verified_on": "2026-11-26"
-    },
-    {
-      "id": "distributed-rollouts",
-      "name": "Distributed RL Rollout Acceleration on a 256-GPU Compute Cluster",
-      "url": null,
-      "image": null,
-      "placeholder": true,
-      "period": "Fall 2025",
-      "description": "Research on distributed reinforcement-learning rollout acceleration using a 256-GPU compute cluster, with rollout execution and scaling as the systems optimization target."
+      "description_verified_on": "2026-11-26",
+      "description_bullets": [
+        "Built Python dataset tooling and Docker/Conda reference pipelines for reproducible evaluation on real public bioinformatics data.",
+        "Added 71 tasks across six domains, including branching workflows up to depth 8 with 16+ CLI tools, with reference outputs for checking pipeline completion and biological correctness."
+      ]
     },
     {
       "id": "csl",
@@ -65,10 +91,14 @@
       "image_type": "Screenshot of the repository's exact Mermaid diagram",
       "image_note": "First README diagram, rendered locally with Mermaid 10.9.4 and captured via CUA because GitHub's Mermaid embed did not load. Diagram content and connections are unchanged. Describes the historical staged Qwen design, not a claim about all current model implementations.",
       "alt": "CSL-LLM SDK architecture: model planning, handwritten CSL, compilation, runtime execution, and reference validation.",
-      "description": "Implemented LLM kernels, Python host orchestration, tensor placement, and persistent model state in CSL for Cerebras CS-3 at Argonne National Lab AI Testbed. Ran the complete 64-layer Qwen3.8 network on one physical WSE-3, generating two continuous sentences plus EOS (37 tokens). This is a functional inference milestone; strict CPU numerical parity remains open.",
-      "period": "Spring 2025",
+      "description": "Implemented CSL kernels, Python orchestration, tensor placement, and persistent state on Cerebras CS-3 at Argonne National Lab AI Testbed. Executed the complete 64-layer Qwen3.8 network on one physical WSE-3, generating two continuous sentences plus EOS (37 tokens). Functional inference is demonstrated; strict CPU numerical parity remains open.",
+      "period": "2025 Spring",
       "description_source": "https://github.com/lingzhi227/csl-llm-sdk/blob/main/README.md",
-      "description_verified_on": "2026-11-26"
+      "description_verified_on": "2026-11-26",
+      "description_bullets": [
+        "Implemented CSL kernels, Python orchestration, tensor placement, and persistent state on Cerebras CS-3 at Argonne National Lab AI Testbed.",
+        "Executed the complete 64-layer Qwen3.8 network on one physical WSE-3, generating two continuous sentences plus EOS (37 tokens). Functional inference is demonstrated; strict CPU numerical parity remains open."
+      ]
     },
     {
       "id": "dataflow",
@@ -80,10 +110,14 @@
       "image_type": "Screenshot of the repository's exact Mermaid diagram",
       "image_note": "Project design Mermaid diagram rendered locally with Mermaid 10.9.4 and captured via CUA because GitHub's Mermaid embed did not load. Diagram content and connections are unchanged.",
       "alt": "Pragma HLS compiler pipeline from C++ tensor programs through spatial planning and generated CSL to numerical and protocol validation.",
-      "description": "Built a Python compiler with a C++ tensor frontend and CSL code generation for spatial kernel placement, communication routing, and buffer-lifetime management on Cerebras. The published SDK-simulator snapshot records 141 qualified algorithm/shape/precision/execution configurations, including a 25-node resident attention composition, with numerical and communication-protocol validation.",
-      "period": "Fall 2024",
+      "description": "Built a Python compiler with a C++ tensor frontend and CSL code generation for PE placement, communication routing, and buffer-lifetime management. The published Cerebras SDK-simulator snapshot records 141 qualified configurations, including a 25-node resident attention graph, with numerical and communication-protocol validation.",
+      "period": "2024 Fall",
       "description_source": "https://github.com/lingzhi227/MIMD_dataflow/blob/main/README.md",
-      "description_verified_on": "2026-11-26"
+      "description_verified_on": "2026-11-26",
+      "description_bullets": [
+        "Built a Python compiler with a C++ tensor frontend and CSL code generation for PE placement, communication routing, and buffer-lifetime management.",
+        "The published Cerebras SDK-simulator snapshot records 141 qualified configurations, including a 25-node resident attention graph, with numerical and communication-protocol validation."
+      ]
     },
     {
       "id": "fpga-fused-kernel",
@@ -91,8 +125,13 @@
       "url": null,
       "image": null,
       "placeholder": true,
-      "period": "Spring 2024",
-      "description": "Research on fused compute kernels for FPGA using high-level synthesis (HLS), combining kernel operations into a hardware implementation."
+      "period": "2024 Spring",
+      "description": "Used HLS to add dedicated buffers around fixed systolic-array IP on Xilinx U280, packaging fused operations as a custom instruction. Integrated the custom instruction with an ARM C++ compiler so software can invoke a fused hardware operation directly; the design targets local data reuse and reduced intermediate data movement.",
+      "description_bullets": [
+        "Used HLS to add dedicated buffers around fixed systolic-array IP on Xilinx U280, packaging fused operations as a custom instruction.",
+        "Integrated the custom instruction with an ARM C++ compiler so software can invoke a fused hardware operation directly; the design targets local data reuse and reduced intermediate data movement."
+      ],
+      "implementation_details_source": "User-provided project details, 2026-11-26"
     },
     {
       "id": "fpga-radon",
@@ -100,8 +139,13 @@
       "url": null,
       "image": null,
       "placeholder": true,
-      "period": "Spring 2023",
-      "description": "Implemented Radon-transform computation for CT imaging on Xilinx FPGA using high-level synthesis (HLS), translating the transform into a hardware-accelerated computation pipeline."
+      "period": "2023 Spring",
+      "description": "Built a Radon-transform stream-processing unit on Xilinx Zynq-7010 using HLS and HDL. Connected spatially arranged processing elements through a hardware pipeline, targeting continuous dataflow and parallel transform computation.",
+      "description_bullets": [
+        "Built a Radon-transform stream-processing unit on Xilinx Zynq-7010 using HLS and HDL.",
+        "Connected spatially arranged processing elements through a hardware pipeline, targeting continuous dataflow and parallel transform computation."
+      ],
+      "implementation_details_source": "User-provided project details, 2026-11-26"
     }
   ],
   "timeline_updated_on": "2026-11-26"
