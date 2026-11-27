@@ -7,7 +7,8 @@
       "url": null,
       "image": null,
       "placeholder": true,
-      "period": "Fall 2026"
+      "period": "Fall 2026",
+      "description": "Research on disaggregated decoding across heterogeneous GPU and dataflow AI accelerators, integrating SRAM-based decoding with GPU-hosted workloads as infrastructure for long-horizon agents."
     },
     {
       "id": "kv-cache",
@@ -15,7 +16,8 @@
       "url": null,
       "image": null,
       "placeholder": true,
-      "period": "Summer 2026"
+      "period": "Summer 2026",
+      "description": "Research on long-context KV-cache management for large-scale computer-use agents, connecting accelerator-level memory management with the persistent execution and memory needs of long-horizon agents."
     },
     {
       "id": "bioworkflow-gym",
@@ -26,7 +28,7 @@
       "image_type": "Existing repository screenshot",
       "image_note": "Unmodified screenshot of an agent-built Hi-C workflow in Galaxy's workflow editor; native 642 × 342 resolution retained.",
       "alt": "Agent-built Galaxy workflow graph for Hi-C contact-map generation and assembly curation.",
-      "description": "A native macOS workspace and research system for constructing, executing, and evaluating long-horizon bioinformatics workflows with agents.",
+      "description": "Built a Python/BioBlend environment on NERSC for training and evaluating long-horizon agents on peer-reviewed Galaxy IWC workflows. Ran 50 concurrent secure rollouts lasting 1.5–2 hours each. Weight-free skill evolution improved the composite workflow score from 33/100 to 51/100 (+54.5%), measuring graph completion, execution completion, and result correctness.",
       "period": "Spring 2026"
     },
     {
@@ -39,8 +41,10 @@
       "image_type": "Cropped browser screenshot",
       "image_note": "Genuine GitHub README screenshot captured with CUA. No image assets exist in the repository. Display name follows the user's requested BioWorkflow-Bench name; source screenshot retains the repository's title.",
       "alt": "BioWorkflow-Bench repository overview describing a growing benchmark of complex bioinformatics workflows.",
-      "description": "An expanding benchmark of multi-tool bioinformatics tasks, spanning six domains with branching workflow graphs and reproducible reference pipelines.",
-      "period": "Spring 2026"
+      "description": "Built Python dataset tooling and Docker/Conda reference pipelines for reproducible bioinformatics evaluation on real public data. Added 71 tasks across six domains, covering branching workflows up to depth 8 with 16+ CLI tools, with reference outputs for assessing pipeline completion and biological result correctness.",
+      "period": "Spring 2026",
+      "description_source": "https://github.com/lingzhi227/Extended-BioAgentBench/blob/main/README.md",
+      "description_verified_on": "2026-11-26"
     },
     {
       "id": "distributed-rollouts",
@@ -48,7 +52,8 @@
       "url": null,
       "image": null,
       "placeholder": true,
-      "period": "Fall 2025"
+      "period": "Fall 2025",
+      "description": "Research on distributed reinforcement-learning rollout acceleration using a 256-GPU compute cluster, with rollout execution and scaling as the systems optimization target."
     },
     {
       "id": "csl",
@@ -60,8 +65,10 @@
       "image_type": "Screenshot of the repository's exact Mermaid diagram",
       "image_note": "First README diagram, rendered locally with Mermaid 10.9.4 and captured via CUA because GitHub's Mermaid embed did not load. Diagram content and connections are unchanged. Describes the historical staged Qwen design, not a claim about all current model implementations.",
       "alt": "CSL-LLM SDK architecture: model planning, handwritten CSL, compilation, runtime execution, and reference validation.",
-      "description": "Handwritten CSL kernels, persistent model state, and on-wafer communication for open language-model inference on Cerebras WSE-3.",
-      "period": "Spring 2025"
+      "description": "Implemented LLM kernels, Python host orchestration, tensor placement, and persistent model state in CSL for Cerebras CS-3 at Argonne National Lab AI Testbed. Ran the complete 64-layer Qwen3.8 network on one physical WSE-3, generating two continuous sentences plus EOS (37 tokens). This is a functional inference milestone; strict CPU numerical parity remains open.",
+      "period": "Spring 2025",
+      "description_source": "https://github.com/lingzhi227/csl-llm-sdk/blob/main/README.md",
+      "description_verified_on": "2026-11-26"
     },
     {
       "id": "dataflow",
@@ -73,8 +80,10 @@
       "image_type": "Screenshot of the repository's exact Mermaid diagram",
       "image_note": "Project design Mermaid diagram rendered locally with Mermaid 10.9.4 and captured via CUA because GitHub's Mermaid embed did not load. Diagram content and connections are unchanged.",
       "alt": "Pragma HLS compiler pipeline from C++ tensor programs through spatial planning and generated CSL to numerical and protocol validation.",
-      "description": "A research compiler that maps restricted C++ tensor programs to spatial computation graphs and generated CSL, with explicit placement, communication, and buffer-lifetime checks.",
-      "period": "Fall 2024"
+      "description": "Built a Python compiler with a C++ tensor frontend and CSL code generation for spatial kernel placement, communication routing, and buffer-lifetime management on Cerebras. The published SDK-simulator snapshot records 141 qualified algorithm/shape/precision/execution configurations, including a 25-node resident attention composition, with numerical and communication-protocol validation.",
+      "period": "Fall 2024",
+      "description_source": "https://github.com/lingzhi227/MIMD_dataflow/blob/main/README.md",
+      "description_verified_on": "2026-11-26"
     },
     {
       "id": "fpga-fused-kernel",
@@ -82,7 +91,8 @@
       "url": null,
       "image": null,
       "placeholder": true,
-      "period": "Spring 2024"
+      "period": "Spring 2024",
+      "description": "Research on fused compute kernels for FPGA using high-level synthesis (HLS), combining kernel operations into a hardware implementation."
     },
     {
       "id": "fpga-radon",
@@ -90,7 +100,8 @@
       "url": null,
       "image": null,
       "placeholder": true,
-      "period": "Spring 2023"
+      "period": "Spring 2023",
+      "description": "Implemented Radon-transform computation for CT imaging on Xilinx FPGA using high-level synthesis (HLS), translating the transform into a hardware-accelerated computation pipeline."
     }
   ],
   "timeline_updated_on": "2026-11-26"

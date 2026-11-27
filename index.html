@@ -15,7 +15,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/roboto-400.ttf" as="font" type="font/ttf" crossorigin>
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('lingzhi-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=20261126-5">
+  <link rel="stylesheet" href="styles.css?v=20261126-6">
   <script src="site.js?v=20261126-2" defer></script>
 </head>
 <body>
@@ -48,79 +48,117 @@
     </section>
     <section id="projects" class="section-list" aria-labelledby="projects-title">
       <h2 id="projects-title">Projects</h2>
-      <ul class="research-list">
+      <div class="project-period" aria-labelledby="projects-fall-2026">
+        <h3 class="project-period-title" id="projects-fall-2026">Fall 2026</h3>
+        <ul class="research-list">
       <li class="research-entry project project-placeholder" id="project-disaggregated-decoding">
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
-          <h3 class="entry-title">Disaggregated Decoding on Heterogeneous GPU–Dataflow AI Accelerators</h3>
-          <p class="entry-meta"><time class="project-date" datetime="2026">Fall 2026</time></p>
+          <h4 class="entry-title">Disaggregated Decoding on Heterogeneous GPU–Dataflow AI Accelerators</h4>
+          <p class="entry-description">Research on disaggregated decoding across heterogeneous GPU and dataflow AI accelerators, integrating SRAM-based decoding with GPU-hosted workloads as infrastructure for long-horizon agents.</p>
         </div>
       </li>
+        </ul>
+      </div>
+      <div class="project-period" aria-labelledby="projects-summer-2026">
+        <h3 class="project-period-title" id="projects-summer-2026">Summer 2026</h3>
+        <ul class="research-list">
       <li class="research-entry project project-placeholder" id="project-kv-cache">
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
-          <h3 class="entry-title">Long-Context KV Cache Management for Large-Scale Computer-Use Agents</h3>
-          <p class="entry-meta"><time class="project-date" datetime="2026">Summer 2026</time></p>
+          <h4 class="entry-title">Long-Context KV Cache Management for Large-Scale Computer-Use Agents</h4>
+          <p class="entry-description">Research on long-context KV-cache management for large-scale computer-use agents, connecting accelerator-level memory management with the persistent execution and memory needs of long-horizon agents.</p>
         </div>
       </li>
+        </ul>
+      </div>
+      <div class="project-period" aria-labelledby="projects-spring-2026">
+        <h3 class="project-period-title" id="projects-spring-2026">Spring 2026</h3>
+        <ul class="research-list">
       <li class="research-entry project" id="project-bioworkflow-gym">
         <figure class="preview"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Gym on GitHub"><img src="assets/images/project-bioworkflow-gym.png" alt="Galaxy bioinformatics workflow built by an agent in BioWorkflow-Gym" width="600" height="400" loading="lazy" decoding="async"></a></figure>
         <div class="entry-content">
-          <h3 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer">BioWorkflow-Gym</a></h3>
-          <p class="entry-meta"><time class="project-date" datetime="2026">Spring 2026</time> · Scientific agents · Workflow environments</p>
-          <p class="entry-description">An environment for long-horizon agents to construct and execute bioinformatics workflows, grounded in peer-reviewed <a href="https://iwc.galaxyproject.org/" target="_blank" rel="noopener noreferrer">Galaxy IWC workflows</a>.</p>
+          <h4 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer">BioWorkflow-Gym</a></h4>
+          <p class="entry-meta">Scientific agents · Workflow environments</p>
+          <p class="entry-description">Built a Python/BioBlend environment on NERSC for training and evaluating long-horizon agents on peer-reviewed <a href="https://iwc.galaxyproject.org/" target="_blank" rel="noopener noreferrer">Galaxy IWC workflows</a>. Ran <strong>50 concurrent secure rollouts</strong> lasting <strong>1.5–2 hours each</strong>. Weight-free skill evolution improved the composite workflow score from <strong>33/100 to 51/100 (+54.5%)</strong>, measuring graph completion, execution completion, and result correctness.</p>
           <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a> <span class="work-note">(work in progress)</span> <a class="resource-link" href="https://arxiv.org/pdf/2606.20839" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-pdf"></use></svg>Manuscript</a></div>
         </div>
       </li>
       <li class="research-entry project" id="project-bioworkflow-bench">
         <figure class="preview"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Bench on GitHub"><img src="assets/images/project-bioworkflow-bench.png" alt="BioWorkflow-Bench repository overview and benchmark documentation" width="600" height="400" loading="lazy" decoding="async"></a></figure>
         <div class="entry-content">
-          <h3 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer">BioWorkflow-Bench</a></h3>
-          <p class="entry-meta"><time class="project-date" datetime="2026">Spring 2026</time> · Scientific agents · Evaluation</p>
-          <p class="entry-description">A benchmark for evaluating agents on complex workflow graph construction and execution, with verifiable results on the Galaxy platform.</p>
+          <h4 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer">BioWorkflow-Bench</a></h4>
+          <p class="entry-meta">Scientific agents · Evaluation</p>
+          <p class="entry-description">Built Python dataset tooling and Docker/Conda reference pipelines for reproducible bioinformatics evaluation on real public data. Added <strong>71 tasks across six domains</strong>, covering branching workflows up to <strong>depth 8 with 16+ CLI tools</strong>, with reference outputs for assessing pipeline completion and biological result correctness.</p>
           <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
         </div>
       </li>
+        </ul>
+      </div>
+      <div class="project-period" aria-labelledby="projects-fall-2025">
+        <h3 class="project-period-title" id="projects-fall-2025">Fall 2025</h3>
+        <ul class="research-list">
       <li class="research-entry project project-placeholder" id="project-distributed-rollouts">
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
-          <h3 class="entry-title">Distributed RL Rollout Acceleration on a 256-GPU Compute Cluster</h3>
-          <p class="entry-meta"><time class="project-date" datetime="2025">Fall 2025</time></p>
+          <h4 class="entry-title">Distributed RL Rollout Acceleration on a 256-GPU Compute Cluster</h4>
+          <p class="entry-description">Research on distributed reinforcement-learning rollout acceleration using a <strong>256-GPU compute cluster</strong>, with rollout execution and scaling as the systems optimization target.</p>
         </div>
       </li>
+        </ul>
+      </div>
+      <div class="project-period" aria-labelledby="projects-spring-2025">
+        <h3 class="project-period-title" id="projects-spring-2025">Spring 2025</h3>
+        <ul class="research-list">
       <li class="research-entry project" id="project-csl">
         <figure class="preview"><a href="https://github.com/lingzhi227/csl-llm-sdk" target="_blank" rel="noopener noreferrer" aria-label="Open csl-llm-sdk on GitHub"><img src="assets/images/project-csl.png" alt="Architecture diagram from the csl-llm-sdk documentation" width="600" height="400" loading="lazy" decoding="async"></a></figure>
         <div class="entry-content">
-          <h3 class="entry-title"><a href="https://github.com/lingzhi227/csl-llm-sdk" target="_blank" rel="noopener noreferrer">csl-llm-sdk</a></h3>
-          <p class="entry-meta"><time class="project-date" datetime="2025">Spring 2025</time> · AI accelerators · LLM inference</p>
-          <p class="entry-description">LLM kernels and inference tooling in Cerebras Software Language, exploring full-model inference and disaggregated decoding on Cerebras CS-3.</p>
+          <h4 class="entry-title"><a href="https://github.com/lingzhi227/csl-llm-sdk" target="_blank" rel="noopener noreferrer">csl-llm-sdk</a></h4>
+          <p class="entry-meta">AI accelerators · LLM inference</p>
+          <p class="entry-description">Implemented LLM kernels, Python host orchestration, tensor placement, and persistent model state in CSL for Cerebras CS-3 at Argonne National Lab AI Testbed. Ran the complete <strong>64-layer Qwen3.8 network on one physical WSE-3</strong>, generating <strong>two continuous sentences plus EOS (37 tokens)</strong>. This is a functional inference milestone; strict CPU numerical parity remains open.</p>
           <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/csl-llm-sdk" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
         </div>
       </li>
+        </ul>
+      </div>
+      <div class="project-period" aria-labelledby="projects-fall-2024">
+        <h3 class="project-period-title" id="projects-fall-2024">Fall 2024</h3>
+        <ul class="research-list">
       <li class="research-entry project" id="project-dataflow">
         <figure class="preview"><a href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer" aria-label="Open MIMD Dataflow on GitHub"><img src="assets/images/project-dataflow.png" alt="Compiler and dataflow architecture from the MIMD Dataflow project" width="600" height="400" loading="lazy" decoding="async"></a></figure>
         <div class="entry-content">
-          <h3 class="entry-title"><a href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer">MIMD Dataflow</a></h3>
-          <p class="entry-meta"><time class="project-date" datetime="2024">Fall 2024</time> · Compilers · Distributed systems</p>
-          <p class="entry-description">A dataflow programming toolkit for spatial kernel mapping and communication routing, treating dataflow architectures as general-purpose MIMD accelerators.</p>
+          <h4 class="entry-title"><a href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer">MIMD Dataflow</a></h4>
+          <p class="entry-meta">Compilers · Distributed systems</p>
+          <p class="entry-description">Built a Python compiler with a C++ tensor frontend and CSL code generation for spatial kernel placement, communication routing, and buffer-lifetime management on Cerebras. The published SDK-simulator snapshot records <strong>141 qualified algorithm/shape/precision/execution configurations</strong>, including a <strong>25-node resident attention composition</strong>, with numerical and communication-protocol validation.</p>
           <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
         </div>
       </li>
+        </ul>
+      </div>
+      <div class="project-period" aria-labelledby="projects-spring-2024">
+        <h3 class="project-period-title" id="projects-spring-2024">Spring 2024</h3>
+        <ul class="research-list">
       <li class="research-entry project project-placeholder" id="project-fpga-fused-kernel">
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
-          <h3 class="entry-title">Fused Kernel on FPGA Using HLS</h3>
-          <p class="entry-meta"><time class="project-date" datetime="2024">Spring 2024</time></p>
+          <h4 class="entry-title">Fused Kernel on FPGA Using HLS</h4>
+          <p class="entry-description">Research on fused compute kernels for FPGA using high-level synthesis (HLS), combining kernel operations into a hardware implementation.</p>
         </div>
       </li>
+        </ul>
+      </div>
+      <div class="project-period" aria-labelledby="projects-spring-2023">
+        <h3 class="project-period-title" id="projects-spring-2023">Spring 2023</h3>
+        <ul class="research-list">
       <li class="research-entry project project-placeholder" id="project-fpga-radon">
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
-          <h3 class="entry-title">Accelerated Radon Transformation on FPGA Using HLS</h3>
-          <p class="entry-meta"><time class="project-date" datetime="2023">Spring 2023</time></p>
+          <h4 class="entry-title">Accelerated Radon Transformation on FPGA Using HLS</h4>
+          <p class="entry-description">Implemented Radon-transform computation for CT imaging on Xilinx FPGA using high-level synthesis (HLS), translating the transform into a hardware-accelerated computation pipeline.</p>
         </div>
       </li>
-      </ul>
+        </ul>
+      </div>
     </section>
     <section id="publications" class="section-list" aria-labelledby="publications-title">
       <h2 id="publications-title">Selected Publications</h2>
