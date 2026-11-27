@@ -15,7 +15,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/roboto-400.ttf" as="font" type="font/ttf" crossorigin>
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('lingzhi-color-theme')==='dark'?'dark':'light'}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=20261127-2">
+  <link rel="stylesheet" href="styles.css?v=20261127-3">
   <script src="site.js?v=20261127-2" defer></script>
 </head>
 <body>
@@ -154,40 +154,6 @@
     </section>
     <section id="research" class="portfolio-panel" aria-labelledby="tab-research">
       <h2 class="panel-title">Research</h2>
-      <div class="project-period">
-        <ul class="research-list">
-      <li class="research-entry project" id="project-bioworkflow-gym">
-        <figure class="preview"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Gym on GitHub"><img src="assets/images/project-bioworkflow-gym.png" alt="Galaxy bioinformatics workflow built by an agent in BioWorkflow-Gym" width="600" height="400" loading="lazy" decoding="async"></a></figure>
-        <div class="entry-content">
-          <div class="project-heading">
-            <h4 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer">BioWorkflow-Gym</a></h4>
-            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a> <span class="work-note">(work in progress)</span> <a class="resource-link" href="https://arxiv.org/pdf/2606.20839" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-pdf"></use></svg>Manuscript</a></div>
-          </div>
-          <p class="entry-meta">Scientific agents · Workflow environments</p>
-          <ul class="entry-description project-points">
-            <li>A training and evaluation environment for long-horizon scientific agents constructing and executing verifiable bioinformatics workflows.</li>
-            <li>Built a <strong>Python/BioBlend</strong> system on <strong>NERSC</strong> using peer-reviewed <a href="https://iwc.galaxyproject.org/" target="_blank" rel="noopener noreferrer">Galaxy IWC workflows</a>; ran <strong>50 concurrent secure rollouts</strong> lasting <strong>1.5–2 hours each</strong>.</li>
-            <li>Weight-free skill evolution improved the composite score from <strong>33/100 to 51/100 (+54.5%)</strong>, measuring workflow graph completion, execution completion, and result correctness.</li>
-          </ul>
-        </div>
-      </li>
-      <li class="research-entry project" id="project-bioworkflow-bench">
-        <figure class="preview"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Bench on GitHub"><img src="assets/images/project-bioworkflow-bench.png" alt="BioWorkflow-Bench repository overview and benchmark documentation" width="600" height="400" loading="lazy" decoding="async"></a></figure>
-        <div class="entry-content">
-          <div class="project-heading">
-            <h4 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer">BioWorkflow-Bench</a></h4>
-            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
-          </div>
-          <p class="entry-meta">Scientific agents · Evaluation</p>
-          <ul class="entry-description project-points">
-            <li>A benchmark for evaluating agents on complex, branching bioinformatics workflows with verifiable outputs.</li>
-            <li>Built <strong>Python</strong> dataset tooling and <strong>Docker/Conda</strong> reference pipelines using real public data and ground-truth outputs.</li>
-            <li>Released <strong>71 additional tasks across six domains</strong>, covering workflows up to <strong>depth 8 with 16+ CLI tools</strong>.</li>
-          </ul>
-        </div>
-      </li>
-        </ul>
-      </div>
       <div id="publications" class="research-publications">
       <ol class="bibliography">
         <li class="paper" id="paper-milestone">
@@ -257,29 +223,42 @@
         </li>
       </ol>
       </div>
-    </section>
-    <section id="software" class="portfolio-panel" aria-labelledby="tab-software">
-      <h2 class="panel-title">Software</h2>
-      <ul class="software-list">
-        <li class="software-entry" id="software-bioworkflow-gym">
-          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" rel="noopener noreferrer" target="_blank">BioWorkflow-Gym</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/BioWorkflow-Gym" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
-          <p class="entry-description">A training and evaluation environment for long-horizon scientific agents constructing and executing verifiable bioinformatics workflows.</p>
-        </li>
-        <li class="software-entry" id="software-bioworkflow-bench">
-          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" rel="noopener noreferrer" target="_blank">BioWorkflow-Bench</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/Extended-BioAgentBench" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
-          <p class="entry-description">A benchmark for evaluating agents on complex, branching bioinformatics workflows with verifiable outputs.</p>
-        </li>
-        <li class="software-entry" id="software-csl">
-          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/csl-llm-sdk" rel="noopener noreferrer" target="_blank">csl-llm-sdk</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/csl-llm-sdk" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
-          <p class="entry-description">LLM execution on programmable wafer-scale hardware, with explicit control over computation, communication, and persistent model state.</p>
-        </li>
-        <li class="software-entry" id="software-dataflow">
-          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/MIMD_dataflow" rel="noopener noreferrer" target="_blank">MIMD Dataflow</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/MIMD_dataflow" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
-          <p class="entry-description">A compiler and programming model for treating spatial dataflow architectures as general-purpose MIMD numerical accelerators.</p>
-        </li>
-      </ul>
-      <div class="software-fpga">
-        <h3 class="software-group-title">FPGA Accelerators</h3>
+      <div class="project-period">
+        <ul class="research-list">
+      <li class="research-entry project" id="project-bioworkflow-gym">
+        <figure class="preview"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Gym on GitHub"><img src="assets/images/project-bioworkflow-gym.png" alt="Galaxy bioinformatics workflow built by an agent in BioWorkflow-Gym" width="600" height="400" loading="lazy" decoding="async"></a></figure>
+        <div class="entry-content">
+          <div class="project-heading">
+            <h4 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer">BioWorkflow-Gym</a></h4>
+            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a> <span class="work-note">(work in progress)</span> <a class="resource-link" href="https://arxiv.org/pdf/2606.20839" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-pdf"></use></svg>Manuscript</a></div>
+          </div>
+          <p class="entry-meta">Scientific agents · Workflow environments</p>
+          <ul class="entry-description project-points">
+            <li>A training and evaluation environment for long-horizon scientific agents constructing and executing verifiable bioinformatics workflows.</li>
+            <li>Built a <strong>Python/BioBlend</strong> system on <strong>NERSC</strong> using peer-reviewed <a href="https://iwc.galaxyproject.org/" target="_blank" rel="noopener noreferrer">Galaxy IWC workflows</a>; ran <strong>50 concurrent secure rollouts</strong> lasting <strong>1.5–2 hours each</strong>.</li>
+            <li>Weight-free skill evolution improved the composite score from <strong>33/100 to 51/100 (+54.5%)</strong>, measuring workflow graph completion, execution completion, and result correctness.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="research-entry project" id="project-bioworkflow-bench">
+        <figure class="preview"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Bench on GitHub"><img src="assets/images/project-bioworkflow-bench.png" alt="BioWorkflow-Bench repository overview and benchmark documentation" width="600" height="400" loading="lazy" decoding="async"></a></figure>
+        <div class="entry-content">
+          <div class="project-heading">
+            <h4 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer">BioWorkflow-Bench</a></h4>
+            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
+          </div>
+          <p class="entry-meta">Scientific agents · Evaluation</p>
+          <ul class="entry-description project-points">
+            <li>A benchmark for evaluating agents on complex, branching bioinformatics workflows with verifiable outputs.</li>
+            <li>Built <strong>Python</strong> dataset tooling and <strong>Docker/Conda</strong> reference pipelines using real public data and ground-truth outputs.</li>
+            <li>Released <strong>71 additional tasks across six domains</strong>, covering workflows up to <strong>depth 8 with 16+ CLI tools</strong>.</li>
+          </ul>
+        </div>
+      </li>
+        </ul>
+      </div>
+      <div class="research-fpga">
+        <h3 class="research-group-title">FPGA Accelerators</h3>
       <div class="project-period">
         <ul class="research-list">
       <li class="research-entry project project-placeholder" id="project-fpga-fused-kernel">
@@ -317,6 +296,27 @@
         </ul>
       </div>
       </div>
+    </section>
+    <section id="software" class="portfolio-panel" aria-labelledby="tab-software">
+      <h2 class="panel-title">Software</h2>
+      <ul class="software-list">
+        <li class="software-entry" id="software-bioworkflow-gym">
+          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" rel="noopener noreferrer" target="_blank">BioWorkflow-Gym</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/BioWorkflow-Gym" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
+          <p class="entry-description">A training and evaluation environment for long-horizon scientific agents constructing and executing verifiable bioinformatics workflows.</p>
+        </li>
+        <li class="software-entry" id="software-bioworkflow-bench">
+          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" rel="noopener noreferrer" target="_blank">BioWorkflow-Bench</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/Extended-BioAgentBench" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
+          <p class="entry-description">A benchmark for evaluating agents on complex, branching bioinformatics workflows with verifiable outputs.</p>
+        </li>
+        <li class="software-entry" id="software-csl">
+          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/csl-llm-sdk" rel="noopener noreferrer" target="_blank">csl-llm-sdk</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/csl-llm-sdk" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
+          <p class="entry-description">LLM execution on programmable wafer-scale hardware, with explicit control over computation, communication, and persistent model state.</p>
+        </li>
+        <li class="software-entry" id="software-dataflow">
+          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/MIMD_dataflow" rel="noopener noreferrer" target="_blank">MIMD Dataflow</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/MIMD_dataflow" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
+          <p class="entry-description">A compiler and programming model for treating spatial dataflow architectures as general-purpose MIMD numerical accelerators.</p>
+        </li>
+      </ul>
     </section>
   </main>
   <footer class="site-footer">© 2026 Lingzhi Yang</footer>

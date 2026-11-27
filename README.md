@@ -4,7 +4,7 @@ A static academic homepage for **https://lingzhi227.github.io/**.
 
 ## Content
 
-The introduction is followed by three switchable sections: Highlights, Research, and Software. Highlights contains five selected systems projects. Research contains BioWorkflow-Gym, BioWorkflow-Bench, and five papers. Software lists the four existing repositories and both FPGA projects. All content is in `index.html`; visual styles are in `styles.css`. `site.js` handles theme selection, accessible tabs, fragment navigation, and author expansion. Without JavaScript, all three sections remain visible. There is no contact-links footer.
+The introduction is followed by three switchable sections: Highlights, Research, and Software. Highlights contains five selected systems projects. Research contains five papers, followed by BioWorkflow-Gym, BioWorkflow-Bench, and both FPGA projects. Software lists the four existing repositories. All content is in `index.html`; visual styles are in `styles.css`. `site.js` handles theme selection, accessible tabs, fragment navigation, and author expansion. Without JavaScript, all three sections remain visible. There is no contact-links footer.
 
 ## Preview
 
