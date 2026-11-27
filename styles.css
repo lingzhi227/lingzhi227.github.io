@@ -127,7 +127,7 @@ h2{font-size:28px;font-weight:500;line-height:1.3;letter-spacing:-.45px;margin-b
 .has-portfolio-tabs .portfolio-panel{margin-top:0}
 .has-portfolio-tabs .panel-title{display:none}
 .portfolio-panel[hidden]{display:none}
-.research-publications+.project-period,.research-fpga{margin-top:34px}
+.research-upcoming+.research-publications,.research-publications+.project-period,.research-fpga{margin-top:34px}
 .software-list{list-style:none;padding:0;margin:0}
 .software-entry{margin-bottom:24px}
 .software-entry:last-child{margin-bottom:0}
