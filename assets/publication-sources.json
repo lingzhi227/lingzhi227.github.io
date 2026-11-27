@@ -2,7 +2,6 @@
   {
     "id": "milestone",
     "title": "Milestone-Aware On-Policy Distillation for Long-Horizon Reasoning",
-    "status": "Under review at AAAI 2027",
     "description": "Uses solution milestones to locate where a model's reasoning stalls, then concentrates teacher feedback on those steps to make long-horizon reasoning training more efficient.",
     "link": "https://github.com/lingzhi227/presentations/blob/main/5222_Milestone_Aware_On_Policy.pdf",
     "image": "assets/images/paper-milestone.png",
@@ -24,13 +23,44 @@
       1200,
       758
     ],
-    "authors_omitted": true,
-    "topic": "Long-horizon reasoning · On-policy distillation"
+    "topic": "Long-horizon reasoning · On-policy distillation",
+    "year": 2026,
+    "authors": [
+      {
+        "name": "Changyuan Lin",
+        "url": "https://openreview.net/profile?id=~Changyuan_Lin1"
+      },
+      {
+        "name": "Xueru Bai",
+        "url": "https://openreview.net/profile?id=~Xueru_Bai2"
+      },
+      {
+        "name": "Haoliang Zhang",
+        "url": "https://openreview.net/profile?id=~Haoliang_Zhang2"
+      },
+      {
+        "name": "Lingzhi Yang",
+        "url": "https://openreview.net/profile?id=~Lingzhi_Yang1"
+      },
+      {
+        "name": "Tianxiang Xu",
+        "url": "https://openreview.net/profile?id=~Tianxiang_Xu3"
+      },
+      {
+        "name": "Yiqi Wang",
+        "url": "https://openreview.net/profile?id=~Yiqi_Wang11"
+      },
+      {
+        "name": "Xander Zhang",
+        "url": "https://openreview.net/profile?id=~Xander_Zhang1"
+      }
+    ],
+    "authors_source": "https://openreview.net/forum?id=j2phZfRQkV",
+    "authors_verified_on": "2026-11-26"
   },
   {
     "id": "cord",
     "title": "CoRD: On-Policy Distillation via Correction Reconstruction",
-    "status": "Under review at ICLR 2027",
     "description": "Selects and reweights complementary token-level corrections so a smaller supervision budget can approximate the combined learning signal of full-response teacher feedback.",
     "link": "https://openreview.net/forum?id=JHUnaQnSCq",
     "image": "assets/images/paper-cord-figure3.png",
@@ -52,13 +82,48 @@
       1200,
       502
     ],
-    "authors_omitted": true,
-    "topic": "On-policy distillation · Efficient supervision"
+    "topic": "On-policy distillation · Efficient supervision",
+    "year": 2026,
+    "authors": [
+      {
+        "name": "Shaoke Fang",
+        "url": "https://openreview.net/profile?id=~Shaoke_Fang1"
+      },
+      {
+        "name": "MEIJIA CHEN",
+        "url": "https://openreview.net/profile?id=~MEIJIA_CHEN1"
+      },
+      {
+        "name": "Lingzhi Yang",
+        "url": "https://openreview.net/profile?id=~Lingzhi_Yang1"
+      },
+      {
+        "name": "Saisai Hu",
+        "url": "https://openreview.net/profile?id=~Saisai_Hu2"
+      },
+      {
+        "name": "Jiayi",
+        "url": "https://openreview.net/profile?id=~Jiayi2"
+      },
+      {
+        "name": "Chao Wang",
+        "url": "https://openreview.net/profile?id=~Chao_Wang115"
+      },
+      {
+        "name": "Xander Zhang",
+        "url": "https://openreview.net/profile?id=~Xuan_Zhang23"
+      },
+      {
+        "name": "Wenfei Wu",
+        "url": "https://openreview.net/profile?id=~Wenfei_Wu1"
+      }
+    ],
+    "authors_source": "https://openreview.net/forum?id=JHUnaQnSCq",
+    "authors_verified_on": "2026-11-26"
   },
   {
     "id": "forgetting",
     "title": "Learning Not to Forget How to Improve: Meta-Forgetting in Self-Evolving Agents",
-    "status": "Under review at ICLR 2027",
     "description": "Studies how agents can lose the ability to improve themselves, and uses Improvement Function Replay to preserve effective improvement strategies while adapting to new tasks.",
     "link": "https://openreview.net/forum?id=eIJH6HV9LZ",
     "image": "assets/images/paper-forgetting.png",
@@ -80,13 +145,56 @@
       1200,
       343
     ],
-    "authors_omitted": true,
-    "topic": "Self-evolving agents · Anti-forgetting"
+    "topic": "Self-evolving agents · Anti-forgetting",
+    "year": 2026,
+    "authors": [
+      {
+        "name": "Jianfeng Chen",
+        "url": "https://openreview.net/profile?id=~Jianfeng_Chen1"
+      },
+      {
+        "name": "MEIJIA CHEN",
+        "url": "https://openreview.net/profile?id=~MEIJIA_CHEN1"
+      },
+      {
+        "name": "Yi Ge",
+        "url": "https://openreview.net/profile?id=~Yi_Ge1"
+      },
+      {
+        "name": "Shuwen Zhou",
+        "url": "https://openreview.net/profile?id=~Shuwen_Zhou1"
+      },
+      {
+        "name": "Fengjiao Sheng",
+        "url": "https://openreview.net/profile?id=~Fengjiao_Sheng1"
+      },
+      {
+        "name": "Yuxuan Fang",
+        "url": "https://openreview.net/profile?id=~Yuxuan_Fang1"
+      },
+      {
+        "name": "Shuhan Sun",
+        "url": "https://openreview.net/profile?id=~Shuhan_Sun3"
+      },
+      {
+        "name": "Ruixin Li",
+        "url": "https://openreview.net/profile?id=~Ruixin_Li10"
+      },
+      {
+        "name": "Lingzhi Yang",
+        "url": "https://openreview.net/profile?id=~Lingzhi_Yang1"
+      },
+      {
+        "name": "Xander Zhang",
+        "url": "https://openreview.net/profile?id=~Xuan_Zhang23"
+      }
+    ],
+    "authors_source": "https://openreview.net/forum?id=eIJH6HV9LZ",
+    "authors_verified_on": "2026-11-26"
   },
   {
     "id": "shapley",
     "title": "Shapley-Guided Rollout Selection for Reinforcement Learning with Verifiable Rewards",
-    "status": "Under review at ICLR 2027",
     "description": "Uses Shapley values to select a small, complementary set of rollouts, preserving the full group's learning direction while reducing the number of responses used in policy updates.",
     "link": "https://openreview.net/forum?id=4XXzK2ixu4",
     "image": "assets/images/paper-shapley.png",
@@ -108,13 +216,48 @@
       1200,
       532
     ],
-    "authors_omitted": true,
-    "topic": "Agentic RL · Rollout selection"
+    "topic": "Agentic RL · Rollout selection",
+    "year": 2026,
+    "authors": [
+      {
+        "name": "Zhiming Lin",
+        "url": "https://openreview.net/profile?id=~Zhiming_Lin1"
+      },
+      {
+        "name": "Kai Zhao",
+        "url": "https://openreview.net/profile?id=~Kai_Zhao22"
+      },
+      {
+        "name": "Lingzhi Yang",
+        "url": "https://openreview.net/profile?id=~Lingzhi_Yang1"
+      },
+      {
+        "name": "Saisai Hu",
+        "url": "https://openreview.net/profile?id=~Saisai_Hu2"
+      },
+      {
+        "name": "Qirui Tu",
+        "url": "https://openreview.net/profile?id=~Qirui_Tu2"
+      },
+      {
+        "name": "JiaLi",
+        "url": "https://openreview.net/profile?id=~JiaLi1"
+      },
+      {
+        "name": "CHEN RONGRU",
+        "url": "https://openreview.net/profile?id=~CHEN_RONGRU1"
+      },
+      {
+        "name": "Xander Zhang",
+        "url": "https://openreview.net/profile?id=~Xander_Zhang1"
+      }
+    ],
+    "authors_source": "https://openreview.net/forum?id=4XXzK2ixu4",
+    "authors_verified_on": "2026-11-26"
   },
   {
     "id": "view",
     "title": "View-Decomposed On-Policy Distillation for Robust Reasoning in Large Language Models",
-    "status": "Under review at ICLR 2027",
     "description": "Compares teacher predictions across different wordings of the same task, retaining shared guidance and useful uncertainty to make student reasoning less sensitive to prompt wording.",
     "link": "https://openreview.net/forum?id=uRLcqKPXl9",
     "image": "assets/images/paper-view.png",
@@ -136,7 +279,39 @@
       1200,
       463
     ],
-    "authors_omitted": true,
-    "topic": "Robust reasoning · Prompt consistency"
+    "topic": "Robust reasoning · Prompt consistency",
+    "year": 2026,
+    "authors": [
+      {
+        "name": "MEIJIA CHEN",
+        "url": "https://openreview.net/profile?id=~MEIJIA_CHEN1"
+      },
+      {
+        "name": "Shangqing Shi",
+        "url": "https://openreview.net/profile?id=~Shangqing_Shi1"
+      },
+      {
+        "name": "Lingzhi Yang",
+        "url": "https://openreview.net/profile?id=~Lingzhi_Yang1"
+      },
+      {
+        "name": "Zijun Tian",
+        "url": "https://openreview.net/profile?id=~Zijun_Tian1"
+      },
+      {
+        "name": "Bojun Li",
+        "url": "https://openreview.net/profile?id=~Bojun_Li4"
+      },
+      {
+        "name": "Yufan Zou",
+        "url": "https://openreview.net/profile?id=~Yufan_Zou2"
+      },
+      {
+        "name": "Xander Zhang",
+        "url": "https://openreview.net/profile?id=~Xuan_Zhang23"
+      }
+    ],
+    "authors_source": "https://openreview.net/forum?id=uRLcqKPXl9",
+    "authors_verified_on": "2026-11-26"
   }
 ]
