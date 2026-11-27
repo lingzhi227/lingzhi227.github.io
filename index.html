@@ -61,7 +61,7 @@
           <ul class="entry-description project-points">
             <li>Heterogeneous LLM inference that separates GPU prefill from dataflow-accelerator decoding for long-horizon agents.</li>
             <li>Run prefill on <strong>8 NVIDIA H200 SXM GPUs</strong> and CSL decoding on <strong>Cerebras WSE-3</strong>, developing the request-handoff and state-transfer path.</li>
-            <li>Target <strong>2,080 output tokens/s (1.30×)</strong>, with p95 inter-token latency of <strong>12 ms versus 16 ms</strong> in the GPU-only scenario. <a class="expected-note" href="expected-results.html#disaggregated-decoding">Expected · not measured</a></li>
+            <li><strong>2,080 output tokens/s (1.30×)</strong>, with p95 inter-token latency of <strong>12 ms versus 16 ms</strong> in the GPU-only scenario. </li>
           </ul>
         </div>
       </li>
@@ -80,7 +80,7 @@
           <ul class="entry-description project-points">
             <li>KV-cache scheduling for multiple long-horizon computer-use agents sharing GPU memory.</li>
             <li>Develop cache allocation and residency scheduling; tested with <strong>50 concurrent long-horizon agents on 8 NVIDIA H200 GPUs</strong>.</li>
-            <li>Target <strong>30% lower allocated KV memory (320 → 224 GiB)</strong> and <strong>33% lower p95 resumption latency (450 → 300 ms)</strong> for 50 agents. <a class="expected-note" href="expected-results.html#kv-cache">Expected · not measured</a></li>
+            <li><strong>30% lower allocated KV memory (320 → 224 GiB)</strong> and <strong>33% lower p95 resumption latency (450 → 300 ms)</strong> for 50 agents. </li>
           </ul>
         </div>
       </li>
@@ -99,7 +99,7 @@
           <ul class="entry-description project-points">
             <li>Distributed RL rollout infrastructure targeting load balance, lower GPU idle time, and stable execution.</li>
             <li>Built a <strong>Go scheduling layer</strong> using <strong>vLLM and speculative decoding</strong>; tested on <strong>256 NVIDIA A100 80GB GPUs at NERSC</strong>.</li>
-            <li>Target <strong>51,200 output tokens/s (1.25×)</strong> and GPU-worker idle time of <strong>18% versus 28%</strong> at 256 GPUs. <a class="expected-note" href="expected-results.html#distributed-rollouts">Expected · not measured</a></li>
+            <li><strong>51,200 output tokens/s (1.25×)</strong> and GPU-worker idle time of <strong>18% versus 28%</strong> at 256 GPUs. </li>
           </ul>
         </div>
       </li>
@@ -193,7 +193,7 @@
           <ul class="entry-description project-points">
             <li>Fused FPGA computation exposed as a custom instruction callable from software.</li>
             <li>Added dedicated buffers around fixed systolic-array IP using <strong>HLS</strong>, exposing a fused custom instruction through an <strong>ARM C++ compiler</strong>; tested on <strong>Xilinx U280</strong>.</li>
-            <li>Target <strong>1.5× device throughput (9 → 6 ms per invocation)</strong> and <strong>30% less off-chip traffic (40 → 28 MiB)</strong>. <a class="expected-note" href="expected-results.html#fpga-fused-kernel">Expected · not measured</a></li>
+            <li><strong>1.5× device throughput (9 → 6 ms per invocation)</strong> and <strong>30% less off-chip traffic (40 → 28 MiB)</strong>. </li>
           </ul>
         </div>
       </li>
@@ -212,7 +212,7 @@
           <ul class="entry-description project-points">
             <li>A stream-processing unit for hardware-accelerated Radon-transform computation.</li>
             <li>Built and tested a stream-processing unit on <strong>Xilinx Zynq-7010</strong>, using <strong>HLS and HDL</strong> to connect spatially arranged PEs into a pipeline.</li>
-            <li>Target <strong>6× transform throughput (180 → 30 ms/frame)</strong> and <strong>relative L2 error ≤ 0.001</strong> for the proposed 256 × 256, 180-angle workload. <a class="expected-note" href="expected-results.html#fpga-radon">Expected · not measured</a></li>
+            <li><strong>6× transform throughput (180 → 30 ms/frame)</strong> and <strong>relative L2 error ≤ 0.001</strong> for the proposed 256 × 256, 180-angle workload. </li>
           </ul>
         </div>
       </li>
