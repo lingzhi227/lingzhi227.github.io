@@ -8,7 +8,7 @@ function updateThemeLabel() {
 updateThemeLabel();
 themeButton.addEventListener('click', () => {
   page.dataset.theme = page.dataset.theme === 'dark' ? 'light' : 'dark';
-  try { localStorage.setItem('lingzhi-theme', page.dataset.theme); } catch (_) {}
+  try { localStorage.setItem('lingzhi-color-theme', page.dataset.theme); } catch (_) {}
   updateThemeLabel();
 });
 const sections = [...document.querySelectorAll('main > section')];
