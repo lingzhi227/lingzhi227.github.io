@@ -15,7 +15,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/roboto-400.ttf" as="font" type="font/ttf" crossorigin>
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('lingzhi-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=20261126-8">
+  <link rel="stylesheet" href="styles.css?v=20261126-9">
   <script src="site.js?v=20261126-2" defer></script>
 </head>
 <body>
@@ -43,7 +43,7 @@
     <section id="about" class="intro" aria-labelledby="name">
       <img class="portrait" src="assets/images/profile.jpg" alt="An observatory, Lingzhi Yang's GitHub profile image" width="138" height="138" fetchpriority="high">
       <p>I'm a PhD candidate in Computational Applied Mathematics at <a href="https://www.stonybrook.edu/" target="_blank" rel="noopener noreferrer">Stony Brook University</a>. My research focuses on distributed systems for AI, particularly low-level performance engineering for heterogeneous architectures, reinforcement-learning infrastructure, and numerical mathematics.</p>
-      <p>My current focus is distributed systems for long-context memory in AI agents. My projects connect KV-cache scheduling, scalable RL rollouts, and GPU–dataflow inference to support long-horizon agent workloads, building on my work in GPU–dataflow heterogeneous LLM execution, spatial compilers, and FPGA pipelines.</p>
+      <p>My current focus is distributed systems for long-context memory in AI agents. My projects connect KV-cache scheduling, scalable RL rollouts, and GPU–dataflow inference to support long-horizon agent workloads, building on my work in GPU–dataflow heterogeneous LLM execution, spatial dataflow compilers, and FPGA pipelines.</p>
       <p>I work with research teams at <a href="https://iacs.stonybrook.edu/" target="_blank" rel="noopener noreferrer">Stony Brook IACS</a>, the <a href="https://www.ams.stonybrook.edu/~songwu/" target="_blank" rel="noopener noreferrer">Stony Brook Bioinformatics Lab</a>, and <a href="https://www.bnl.gov/compsci/" target="_blank" rel="noopener noreferrer">Brookhaven National Laboratory</a>.</p>
     </section>
     <section id="projects" class="section-list" aria-labelledby="projects-title">
@@ -57,10 +57,11 @@
           <div class="project-heading">
             <h4 class="entry-title">Disaggregated Decoding on Heterogeneous GPU–Dataflow AI Accelerators</h4>
           </div>
+          <p class="entry-meta">Distributed System · LLM inference</p>
           <ul class="entry-description project-points">
-            <li><strong>Overview:</strong> Heterogeneous LLM inference that separates GPU prefill from dataflow-accelerator decoding for long-horizon agents.</li>
-            <li><strong>Implementation:</strong> Develop the GPU-to-CSL execution path, including request handoff and state transfer between prefill and decode.</li>
-            <li><strong>Results:</strong> Executed prefill on an <strong>8-GPU NVIDIA H200 SXM system</strong> and autoregressive decoding on <strong>Cerebras WSE-3</strong>.</li>
+            <li>Heterogeneous LLM inference that separates GPU prefill from dataflow-accelerator decoding for long-horizon agents.</li>
+            <li>Run prefill on <strong>8 NVIDIA H200 SXM GPUs</strong> and CSL decoding on <strong>Cerebras WSE-3</strong>, developing the request-handoff and state-transfer path.</li>
+            <li>Target <strong>2,080 output tokens/s (1.30×)</strong>, with p95 inter-token latency of <strong>12 ms versus 16 ms</strong> in the GPU-only scenario. <a class="expected-note" href="expected-results.html#disaggregated-decoding">Expected · not measured</a></li>
           </ul>
         </div>
       </li>
@@ -75,10 +76,11 @@
           <div class="project-heading">
             <h4 class="entry-title">Long-Context KV Cache Management for Large-Scale Computer-Use Agents</h4>
           </div>
+          <p class="entry-meta">Distributed System · LLM inference</p>
           <ul class="entry-description project-points">
-            <li><strong>Overview:</strong> KV-cache scheduling for multiple long-horizon computer-use agents sharing GPU memory.</li>
-            <li><strong>Implementation:</strong> Develop cache allocation and residency scheduling across agent sessions, focusing on context reuse and memory pressure.</li>
-            <li><strong>Results:</strong> Evaluated KV-cache scheduling with <strong>50 concurrent long-horizon agents on 8 NVIDIA H200 GPUs</strong>.</li>
+            <li>KV-cache scheduling for multiple long-horizon computer-use agents sharing GPU memory.</li>
+            <li>Develop cache allocation and residency scheduling; tested with <strong>50 concurrent long-horizon agents on 8 NVIDIA H200 GPUs</strong>.</li>
+            <li>Target <strong>30% lower allocated KV memory (320 → 224 GiB)</strong> and <strong>33% lower p95 resumption latency (450 → 300 ms)</strong> for 50 agents. <a class="expected-note" href="expected-results.html#kv-cache">Expected · not measured</a></li>
           </ul>
         </div>
       </li>
@@ -93,10 +95,11 @@
           <div class="project-heading">
             <h4 class="entry-title">Distributed RL Rollout Acceleration on a 256-GPU Compute Cluster</h4>
           </div>
+          <p class="entry-meta">Distributed System · Post Training</p>
           <ul class="entry-description project-points">
-            <li><strong>Overview:</strong> Distributed RL rollout infrastructure targeting load balance, lower GPU idle time, and stable execution.</li>
-            <li><strong>Implementation:</strong> Built a <strong>Go task-scheduling layer</strong> using <strong>vLLM</strong> and <strong>speculative decoding</strong> to coordinate variable-length rollout tasks across the cluster.</li>
-            <li><strong>Results:</strong> Tested the rollout system at a scale of <strong>256 NVIDIA A100 80GB GPUs at NERSC</strong>.</li>
+            <li>Distributed RL rollout infrastructure targeting load balance, lower GPU idle time, and stable execution.</li>
+            <li>Built a <strong>Go scheduling layer</strong> using <strong>vLLM and speculative decoding</strong>; tested on <strong>256 NVIDIA A100 80GB GPUs at NERSC</strong>.</li>
+            <li>Target <strong>51,200 output tokens/s (1.25×)</strong> and GPU-worker idle time of <strong>18% versus 28%</strong> at 256 GPUs. <a class="expected-note" href="expected-results.html#distributed-rollouts">Expected · not measured</a></li>
           </ul>
         </div>
       </li>
@@ -114,9 +117,9 @@
           </div>
           <p class="entry-meta">Scientific agents · Workflow environments</p>
           <ul class="entry-description project-points">
-            <li><strong>Overview:</strong> A training and evaluation environment for long-horizon scientific agents constructing and executing verifiable bioinformatics workflows.</li>
-            <li><strong>Implementation:</strong> Built a <strong>Python/BioBlend</strong> system on <strong>NERSC</strong> using peer-reviewed <a href="https://iwc.galaxyproject.org/" target="_blank" rel="noopener noreferrer">Galaxy IWC workflows</a>; ran <strong>50 concurrent secure rollouts</strong> lasting <strong>1.5–2 hours each</strong>.</li>
-            <li><strong>Results:</strong> Weight-free skill evolution improved the composite score from <strong>33/100 to 51/100 (+54.5%)</strong>, measuring workflow graph completion, execution completion, and result correctness.</li>
+            <li>A training and evaluation environment for long-horizon scientific agents constructing and executing verifiable bioinformatics workflows.</li>
+            <li>Built a <strong>Python/BioBlend</strong> system on <strong>NERSC</strong> using peer-reviewed <a href="https://iwc.galaxyproject.org/" target="_blank" rel="noopener noreferrer">Galaxy IWC workflows</a>; ran <strong>50 concurrent secure rollouts</strong> lasting <strong>1.5–2 hours each</strong>.</li>
+            <li>Weight-free skill evolution improved the composite score from <strong>33/100 to 51/100 (+54.5%)</strong>, measuring workflow graph completion, execution completion, and result correctness.</li>
           </ul>
         </div>
       </li>
@@ -129,9 +132,9 @@
           </div>
           <p class="entry-meta">Scientific agents · Evaluation</p>
           <ul class="entry-description project-points">
-            <li><strong>Overview:</strong> A benchmark for evaluating agents on complex, branching bioinformatics workflows with verifiable outputs.</li>
-            <li><strong>Implementation:</strong> Built <strong>Python</strong> dataset tooling and <strong>Docker/Conda</strong> reference pipelines using real public data and ground-truth outputs.</li>
-            <li><strong>Results:</strong> Released <strong>71 additional tasks across six domains</strong>, covering workflows up to <strong>depth 8 with 16+ CLI tools</strong>.</li>
+            <li>A benchmark for evaluating agents on complex, branching bioinformatics workflows with verifiable outputs.</li>
+            <li>Built <strong>Python</strong> dataset tooling and <strong>Docker/Conda</strong> reference pipelines using real public data and ground-truth outputs.</li>
+            <li>Released <strong>71 additional tasks across six domains</strong>, covering workflows up to <strong>depth 8 with 16+ CLI tools</strong>.</li>
           </ul>
         </div>
       </li>
@@ -149,9 +152,9 @@
           </div>
           <p class="entry-meta">AI accelerators · LLM inference</p>
           <ul class="entry-description project-points">
-            <li><strong>Overview:</strong> LLM execution on programmable wafer-scale hardware, with explicit control over computation, communication, and persistent model state.</li>
-            <li><strong>Implementation:</strong> Implemented <strong>CSL kernels</strong>, Python host orchestration, and tensor placement on <strong>Cerebras CS-3</strong> at Argonne National Lab AI Testbed.</li>
-            <li><strong>Results:</strong> The complete <strong>64-layer Qwen3.8 network</strong> generated <strong>two continuous sentences plus EOS (37 tokens)</strong> on one physical WSE-3. Strict CPU numerical parity remains open.</li>
+            <li>LLM execution on programmable wafer-scale hardware, with explicit control over computation, communication, and persistent model state.</li>
+            <li>Implemented <strong>CSL kernels</strong>, Python host orchestration, and tensor placement on <strong>Cerebras CS-3</strong> at Argonne National Lab AI Testbed.</li>
+            <li>The complete <strong>64-layer Qwen3.8 network</strong> generated <strong>two continuous sentences plus EOS (37 tokens)</strong> on one physical WSE-3. Strict CPU numerical parity remains open.</li>
           </ul>
         </div>
       </li>
@@ -167,11 +170,11 @@
             <h4 class="entry-title"><a href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer">MIMD Dataflow</a></h4>
             <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
           </div>
-          <p class="entry-meta">Compilers · Distributed systems</p>
+          <p class="entry-meta">AI accelerators · Compilers</p>
           <ul class="entry-description project-points">
-            <li><strong>Overview:</strong> A compiler and programming model for treating spatial dataflow architectures as general-purpose MIMD numerical accelerators.</li>
-            <li><strong>Implementation:</strong> Built a <strong>Python compiler</strong> with a <strong>C++ tensor frontend</strong> and <strong>CSL code generation</strong> for PE placement, communication routing, and buffer-lifetime management.</li>
-            <li><strong>Results:</strong> The published <strong>Cerebras SDK-simulator</strong> snapshot records <strong>141 qualified configurations</strong>, including a <strong>25-node resident attention graph</strong>, with numerical and communication-protocol validation.</li>
+            <li>A compiler and programming model for treating spatial dataflow architectures as general-purpose MIMD numerical accelerators.</li>
+            <li>Built a <strong>Python compiler</strong> with a <strong>C++ tensor frontend</strong> and <strong>CSL code generation</strong> for PE placement, communication routing, and buffer-lifetime management.</li>
+            <li>The published <strong>Cerebras SDK-simulator</strong> snapshot records <strong>141 qualified configurations</strong>, including a <strong>25-node resident attention graph</strong>, with numerical and communication-protocol validation.</li>
           </ul>
         </div>
       </li>
@@ -186,10 +189,11 @@
           <div class="project-heading">
             <h4 class="entry-title">Fused Kernel on FPGA Using HLS</h4>
           </div>
+          <p class="entry-meta">AI accelerators · Compilers</p>
           <ul class="entry-description project-points">
-            <li><strong>Overview:</strong> Fused FPGA computation exposed as a custom instruction callable from software.</li>
-            <li><strong>Implementation:</strong> Used <strong>HLS</strong> to add dedicated buffers around fixed systolic-array IP and integrated the fused operation with an <strong>ARM C++ compiler</strong>.</li>
-            <li><strong>Results:</strong> Tested on <strong>Xilinx U280</strong>, exposing a fused hardware operation as <strong>one custom instruction</strong> callable through an ARM C++ compiler.</li>
+            <li>Fused FPGA computation exposed as a custom instruction callable from software.</li>
+            <li>Added dedicated buffers around fixed systolic-array IP using <strong>HLS</strong>, exposing a fused custom instruction through an <strong>ARM C++ compiler</strong>; tested on <strong>Xilinx U280</strong>.</li>
+            <li>Target <strong>1.5× device throughput (9 → 6 ms per invocation)</strong> and <strong>30% less off-chip traffic (40 → 28 MiB)</strong>. <a class="expected-note" href="expected-results.html#fpga-fused-kernel">Expected · not measured</a></li>
           </ul>
         </div>
       </li>
@@ -204,10 +208,11 @@
           <div class="project-heading">
             <h4 class="entry-title">Accelerated Radon Transformation on FPGA Using HLS</h4>
           </div>
+          <p class="entry-meta">AI accelerators · Numerical Kernels</p>
           <ul class="entry-description project-points">
-            <li><strong>Overview:</strong> A stream-processing unit for hardware-accelerated Radon-transform computation.</li>
-            <li><strong>Implementation:</strong> Used <strong>HLS and HDL</strong> to connect spatially arranged processing elements into a streaming hardware pipeline.</li>
-            <li><strong>Results:</strong> Built and tested a <strong>Radon-transform stream-processing unit on Xilinx Zynq-7010</strong>.</li>
+            <li>A stream-processing unit for hardware-accelerated Radon-transform computation.</li>
+            <li>Built and tested a stream-processing unit on <strong>Xilinx Zynq-7010</strong>, using <strong>HLS and HDL</strong> to connect spatially arranged PEs into a pipeline.</li>
+            <li>Target <strong>6× transform throughput (180 → 30 ms/frame)</strong> and <strong>relative L2 error ≤ 0.001</strong> for the proposed 256 × 256, 180-angle workload. <a class="expected-note" href="expected-results.html#fpga-radon">Expected · not measured</a></li>
           </ul>
         </div>
       </li>

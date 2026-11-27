@@ -1,0 +1,428 @@
+{
+  "title": "Expected Results — Illustrative Benchmark Scenarios",
+  "created_on": "2026-11-26",
+  "status": "illustrative_not_measured",
+  "notice": "All baseline and target performance values are manually designed scenario values. They are not measured results, simulation outputs, or validated performance predictions. Hardware/project configurations are based on user-provided information; workload details are proposed assumptions.",
+  "projects": [
+    {
+      "id": "disaggregated-decoding",
+      "title": "Heterogeneous GPU–Dataflow Decoding",
+      "hardware": "8 NVIDIA H200 SXM GPUs for prefill; Cerebras WSE-3 for decode.",
+      "baseline": "GPU-only prefill and decoding on the 8-H200 system.",
+      "target_system": "GPU prefill plus WSE-3 decoding. The target configuration adds a WSE-3; this is not an equal-cost or equal-power comparison.",
+      "assumptions": [
+        "Generic 8B dense decoder; 32 layers, 8 KV heads, head dimension 128; BF16 weights and KV. This is a proposed workload, not a claim about the model already tested.",
+        "16 concurrent requests; exactly 8,192 input and 1,024 output tokens per request. Identical weights, prompts, precision, and generation settings.",
+        "A 30-minute steady-state window after a 5-minute warm-up; 5 planned repetitions. No repetitions have been run for this dataset.",
+        "The assumed KV layout needs 128 KiB per cached token: 18 GiB at 16 × 9,216 tokens. Approximately 16 GB of BF16 weights plus KV and runtime buffers must fit the wafer.",
+        "GPU–wafer state transfer, layout conversion, and correctness matching are prerequisites; these target figures do not establish that the handoff is implemented or meets timing.",
+        "The target assumes an independently optimized decode-kernel and routing stack; it is not extrapolated from the current CSL-LLM SDK functional-inference timing."
+      ],
+      "metrics": [
+        {
+          "name": "Steady-state aggregate output throughput",
+          "unit": "tokens/s",
+          "baseline": 1600,
+          "target": 2080,
+          "note": "Output tokens only; excludes the initial prefill wave.",
+          "direction": "higher",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Mean inter-token latency",
+          "unit": "ms",
+          "baseline": 10,
+          "target": 7.6923076923076925,
+          "note": "Derived consistently from 16 active decode streams and aggregate throughput.",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "p95 inter-token latency",
+          "unit": "ms",
+          "baseline": 16,
+          "target": 12,
+          "note": "",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "p95 time to first token",
+          "unit": "s",
+          "baseline": 1.4,
+          "target": 1.1,
+          "note": "Includes queuing, prefill and, for the target, handoff.",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "p95 prefill–decode handoff overhead",
+          "unit": "ms",
+          "baseline": 0,
+          "target": 42,
+          "note": "GPU-only baseline has no cross-accelerator handoff; target includes transfer and conversion.",
+          "direction": "cost",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Peak logical KV footprint",
+          "unit": "GiB",
+          "baseline": 18,
+          "target": 18,
+          "note": "Same full-context KV footprint for both cases; no compression assumed.",
+          "direction": "neutral",
+          "status": "illustrative_not_measured"
+        }
+      ],
+      "verification": "Check logits/token agreement under a declared numerical tolerance before interpreting speed. Report full-system energy/cost separately; the extra accelerator is not free.",
+      "sources": [
+        [
+          "NVIDIA H200 system specifications",
+          "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory-h100-h200-b200/latest/components.html"
+        ],
+        [
+          "Cerebras WSE-3: 44 GB on-chip SRAM",
+          "https://www.cerebras.ai/press-release/cerebras-announces-third-generation-wafer-scale-engine"
+        ]
+      ]
+    },
+    {
+      "id": "kv-cache",
+      "title": "Long-Horizon Agent KV-Cache Scheduling",
+      "hardware": "8 NVIDIA H200 GPUs; 50 concurrent agent sessions.",
+      "baseline": "Fixed per-session KV allocation with reactive eviction and no scheduler-level sharing of common prefixes.",
+      "target_system": "A proposed residency-aware scheduling policy with shared-prefix reuse. These policy choices are evaluation assumptions, not assertions about completed implementation.",
+      "assumptions": [
+        "The same generic 8B, 32-layer BF16 GQA model as the decoding scenario; 8 KV heads of dimension 128.",
+        "50 sessions: 20 at 16,384 tokens, 20 at 32,768, and 10 at 65,536; mean context length 32,768 tokens.",
+        "TP=1 model workers spread across 8 GPUs; load-balanced session assignment. A shared 8,192-token prefix and 1–30 s tool pauses are proposed trace characteristics.",
+        "One-hour fixed replay trace after a 15-minute warm-up; 5 planned repetitions. Identical request arrival times and token sequences.",
+        "The unshared live-token KV footprint is 200 GiB across the system. Allocated pool figures include spare capacity and fragmentation; they are not total GPU memory."
+      ],
+      "metrics": [
+        {
+          "name": "Peak allocated KV pool, all GPUs",
+          "unit": "GiB",
+          "baseline": 320,
+          "target": 224,
+          "note": "",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "p95 agent-resumption latency",
+          "unit": "ms",
+          "baseline": 450,
+          "target": 300,
+          "note": "Time from tool-result arrival to the next generated token.",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Reusable-prefix token hit rate",
+          "unit": "%",
+          "baseline": 40,
+          "target": 65,
+          "note": "Share of eligible prefix tokens served from resident cache.",
+          "direction": "higher",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Redundant prefill tokens per replay",
+          "unit": "million tokens",
+          "baseline": 12,
+          "target": 7.2,
+          "note": "Tokens recomputed after eviction or missed reuse.",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Useful aggregate output throughput",
+          "unit": "tokens/s",
+          "baseline": 5000,
+          "target": 5750,
+          "note": "Excludes duplicate/retried output tokens.",
+          "direction": "higher",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Replayed concurrent agent sessions",
+          "unit": "sessions",
+          "baseline": 50,
+          "target": 50,
+          "note": "Fixed workload, not a completion or correctness claim.",
+          "direction": "neutral",
+          "status": "illustrative_not_measured"
+        }
+      ],
+      "verification": "Compare identical traces and final agent outputs. Log cache allocations and evictions separately from model weights, activations, and allocator reservations.",
+      "sources": [
+        [
+          "NVIDIA H200 memory specifications",
+          "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory-h100-h200-b200/latest/components.html"
+        ]
+      ]
+    },
+    {
+      "id": "distributed-rollouts",
+      "title": "Distributed RL Rollout Scheduling",
+      "hardware": "256 NVIDIA A100 80GB GPU worker slots at NERSC, as specified for the project; node topology is not assumed.",
+      "baseline": "Static task assignment and default vLLM serving without speculative decoding.",
+      "target_system": "Go scheduling layer with dynamic work assignment, configured vLLM batching, and verified speculative decoding.",
+      "assumptions": [
+        "Generic 8B BF16 target model; a 0.5B draft model is an illustrative speculative-decoding choice. TP=1; matched output correctness rules.",
+        "Input lengths of 1K/4K/8K tokens in a 25%/50%/25% mix; generated lengths span 512–4,096 tokens.",
+        "Five proposed 2-hour trace replays at each scale, plus a separate 24-hour reliability run with 100,000 scheduled tasks.",
+        "Idle time means GPU-worker wall time without an active rollout batch; it is not SM utilization.",
+        "A same-feature scheduler-only ablation and a same-scheduler speculative-decoding ablation are required to attribute gains."
+      ],
+      "metrics": [
+        {
+          "name": "Aggregate useful output throughput, 256 GPUs",
+          "unit": "tokens/s",
+          "baseline": 40960,
+          "target": 51200,
+          "note": "Counts only accepted target-model output tokens.",
+          "direction": "higher",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "GPU-worker idle time",
+          "unit": "%",
+          "baseline": 28,
+          "target": 18,
+          "note": "Measured fraction of worker wall time.",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "p95 task-dispatch queue delay",
+          "unit": "ms",
+          "baseline": 1800,
+          "target": 900,
+          "note": "",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Completed tasks in the 24-hour trace",
+          "unit": "tasks / 100,000",
+          "baseline": 99000,
+          "target": 99600,
+          "note": "Illustrative completion counts; separate from output correctness.",
+          "direction": "higher",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Aggregate useful output throughput, 128 GPUs",
+          "unit": "tokens/s",
+          "baseline": 23500,
+          "target": 28000,
+          "note": "Same per-GPU workload distribution as the 256-GPU scenario.",
+          "direction": "higher",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "128→256 GPU scaling efficiency",
+          "unit": "%",
+          "baseline": 87.14893617021276,
+          "target": 91.42857142857143,
+          "note": "Derived as T256 / (2 × T128).",
+          "direction": "higher",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Recovery delay after a worker restart, p95",
+          "unit": "s",
+          "baseline": 90,
+          "target": 45,
+          "note": "Time until affected tasks return to productive execution.",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        }
+      ],
+      "verification": "Pin model, vLLM, draft-model and scheduler revisions. Report task success separately from hardware utilization, and verify speculative outputs against the target distribution.",
+      "sources": []
+    },
+    {
+      "id": "fpga-fused-kernel",
+      "title": "Fused FPGA Instruction on U280",
+      "hardware": "Xilinx U280; HLS with dedicated buffers around fixed systolic-array IP; ARM C++ compiler interface.",
+      "baseline": "Separate GEMM, bias-add and ReLU operations with intermediate off-chip writes.",
+      "target_system": "The same compute IP with buffered fusion exposed as one custom instruction.",
+      "assumptions": [
+        "Illustrative workload: 1,024 × 1,024 INT16 GEMM followed by bias and ReLU; INT32 accumulation, INT16 output.",
+        "Assumed 32 × 32 MAC array at 250 MHz. Its theoretical ceiling is 512 GOP/s when a MAC counts as two operations.",
+        "1,000 invocations after 100 warm-ups; 5 planned repetitions. Buffer placement and tile sizes are fixed across the comparison except where fusion requires changes.",
+        "Device latency excludes host launch and PCIe transfer; host-command overhead is reported separately.",
+        "Memory traffic includes repeated tile reads as well as intermediate tensors. FPGA resource counts below are illustrative kernel-region counts, not implementation-tool reports."
+      ],
+      "metrics": [
+        {
+          "name": "Device latency per fused workload",
+          "unit": "ms",
+          "baseline": 9,
+          "target": 6,
+          "note": "",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Device workload throughput",
+          "unit": "invocations/s",
+          "baseline": 111.11111111111111,
+          "target": 166.66666666666666,
+          "note": "Derived as 1,000 / device latency in ms.",
+          "direction": "higher",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Effective GEMM throughput",
+          "unit": "GOP/s",
+          "baseline": 238.60929422222222,
+          "target": 357.91394133333336,
+          "note": "Derived from 2 × 1,024³ arithmetic operations.",
+          "direction": "higher",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Off-chip traffic per invocation",
+          "unit": "MiB",
+          "baseline": 40,
+          "target": 28,
+          "note": "",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Host-command overhead",
+          "unit": "microseconds",
+          "baseline": 50,
+          "target": 18,
+          "note": "",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Kernel LUT use",
+          "unit": "LUTs",
+          "baseline": 180000,
+          "target": 202000,
+          "note": "Expected buffering/control cost.",
+          "direction": "cost",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Kernel BRAM36 use",
+          "unit": "blocks",
+          "baseline": 220,
+          "target": 284,
+          "note": "Expected additional buffer storage.",
+          "direction": "cost",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Kernel DSP use",
+          "unit": "slices",
+          "baseline": 1024,
+          "target": 1024,
+          "note": "The systolic compute IP is unchanged.",
+          "direction": "neutral",
+          "status": "illustrative_not_measured"
+        }
+      ],
+      "verification": "Require bit-exact INT16 outputs under an identical saturation rule. Record post-route timing, shell version and host interface details before claiming an implementation result.",
+      "sources": [
+        [
+          "AMD U280 device resources",
+          "https://docs.amd.com/r/en-US/ds963-u280/Alveo-Product-Details"
+        ],
+        [
+          "AMD U280 platform resource budgets",
+          "https://docs.amd.com/r/en-US/ug1120-alveo-platforms/U280-Gen3x16-XDMA-base_1-Platform"
+        ]
+      ]
+    },
+    {
+      "id": "fpga-radon",
+      "title": "Streaming Radon Transform on Zynq-7010",
+      "hardware": "Xilinx Zynq-7010; spatial PE pipeline built with HLS and HDL.",
+      "baseline": "Scalar software Radon reference on one ARM Cortex-A9 core; proposed 667 MHz CPU clock.",
+      "target_system": "An illustrative 8-PE spatial pipeline at 100 MHz, with fixed-point arithmetic and streaming I/O.",
+      "assumptions": [
+        "256 × 256 grayscale images, 180 projection angles, 512 detector bins; identical geometry, interpolation and boundary conventions.",
+        "Proposed 16-bit input/fixed-point data path with 32-bit accumulation, compared with an FP32 reference. Precision differs and is governed by an explicit error threshold.",
+        "100 fixed test images; 10 warm-ups and 5 planned repetitions. End-to-end FPGA latency includes DMA and output collection.",
+        "The target frame time includes all angles. It must not be interpreted as one full image or one full transform per clock cycle.",
+        "The CPU baseline uses no FPGA PL resources; zero in those rows means not instantiated. The target LUT/DSP/BRAM counts are planned budgets, not synthesis measurements."
+      ],
+      "metrics": [
+        {
+          "name": "End-to-end transform latency",
+          "unit": "ms/frame",
+          "baseline": 180,
+          "target": 30,
+          "note": "",
+          "direction": "lower",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Complete-transform throughput",
+          "unit": "frames/s",
+          "baseline": 5.555555555555555,
+          "target": 33.333333333333336,
+          "note": "Derived from full-frame latency, including all 180 angles.",
+          "direction": "higher",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "FPGA PL LUT use",
+          "unit": "LUTs",
+          "baseline": 0,
+          "target": 11200,
+          "note": "Target stays below the device total of 17,600 LUTs.",
+          "direction": "cost",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "FPGA PL DSP use",
+          "unit": "slices",
+          "baseline": 0,
+          "target": 32,
+          "note": "Target stays below 80 DSP slices.",
+          "direction": "cost",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "FPGA PL BRAM36 use",
+          "unit": "blocks",
+          "baseline": 0,
+          "target": 40,
+          "note": "Target stays below 60 BRAM36 blocks.",
+          "direction": "cost",
+          "status": "illustrative_not_measured"
+        },
+        {
+          "name": "Relative L2 output error",
+          "unit": "ratio",
+          "baseline": 0,
+          "target": 0.0008,
+          "note": "Illustrative target below the proposed 0.001 acceptance threshold.",
+          "direction": "cost",
+          "status": "illustrative_not_measured"
+        }
+      ],
+      "verification": "Use the same Radon definition and compare complete sinograms. Require relative L2 error ≤ 0.001, correct output dimensions, and post-route timing closure.",
+      "sources": [
+        [
+          "AMD Zynq-7000 resource table",
+          "https://docs.amd.com/r/en-US/ug585-zynq-7000-SoC-TRM/PL-Resources-by-Device-Type"
+        ],
+        [
+          "AMD Zynq-7000 overview",
+          "https://docs.amd.com/v/u/en-US/ds190-Zynq-7000-Overview"
+        ]
+      ]
+    }
+  ]
+}

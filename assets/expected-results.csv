@@ -1,0 +1,34 @@
+﻿status,project,metric,unit,illustrative_baseline,illustrative_target,relative_change_percent,absolute_change,direction,note
+EXPECTED_NOT_MEASURED,Heterogeneous GPU–Dataflow Decoding,Steady-state aggregate output throughput,tokens/s,1600,2080,30.0,480,higher,Output tokens only; excludes the initial prefill wave.
+EXPECTED_NOT_MEASURED,Heterogeneous GPU–Dataflow Decoding,Mean inter-token latency,ms,10,7.692308,-23.076923,-2.307692,lower,Derived consistently from 16 active decode streams and aggregate throughput.
+EXPECTED_NOT_MEASURED,Heterogeneous GPU–Dataflow Decoding,p95 inter-token latency,ms,16,12,-25.0,-4,lower,
+EXPECTED_NOT_MEASURED,Heterogeneous GPU–Dataflow Decoding,p95 time to first token,s,1.4,1.1,-21.428571,-0.3,lower,"Includes queuing, prefill and, for the target, handoff."
+EXPECTED_NOT_MEASURED,Heterogeneous GPU–Dataflow Decoding,p95 prefill–decode handoff overhead,ms,0,42,,42,cost,GPU-only baseline has no cross-accelerator handoff; target includes transfer and conversion.
+EXPECTED_NOT_MEASURED,Heterogeneous GPU–Dataflow Decoding,Peak logical KV footprint,GiB,18,18,0.0,0,neutral,Same full-context KV footprint for both cases; no compression assumed.
+EXPECTED_NOT_MEASURED,Long-Horizon Agent KV-Cache Scheduling,"Peak allocated KV pool, all GPUs",GiB,320,224,-30.0,-96,lower,
+EXPECTED_NOT_MEASURED,Long-Horizon Agent KV-Cache Scheduling,p95 agent-resumption latency,ms,450,300,-33.333333,-150,lower,Time from tool-result arrival to the next generated token.
+EXPECTED_NOT_MEASURED,Long-Horizon Agent KV-Cache Scheduling,Reusable-prefix token hit rate,%,40,65,62.5,25,higher,Share of eligible prefix tokens served from resident cache.
+EXPECTED_NOT_MEASURED,Long-Horizon Agent KV-Cache Scheduling,Redundant prefill tokens per replay,million tokens,12,7.2,-40.0,-4.8,lower,Tokens recomputed after eviction or missed reuse.
+EXPECTED_NOT_MEASURED,Long-Horizon Agent KV-Cache Scheduling,Useful aggregate output throughput,tokens/s,5000,5750,15.0,750,higher,Excludes duplicate/retried output tokens.
+EXPECTED_NOT_MEASURED,Long-Horizon Agent KV-Cache Scheduling,Replayed concurrent agent sessions,sessions,50,50,0.0,0,neutral,"Fixed workload, not a completion or correctness claim."
+EXPECTED_NOT_MEASURED,Distributed RL Rollout Scheduling,"Aggregate useful output throughput, 256 GPUs",tokens/s,40960,51200,25.0,10240,higher,Counts only accepted target-model output tokens.
+EXPECTED_NOT_MEASURED,Distributed RL Rollout Scheduling,GPU-worker idle time,%,28,18,-35.714286,-10,lower,Measured fraction of worker wall time.
+EXPECTED_NOT_MEASURED,Distributed RL Rollout Scheduling,p95 task-dispatch queue delay,ms,1800,900,-50.0,-900,lower,
+EXPECTED_NOT_MEASURED,Distributed RL Rollout Scheduling,Completed tasks in the 24-hour trace,"tasks / 100,000",99000,99600,0.606061,600,higher,Illustrative completion counts; separate from output correctness.
+EXPECTED_NOT_MEASURED,Distributed RL Rollout Scheduling,"Aggregate useful output throughput, 128 GPUs",tokens/s,23500,28000,19.148936,4500,higher,Same per-GPU workload distribution as the 256-GPU scenario.
+EXPECTED_NOT_MEASURED,Distributed RL Rollout Scheduling,128→256 GPU scaling efficiency,%,87.148936,91.428571,4.910714,4.279635,higher,Derived as T256 / (2 × T128).
+EXPECTED_NOT_MEASURED,Distributed RL Rollout Scheduling,"Recovery delay after a worker restart, p95",s,90,45,-50.0,-45,lower,Time until affected tasks return to productive execution.
+EXPECTED_NOT_MEASURED,Fused FPGA Instruction on U280,Device latency per fused workload,ms,9,6,-33.333333,-3,lower,
+EXPECTED_NOT_MEASURED,Fused FPGA Instruction on U280,Device workload throughput,invocations/s,111.111111,166.666667,50.0,55.555556,higher,"Derived as 1,000 / device latency in ms."
+EXPECTED_NOT_MEASURED,Fused FPGA Instruction on U280,Effective GEMM throughput,GOP/s,238.609294,357.913941,50.0,119.304647,higher,"Derived from 2 × 1,024³ arithmetic operations."
+EXPECTED_NOT_MEASURED,Fused FPGA Instruction on U280,Off-chip traffic per invocation,MiB,40,28,-30.0,-12,lower,
+EXPECTED_NOT_MEASURED,Fused FPGA Instruction on U280,Host-command overhead,microseconds,50,18,-64.0,-32,lower,
+EXPECTED_NOT_MEASURED,Fused FPGA Instruction on U280,Kernel LUT use,LUTs,180000,202000,12.222222,22000,cost,Expected buffering/control cost.
+EXPECTED_NOT_MEASURED,Fused FPGA Instruction on U280,Kernel BRAM36 use,blocks,220,284,29.090909,64,cost,Expected additional buffer storage.
+EXPECTED_NOT_MEASURED,Fused FPGA Instruction on U280,Kernel DSP use,slices,1024,1024,0.0,0,neutral,The systolic compute IP is unchanged.
+EXPECTED_NOT_MEASURED,Streaming Radon Transform on Zynq-7010,End-to-end transform latency,ms/frame,180,30,-83.333333,-150,lower,
+EXPECTED_NOT_MEASURED,Streaming Radon Transform on Zynq-7010,Complete-transform throughput,frames/s,5.555556,33.333333,500.0,27.777778,higher,"Derived from full-frame latency, including all 180 angles."
+EXPECTED_NOT_MEASURED,Streaming Radon Transform on Zynq-7010,FPGA PL LUT use,LUTs,0,11200,,11200,cost,"Target stays below the device total of 17,600 LUTs."
+EXPECTED_NOT_MEASURED,Streaming Radon Transform on Zynq-7010,FPGA PL DSP use,slices,0,32,,32,cost,Target stays below 80 DSP slices.
+EXPECTED_NOT_MEASURED,Streaming Radon Transform on Zynq-7010,FPGA PL BRAM36 use,blocks,0,40,,40,cost,Target stays below 60 BRAM36 blocks.
+EXPECTED_NOT_MEASURED,Streaming Radon Transform on Zynq-7010,Relative L2 output error,ratio,0,0.0008,,0.0008,cost,Illustrative target below the proposed 0.001 acceptance threshold.
