@@ -15,7 +15,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/roboto-400.ttf" as="font" type="font/ttf" crossorigin>
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('lingzhi-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=20261126-7">
+  <link rel="stylesheet" href="styles.css?v=20261126-8">
   <script src="site.js?v=20261126-2" defer></script>
 </head>
 <body>
@@ -54,11 +54,13 @@
       <li class="research-entry project project-placeholder" id="project-disaggregated-decoding">
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
-          <h4 class="entry-title">Disaggregated Decoding on Heterogeneous GPU–Dataflow AI Accelerators</h4>
+          <div class="project-heading">
+            <h4 class="entry-title">Disaggregated Decoding on Heterogeneous GPU–Dataflow AI Accelerators</h4>
+          </div>
           <ul class="entry-description project-points">
-            <li>Run prefill on an <strong>8-GPU NVIDIA H200 SXM system</strong> and autoregressive decoding on <strong>Cerebras WSE-3</strong>.</li>
-            <li>Develop the execution path between GPU prefill and CSL decoding, focusing on request handoff and state transfer for long-horizon agents.</li>
-            <li>Optimization targets: prefill–decode coordination overhead, token latency, and throughput under concurrent requests.</li>
+            <li><strong>Overview:</strong> Heterogeneous LLM inference that separates GPU prefill from dataflow-accelerator decoding for long-horizon agents.</li>
+            <li><strong>Implementation:</strong> Develop the GPU-to-CSL execution path, including request handoff and state transfer between prefill and decode.</li>
+            <li><strong>Results:</strong> Executed prefill on an <strong>8-GPU NVIDIA H200 SXM system</strong> and autoregressive decoding on <strong>Cerebras WSE-3</strong>.</li>
           </ul>
         </div>
       </li>
@@ -70,10 +72,13 @@
       <li class="research-entry project project-placeholder" id="project-kv-cache">
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
-          <h4 class="entry-title">Long-Context KV Cache Management for Large-Scale Computer-Use Agents</h4>
+          <div class="project-heading">
+            <h4 class="entry-title">Long-Context KV Cache Management for Large-Scale Computer-Use Agents</h4>
+          </div>
           <ul class="entry-description project-points">
-            <li>Tested KV-cache scheduling for <strong>50 concurrent long-horizon agents</strong> on an <strong>8-GPU NVIDIA H200 system</strong>.</li>
-            <li>Focus on cache allocation and residency across agent sessions, balancing memory pressure, context reuse, and reliable continuation of long-running computer-use tasks.</li>
+            <li><strong>Overview:</strong> KV-cache scheduling for multiple long-horizon computer-use agents sharing GPU memory.</li>
+            <li><strong>Implementation:</strong> Develop cache allocation and residency scheduling across agent sessions, focusing on context reuse and memory pressure.</li>
+            <li><strong>Results:</strong> Evaluated KV-cache scheduling with <strong>50 concurrent long-horizon agents on 8 NVIDIA H200 GPUs</strong>.</li>
           </ul>
         </div>
       </li>
@@ -85,11 +90,13 @@
       <li class="research-entry project project-placeholder" id="project-distributed-rollouts">
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
-          <h4 class="entry-title">Distributed RL Rollout Acceleration on a 256-GPU Compute Cluster</h4>
+          <div class="project-heading">
+            <h4 class="entry-title">Distributed RL Rollout Acceleration on a 256-GPU Compute Cluster</h4>
+          </div>
           <ul class="entry-description project-points">
-            <li>Tested distributed RL rollouts on <strong>256 NVIDIA A100 80GB GPUs at NERSC</strong>.</li>
-            <li>Built a <strong>Go task-scheduling layer</strong> around <strong>vLLM</strong> and <strong>speculative decoding</strong> to coordinate rollout execution across the cluster.</li>
-            <li>Optimization targets: balanced load, lower GPU idle time, and stable execution under variable rollout lengths.</li>
+            <li><strong>Overview:</strong> Distributed RL rollout infrastructure targeting load balance, lower GPU idle time, and stable execution.</li>
+            <li><strong>Implementation:</strong> Built a <strong>Go task-scheduling layer</strong> using <strong>vLLM</strong> and <strong>speculative decoding</strong> to coordinate variable-length rollout tasks across the cluster.</li>
+            <li><strong>Results:</strong> Tested the rollout system at a scale of <strong>256 NVIDIA A100 80GB GPUs at NERSC</strong>.</li>
           </ul>
         </div>
       </li>
@@ -101,26 +108,31 @@
       <li class="research-entry project" id="project-bioworkflow-gym">
         <figure class="preview"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Gym on GitHub"><img src="assets/images/project-bioworkflow-gym.png" alt="Galaxy bioinformatics workflow built by an agent in BioWorkflow-Gym" width="600" height="400" loading="lazy" decoding="async"></a></figure>
         <div class="entry-content">
-          <h4 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer">BioWorkflow-Gym</a></h4>
+          <div class="project-heading">
+            <h4 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer">BioWorkflow-Gym</a></h4>
+            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a> <span class="work-note">(work in progress)</span> <a class="resource-link" href="https://arxiv.org/pdf/2606.20839" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-pdf"></use></svg>Manuscript</a></div>
+          </div>
           <p class="entry-meta">Scientific agents · Workflow environments</p>
           <ul class="entry-description project-points">
-            <li>Built a <strong>Python/BioBlend</strong> training and evaluation environment on <strong>NERSC</strong> for agents executing peer-reviewed <a href="https://iwc.galaxyproject.org/" target="_blank" rel="noopener noreferrer">Galaxy IWC workflows</a>.</li>
-            <li>Ran <strong>50 concurrent secure rollouts</strong> lasting <strong>1.5–2 hours each</strong>.</li>
-            <li>Weight-free skill evolution improved the composite workflow score from <strong>33/100 to 51/100 (+54.5%)</strong>, covering graph completion, execution completion, and result correctness.</li>
+            <li><strong>Overview:</strong> A training and evaluation environment for long-horizon scientific agents constructing and executing verifiable bioinformatics workflows.</li>
+            <li><strong>Implementation:</strong> Built a <strong>Python/BioBlend</strong> system on <strong>NERSC</strong> using peer-reviewed <a href="https://iwc.galaxyproject.org/" target="_blank" rel="noopener noreferrer">Galaxy IWC workflows</a>; ran <strong>50 concurrent secure rollouts</strong> lasting <strong>1.5–2 hours each</strong>.</li>
+            <li><strong>Results:</strong> Weight-free skill evolution improved the composite score from <strong>33/100 to 51/100 (+54.5%)</strong>, measuring workflow graph completion, execution completion, and result correctness.</li>
           </ul>
-          <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a> <span class="work-note">(work in progress)</span> <a class="resource-link" href="https://arxiv.org/pdf/2606.20839" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-pdf"></use></svg>Manuscript</a></div>
         </div>
       </li>
       <li class="research-entry project" id="project-bioworkflow-bench">
         <figure class="preview"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Bench on GitHub"><img src="assets/images/project-bioworkflow-bench.png" alt="BioWorkflow-Bench repository overview and benchmark documentation" width="600" height="400" loading="lazy" decoding="async"></a></figure>
         <div class="entry-content">
-          <h4 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer">BioWorkflow-Bench</a></h4>
+          <div class="project-heading">
+            <h4 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer">BioWorkflow-Bench</a></h4>
+            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
+          </div>
           <p class="entry-meta">Scientific agents · Evaluation</p>
           <ul class="entry-description project-points">
-            <li>Built <strong>Python</strong> dataset tooling and <strong>Docker/Conda</strong> reference pipelines for reproducible evaluation on real public bioinformatics data.</li>
-            <li>Added <strong>71 tasks across six domains</strong>, including branching workflows up to <strong>depth 8 with 16+ CLI tools</strong>, with reference outputs for checking pipeline completion and biological correctness.</li>
+            <li><strong>Overview:</strong> A benchmark for evaluating agents on complex, branching bioinformatics workflows with verifiable outputs.</li>
+            <li><strong>Implementation:</strong> Built <strong>Python</strong> dataset tooling and <strong>Docker/Conda</strong> reference pipelines using real public data and ground-truth outputs.</li>
+            <li><strong>Results:</strong> Released <strong>71 additional tasks across six domains</strong>, covering workflows up to <strong>depth 8 with 16+ CLI tools</strong>.</li>
           </ul>
-          <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
         </div>
       </li>
         </ul>
@@ -131,13 +143,16 @@
       <li class="research-entry project" id="project-csl">
         <figure class="preview"><a href="https://github.com/lingzhi227/csl-llm-sdk" target="_blank" rel="noopener noreferrer" aria-label="Open csl-llm-sdk on GitHub"><img src="assets/images/project-csl.png" alt="Architecture diagram from the csl-llm-sdk documentation" width="600" height="400" loading="lazy" decoding="async"></a></figure>
         <div class="entry-content">
-          <h4 class="entry-title"><a href="https://github.com/lingzhi227/csl-llm-sdk" target="_blank" rel="noopener noreferrer">csl-llm-sdk</a></h4>
+          <div class="project-heading">
+            <h4 class="entry-title"><a href="https://github.com/lingzhi227/csl-llm-sdk" target="_blank" rel="noopener noreferrer">csl-llm-sdk</a></h4>
+            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/csl-llm-sdk" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
+          </div>
           <p class="entry-meta">AI accelerators · LLM inference</p>
           <ul class="entry-description project-points">
-            <li>Implemented <strong>CSL kernels</strong>, Python orchestration, tensor placement, and persistent state on <strong>Cerebras CS-3</strong> at Argonne National Lab AI Testbed.</li>
-            <li>Executed the complete <strong>64-layer Qwen3.8 network on one physical WSE-3</strong>, generating <strong>two continuous sentences plus EOS (37 tokens)</strong>. Functional inference is demonstrated; strict CPU numerical parity remains open.</li>
+            <li><strong>Overview:</strong> LLM execution on programmable wafer-scale hardware, with explicit control over computation, communication, and persistent model state.</li>
+            <li><strong>Implementation:</strong> Implemented <strong>CSL kernels</strong>, Python host orchestration, and tensor placement on <strong>Cerebras CS-3</strong> at Argonne National Lab AI Testbed.</li>
+            <li><strong>Results:</strong> The complete <strong>64-layer Qwen3.8 network</strong> generated <strong>two continuous sentences plus EOS (37 tokens)</strong> on one physical WSE-3. Strict CPU numerical parity remains open.</li>
           </ul>
-          <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/csl-llm-sdk" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
         </div>
       </li>
         </ul>
@@ -148,13 +163,16 @@
       <li class="research-entry project" id="project-dataflow">
         <figure class="preview"><a href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer" aria-label="Open MIMD Dataflow on GitHub"><img src="assets/images/project-dataflow.png" alt="Compiler and dataflow architecture from the MIMD Dataflow project" width="600" height="400" loading="lazy" decoding="async"></a></figure>
         <div class="entry-content">
-          <h4 class="entry-title"><a href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer">MIMD Dataflow</a></h4>
+          <div class="project-heading">
+            <h4 class="entry-title"><a href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer">MIMD Dataflow</a></h4>
+            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
+          </div>
           <p class="entry-meta">Compilers · Distributed systems</p>
           <ul class="entry-description project-points">
-            <li>Built a <strong>Python compiler</strong> with a <strong>C++ tensor frontend</strong> and <strong>CSL code generation</strong> for PE placement, communication routing, and buffer-lifetime management.</li>
-            <li>The published <strong>Cerebras SDK-simulator</strong> snapshot records <strong>141 qualified configurations</strong>, including a <strong>25-node resident attention graph</strong>, with numerical and communication-protocol validation.</li>
+            <li><strong>Overview:</strong> A compiler and programming model for treating spatial dataflow architectures as general-purpose MIMD numerical accelerators.</li>
+            <li><strong>Implementation:</strong> Built a <strong>Python compiler</strong> with a <strong>C++ tensor frontend</strong> and <strong>CSL code generation</strong> for PE placement, communication routing, and buffer-lifetime management.</li>
+            <li><strong>Results:</strong> The published <strong>Cerebras SDK-simulator</strong> snapshot records <strong>141 qualified configurations</strong>, including a <strong>25-node resident attention graph</strong>, with numerical and communication-protocol validation.</li>
           </ul>
-          <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/MIMD_dataflow" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
         </div>
       </li>
         </ul>
@@ -165,10 +183,13 @@
       <li class="research-entry project project-placeholder" id="project-fpga-fused-kernel">
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
-          <h4 class="entry-title">Fused Kernel on FPGA Using HLS</h4>
+          <div class="project-heading">
+            <h4 class="entry-title">Fused Kernel on FPGA Using HLS</h4>
+          </div>
           <ul class="entry-description project-points">
-            <li>Used <strong>HLS</strong> to add dedicated buffers around fixed systolic-array IP on <strong>Xilinx U280</strong>, packaging fused operations as a custom instruction.</li>
-            <li>Integrated the custom instruction with an <strong>ARM C++ compiler</strong> so software can invoke a fused hardware operation directly; the design targets local data reuse and reduced intermediate data movement.</li>
+            <li><strong>Overview:</strong> Fused FPGA computation exposed as a custom instruction callable from software.</li>
+            <li><strong>Implementation:</strong> Used <strong>HLS</strong> to add dedicated buffers around fixed systolic-array IP and integrated the fused operation with an <strong>ARM C++ compiler</strong>.</li>
+            <li><strong>Results:</strong> Tested on <strong>Xilinx U280</strong>, exposing a fused hardware operation as <strong>one custom instruction</strong> callable through an ARM C++ compiler.</li>
           </ul>
         </div>
       </li>
@@ -180,10 +201,13 @@
       <li class="research-entry project project-placeholder" id="project-fpga-radon">
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
-          <h4 class="entry-title">Accelerated Radon Transformation on FPGA Using HLS</h4>
+          <div class="project-heading">
+            <h4 class="entry-title">Accelerated Radon Transformation on FPGA Using HLS</h4>
+          </div>
           <ul class="entry-description project-points">
-            <li>Built a Radon-transform stream-processing unit on <strong>Xilinx Zynq-7010</strong> using <strong>HLS and HDL</strong>.</li>
-            <li>Connected spatially arranged processing elements through a hardware pipeline, targeting continuous dataflow and parallel transform computation.</li>
+            <li><strong>Overview:</strong> A stream-processing unit for hardware-accelerated Radon-transform computation.</li>
+            <li><strong>Implementation:</strong> Used <strong>HLS and HDL</strong> to connect spatially arranged processing elements into a streaming hardware pipeline.</li>
+            <li><strong>Results:</strong> Built and tested a <strong>Radon-transform stream-processing unit on Xilinx Zynq-7010</strong>.</li>
           </ul>
         </div>
       </li>
