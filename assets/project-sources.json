@@ -2,6 +2,22 @@
   "retrieved_on": "2026-11-04",
   "projects": [
     {
+      "id": "disaggregated-decoding",
+      "name": "Disaggregated Decoding on Heterogeneous GPU–Dataflow AI Accelerators",
+      "url": null,
+      "image": null,
+      "placeholder": true,
+      "period": "Fall 2026"
+    },
+    {
+      "id": "kv-cache",
+      "name": "Long-Context KV Cache Management for Large-Scale Computer-Use Agents",
+      "url": null,
+      "image": null,
+      "placeholder": true,
+      "period": "Summer 2026"
+    },
+    {
       "id": "bioworkflow-gym",
       "name": "BioWorkflow-Gym",
       "url": "https://github.com/lingzhi227/BioWorkflow-Gym",
@@ -10,7 +26,8 @@
       "image_type": "Existing repository screenshot",
       "image_note": "Unmodified screenshot of an agent-built Hi-C workflow in Galaxy's workflow editor; native 642 × 342 resolution retained.",
       "alt": "Agent-built Galaxy workflow graph for Hi-C contact-map generation and assembly curation.",
-      "description": "A native macOS workspace and research system for constructing, executing, and evaluating long-horizon bioinformatics workflows with agents."
+      "description": "A native macOS workspace and research system for constructing, executing, and evaluating long-horizon bioinformatics workflows with agents.",
+      "period": "Spring 2026"
     },
     {
       "id": "bioworkflow-bench",
@@ -22,7 +39,16 @@
       "image_type": "Cropped browser screenshot",
       "image_note": "Genuine GitHub README screenshot captured with CUA. No image assets exist in the repository. Display name follows the user's requested BioWorkflow-Bench name; source screenshot retains the repository's title.",
       "alt": "BioWorkflow-Bench repository overview describing a growing benchmark of complex bioinformatics workflows.",
-      "description": "An expanding benchmark of multi-tool bioinformatics tasks, spanning six domains with branching workflow graphs and reproducible reference pipelines."
+      "description": "An expanding benchmark of multi-tool bioinformatics tasks, spanning six domains with branching workflow graphs and reproducible reference pipelines.",
+      "period": "Spring 2026"
+    },
+    {
+      "id": "distributed-rollouts",
+      "name": "Distributed RL Rollout Acceleration on a 256-GPU Compute Cluster",
+      "url": null,
+      "image": null,
+      "placeholder": true,
+      "period": "Fall 2025"
     },
     {
       "id": "csl",
@@ -34,7 +60,8 @@
       "image_type": "Screenshot of the repository's exact Mermaid diagram",
       "image_note": "First README diagram, rendered locally with Mermaid 10.9.4 and captured via CUA because GitHub's Mermaid embed did not load. Diagram content and connections are unchanged. Describes the historical staged Qwen design, not a claim about all current model implementations.",
       "alt": "CSL-LLM SDK architecture: model planning, handwritten CSL, compilation, runtime execution, and reference validation.",
-      "description": "Handwritten CSL kernels, persistent model state, and on-wafer communication for open language-model inference on Cerebras WSE-3."
+      "description": "Handwritten CSL kernels, persistent model state, and on-wafer communication for open language-model inference on Cerebras WSE-3.",
+      "period": "Spring 2025"
     },
     {
       "id": "dataflow",
@@ -46,7 +73,25 @@
       "image_type": "Screenshot of the repository's exact Mermaid diagram",
       "image_note": "Project design Mermaid diagram rendered locally with Mermaid 10.9.4 and captured via CUA because GitHub's Mermaid embed did not load. Diagram content and connections are unchanged.",
       "alt": "Pragma HLS compiler pipeline from C++ tensor programs through spatial planning and generated CSL to numerical and protocol validation.",
-      "description": "A research compiler that maps restricted C++ tensor programs to spatial computation graphs and generated CSL, with explicit placement, communication, and buffer-lifetime checks."
+      "description": "A research compiler that maps restricted C++ tensor programs to spatial computation graphs and generated CSL, with explicit placement, communication, and buffer-lifetime checks.",
+      "period": "Fall 2024"
+    },
+    {
+      "id": "fpga-fused-kernel",
+      "name": "Fused Kernel on FPGA Using HLS",
+      "url": null,
+      "image": null,
+      "placeholder": true,
+      "period": "Spring 2024"
+    },
+    {
+      "id": "fpga-radon",
+      "name": "Accelerated Radon Transformation on FPGA Using HLS",
+      "url": null,
+      "image": null,
+      "placeholder": true,
+      "period": "Spring 2023"
     }
-  ]
+  ],
+  "timeline_updated_on": "2026-11-26"
 }
