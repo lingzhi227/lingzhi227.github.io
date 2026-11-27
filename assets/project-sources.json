@@ -98,7 +98,7 @@
     },
     {
       "id": "csl",
-      "name": "CSL-LLM SDK",
+      "name": "Spatial Mapping and Explicit Routing of LLM Kernels on Dataflow Accelerators Using Low-Level Programming",
       "url": "https://github.com/lingzhi227/csl-llm-sdk",
       "image": "assets/images/project-csl.png",
       "image_source": "https://github.com/lingzhi227/csl-llm-sdk#1-qwen-project-design",
@@ -120,7 +120,7 @@
     },
     {
       "id": "dataflow",
-      "name": "MIMD Dataflow / Pragma HLS",
+      "name": "Dataflow Graph Compilation for General-Purpose MIMD Accelerators",
       "url": "https://github.com/lingzhi227/MIMD_dataflow",
       "image": "assets/images/project-dataflow.png",
       "image_source": "https://github.com/lingzhi227/MIMD_dataflow#project-design",
