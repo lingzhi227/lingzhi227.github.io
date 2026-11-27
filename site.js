@@ -29,3 +29,18 @@ function updateActiveSection() {
 window.addEventListener('scroll', updateActiveSection, { passive: true });
 window.addEventListener('resize', updateActiveSection);
 updateActiveSection();
+
+// Keep full author names available without JavaScript and in print.
+document.querySelectorAll('.author-group').forEach(group => {
+  const button = group.querySelector('.more-authors');
+  const names = group.querySelector('.more-author-names');
+  button.hidden = false;
+  names.hidden = true;
+  button.title = `Click to view ${button.dataset.label}`;
+  button.addEventListener('click', () => {
+    const expanded = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(expanded));
+    button.textContent = expanded ? button.dataset.names : button.dataset.label;
+    button.title = expanded ? 'Click to collapse author names' : `Click to view ${button.dataset.label}`;
+  });
+});
