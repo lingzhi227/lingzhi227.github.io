@@ -4,7 +4,7 @@ A static academic homepage for **https://lingzhi227.github.io/**.
 
 ## Content
 
-The page has three sections: introduction, Projects, and Publications. There is no contact-links footer. All content is in `index.html`; visual styles are in `styles.css`. `site.js` handles the theme switch and active navigation.
+The introduction is followed by three switchable sections: Highlights, Research, and Software. Highlights contains five selected systems projects. Research contains BioWorkflow-Gym, BioWorkflow-Bench, and five papers. Software lists the four existing repositories and both FPGA projects. All content is in `index.html`; visual styles are in `styles.css`. `site.js` handles theme selection, accessible tabs, fragment navigation, and author expansion. Without JavaScript, all three sections remain visible. There is no contact-links footer.
 
 ## Preview
 
@@ -26,4 +26,4 @@ Publication thumbnails are genuine overview-figure screenshots from the five sup
 
 The profile image is the owner's existing public GitHub avatar. Roboto is self-hosted under the SIL Open Font License; see `assets/fonts/OFL.txt`.
 
-Layout inspiration: [Matthew Y. C. Cheung's homepage](https://matthewyccheung.github.io/). The implementation is a lightweight static site; no Jekyll build or third-party JavaScript is required.
+Layout inspiration: [Matthew Y. C. Cheung's homepage](https://matthewyccheung.github.io/) and the Highlights / Research / Software organization of [Qiayuan Liao's homepage](https://qiayuanl.github.io/). The implementation is a lightweight static site; no Jekyll build or third-party JavaScript is required.

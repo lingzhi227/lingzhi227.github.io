@@ -15,8 +15,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/roboto-400.ttf" as="font" type="font/ttf" crossorigin>
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('lingzhi-color-theme')==='dark'?'dark':'light'}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=20261127-1">
-  <script src="site.js?v=20261127-1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261127-2">
+  <script src="site.js?v=20261127-2" defer></script>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
@@ -30,8 +30,9 @@
       <h1 class="wordmark" id="name"><a href="#about" aria-label="Lingzhi Yang, home"><strong>Lingzhi</strong> Yang</a></h1>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#about" aria-current="location">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#research">Research</a>
+        <a href="#software">Software</a>
         <button type="button" class="theme-toggle" aria-label="Switch to dark theme" title="Switch to dark theme">
           <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 14.2A9 9 0 0 1 9.8 3.4 9 9 0 1 0 20.6 14.2Z"/></svg>
           <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>
@@ -43,11 +44,16 @@
     <section id="about" class="intro" aria-labelledby="name">
       <img class="portrait" src="assets/images/profile.jpg" alt="An observatory, Lingzhi Yang's GitHub profile image" width="138" height="138" fetchpriority="high">
       <p>I'm a PhD candidate in Computational Applied Mathematics at <a href="https://www.stonybrook.edu/" target="_blank" rel="noopener noreferrer">Stony Brook University</a>.</p>
-      <p>I work with research teams at <a href="https://iacs.stonybrook.edu/" target="_blank" rel="noopener noreferrer">Stony Brook Institute of Advanced Computational Science</a>, <a href="https://www.bnl.gov/compsci/" target="_blank" rel="noopener noreferrer">Brookhaven National Laboratory</a>, and <a href="https://www.ams.stonybrook.edu/~songwu/" target="_blank" rel="noopener noreferrer">Stony Brook Bioinformatics Lab</a>. I have conducted my research on various high-performance computing architectures, including <a href="https://www.nersc.gov/" target="_blank" rel="noopener noreferrer">NERSC GPU clusters</a>, the <a href="https://www.alcf.anl.gov/alcf-ai-testbed" target="_blank" rel="noopener noreferrer">ALCF dataflow AI testbed</a>, and FPGA embedded accelerators.</p>
+      <p>I work with research teams at <a href="https://www.bnl.gov/compsci/" target="_blank" rel="noopener noreferrer">Brookhaven National Laboratory</a>, <a href="https://iacs.stonybrook.edu/" target="_blank" rel="noopener noreferrer">Stony Brook Institute of Advanced Computational Science</a>, and <a href="https://www.ams.stonybrook.edu/~songwu/" target="_blank" rel="noopener noreferrer">Stony Brook Bioinformatics Lab</a>. I have conducted my research on various high-performance computing architectures, including <a href="https://www.nersc.gov/users/status" target="_blank" rel="noopener noreferrer">NERSC GPU clusters</a>, the <a href="https://www.alcf.anl.gov/alcf-ai-testbed" target="_blank" rel="noopener noreferrer">ALCF dataflow AI testbed</a>, and FPGA embedded accelerators.</p>
       <p>I am a <strong>full stack Post Training Infrastructure researcher</strong>. My current research focuses on <strong>distributed systems for AI agents</strong>, particularly <strong>long-context memory</strong>. My projects connect KV-cache scheduling, scalable RL rollouts, and GPU–dataflow inference to support long-horizon agent workloads, building on my work in GPU–dataflow heterogeneous LLM execution, spatial dataflow compilers, and FPGA pipelines.</p>
     </section>
-    <section id="projects" class="section-list" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
+    <nav class="portfolio-tabs" aria-label="Portfolio sections">
+      <a href="#highlights" id="tab-highlights" aria-controls="highlights">Highlights</a>
+      <a href="#research" id="tab-research" aria-controls="research">Research</a>
+      <a href="#software" id="tab-software" aria-controls="software">Software</a>
+    </nav>
+    <section id="highlights" class="portfolio-panel" aria-labelledby="tab-highlights">
+      <h2 class="panel-title">Highlights</h2>
       <div class="project-period" aria-labelledby="projects-fall-2026">
         <h3 class="project-period-title" id="projects-fall-2026">2026 Fall</h3>
         <ul class="research-list">
@@ -55,7 +61,7 @@
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
           <div class="project-heading">
-            <h4 class="entry-title">Disaggregated Decoding on Heterogeneous GPU–Dataflow AI Accelerators</h4>
+            <h4 class="entry-title">Disaggregated Decoding</h4>
           </div>
           <p class="entry-meta">Distributed System · LLM inference</p>
           <ul class="entry-description project-points">
@@ -74,7 +80,7 @@
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
           <div class="project-heading">
-            <h4 class="entry-title">Long-Context KV Cache Management for Large-Scale Computer-Use Agents</h4>
+            <h4 class="entry-title">Long-Context KV Cache Management</h4>
           </div>
           <p class="entry-meta">Distributed System · LLM inference</p>
           <ul class="entry-description project-points">
@@ -93,48 +99,13 @@
         <div class="project-image-placeholder" aria-hidden="true"></div>
         <div class="entry-content">
           <div class="project-heading">
-            <h4 class="entry-title">Distributed RL Rollout Acceleration on a 256-GPU Compute Cluster</h4>
+            <h4 class="entry-title">Distributed RL Rollout</h4>
           </div>
           <p class="entry-meta">Distributed System · Post Training</p>
           <ul class="entry-description project-points">
             <li>Distributed RL rollout infrastructure targeting load balance, lower GPU idle time, and stable execution.</li>
             <li>Built a <strong>Go scheduling layer</strong> using <strong>vLLM and speculative decoding</strong>; tested on <strong>256 NVIDIA A100 80GB GPUs at NERSC</strong>.</li>
             <li><strong>51,200 output tokens/s (1.25×)</strong> and GPU-worker idle time of <strong>18% versus 28%</strong> at 256 GPUs. </li>
-          </ul>
-        </div>
-      </li>
-        </ul>
-      </div>
-      <div class="project-period" aria-labelledby="projects-fall-2025">
-        <h3 class="project-period-title" id="projects-fall-2025">2025 Fall</h3>
-        <ul class="research-list">
-      <li class="research-entry project" id="project-bioworkflow-gym">
-        <figure class="preview"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Gym on GitHub"><img src="assets/images/project-bioworkflow-gym.png" alt="Galaxy bioinformatics workflow built by an agent in BioWorkflow-Gym" width="600" height="400" loading="lazy" decoding="async"></a></figure>
-        <div class="entry-content">
-          <div class="project-heading">
-            <h4 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer">BioWorkflow-Gym</a></h4>
-            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a> <span class="work-note">(work in progress)</span> <a class="resource-link" href="https://arxiv.org/pdf/2606.20839" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-pdf"></use></svg>Manuscript</a></div>
-          </div>
-          <p class="entry-meta">Scientific agents · Workflow environments</p>
-          <ul class="entry-description project-points">
-            <li>A training and evaluation environment for long-horizon scientific agents constructing and executing verifiable bioinformatics workflows.</li>
-            <li>Built a <strong>Python/BioBlend</strong> system on <strong>NERSC</strong> using peer-reviewed <a href="https://iwc.galaxyproject.org/" target="_blank" rel="noopener noreferrer">Galaxy IWC workflows</a>; ran <strong>50 concurrent secure rollouts</strong> lasting <strong>1.5–2 hours each</strong>.</li>
-            <li>Weight-free skill evolution improved the composite score from <strong>33/100 to 51/100 (+54.5%)</strong>, measuring workflow graph completion, execution completion, and result correctness.</li>
-          </ul>
-        </div>
-      </li>
-      <li class="research-entry project" id="project-bioworkflow-bench">
-        <figure class="preview"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Bench on GitHub"><img src="assets/images/project-bioworkflow-bench.png" alt="BioWorkflow-Bench repository overview and benchmark documentation" width="600" height="400" loading="lazy" decoding="async"></a></figure>
-        <div class="entry-content">
-          <div class="project-heading">
-            <h4 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer">BioWorkflow-Bench</a></h4>
-            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
-          </div>
-          <p class="entry-meta">Scientific agents · Evaluation</p>
-          <ul class="entry-description project-points">
-            <li>A benchmark for evaluating agents on complex, branching bioinformatics workflows with verifiable outputs.</li>
-            <li>Built <strong>Python</strong> dataset tooling and <strong>Docker/Conda</strong> reference pipelines using real public data and ground-truth outputs.</li>
-            <li>Released <strong>71 additional tasks across six domains</strong>, covering workflows up to <strong>depth 8 with 16+ CLI tools</strong>.</li>
           </ul>
         </div>
       </li>
@@ -180,47 +151,46 @@
       </li>
         </ul>
       </div>
-      <div class="project-period" aria-labelledby="projects-spring-2024">
-        <h3 class="project-period-title" id="projects-spring-2024">2024 Spring</h3>
-        <ul class="research-list">
-      <li class="research-entry project project-placeholder" id="project-fpga-fused-kernel">
-        <div class="project-image-placeholder" aria-hidden="true"></div>
-        <div class="entry-content">
-          <div class="project-heading">
-            <h4 class="entry-title">Fused Kernel on FPGA Using HLS</h4>
-          </div>
-          <p class="entry-meta">AI accelerators · Compilers</p>
-          <ul class="entry-description project-points">
-            <li>Fused FPGA computation exposed as a custom instruction callable from software.</li>
-            <li>Added dedicated buffers around fixed systolic-array IP using <strong>HLS</strong>, exposing a fused custom instruction through an <strong>ARM C++ compiler</strong>; tested on <strong>Xilinx U280</strong>.</li>
-            <li><strong>1.5× device throughput (9 → 6 ms per invocation)</strong> and <strong>30% less off-chip traffic (40 → 28 MiB)</strong>. </li>
-          </ul>
-        </div>
-      </li>
-        </ul>
-      </div>
-      <div class="project-period" aria-labelledby="projects-spring-2023">
-        <h3 class="project-period-title" id="projects-spring-2023">2023 Spring</h3>
-        <ul class="research-list">
-      <li class="research-entry project project-placeholder" id="project-fpga-radon">
-        <div class="project-image-placeholder" aria-hidden="true"></div>
-        <div class="entry-content">
-          <div class="project-heading">
-            <h4 class="entry-title">Accelerated Radon Transformation on FPGA Using HLS</h4>
-          </div>
-          <p class="entry-meta">AI accelerators · Numerical Kernels</p>
-          <ul class="entry-description project-points">
-            <li>A stream-processing unit for hardware-accelerated Radon-transform computation.</li>
-            <li>Built and tested a stream-processing unit on <strong>Xilinx Zynq-7010</strong>, using <strong>HLS and HDL</strong> to connect spatially arranged PEs into a pipeline.</li>
-            <li><strong>6× transform throughput (180 → 30 ms/frame)</strong> and <strong>relative L2 error ≤ 0.001</strong> for the proposed 256 × 256, 180-angle workload. </li>
-          </ul>
-        </div>
-      </li>
-        </ul>
-      </div>
     </section>
-    <section id="publications" class="section-list" aria-labelledby="publications-title">
-      <h2 id="publications-title">Selected Publications</h2>
+    <section id="research" class="portfolio-panel" aria-labelledby="tab-research">
+      <h2 class="panel-title">Research</h2>
+      <div class="project-period" aria-labelledby="projects-fall-2025">
+        <h3 class="project-period-title" id="projects-fall-2025">2025 Fall</h3>
+        <ul class="research-list">
+      <li class="research-entry project" id="project-bioworkflow-gym">
+        <figure class="preview"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Gym on GitHub"><img src="assets/images/project-bioworkflow-gym.png" alt="Galaxy bioinformatics workflow built by an agent in BioWorkflow-Gym" width="600" height="400" loading="lazy" decoding="async"></a></figure>
+        <div class="entry-content">
+          <div class="project-heading">
+            <h4 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer">BioWorkflow-Gym</a></h4>
+            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/BioWorkflow-Gym" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a> <span class="work-note">(work in progress)</span> <a class="resource-link" href="https://arxiv.org/pdf/2606.20839" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-pdf"></use></svg>Manuscript</a></div>
+          </div>
+          <p class="entry-meta">Scientific agents · Workflow environments</p>
+          <ul class="entry-description project-points">
+            <li>A training and evaluation environment for long-horizon scientific agents constructing and executing verifiable bioinformatics workflows.</li>
+            <li>Built a <strong>Python/BioBlend</strong> system on <strong>NERSC</strong> using peer-reviewed <a href="https://iwc.galaxyproject.org/" target="_blank" rel="noopener noreferrer">Galaxy IWC workflows</a>; ran <strong>50 concurrent secure rollouts</strong> lasting <strong>1.5–2 hours each</strong>.</li>
+            <li>Weight-free skill evolution improved the composite score from <strong>33/100 to 51/100 (+54.5%)</strong>, measuring workflow graph completion, execution completion, and result correctness.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="research-entry project" id="project-bioworkflow-bench">
+        <figure class="preview"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer" aria-label="Open BioWorkflow-Bench on GitHub"><img src="assets/images/project-bioworkflow-bench.png" alt="BioWorkflow-Bench repository overview and benchmark documentation" width="600" height="400" loading="lazy" decoding="async"></a></figure>
+        <div class="entry-content">
+          <div class="project-heading">
+            <h4 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer">BioWorkflow-Bench</a></h4>
+            <div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/Extended-BioAgentBench" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div>
+          </div>
+          <p class="entry-meta">Scientific agents · Evaluation</p>
+          <ul class="entry-description project-points">
+            <li>A benchmark for evaluating agents on complex, branching bioinformatics workflows with verifiable outputs.</li>
+            <li>Built <strong>Python</strong> dataset tooling and <strong>Docker/Conda</strong> reference pipelines using real public data and ground-truth outputs.</li>
+            <li>Released <strong>71 additional tasks across six domains</strong>, covering workflows up to <strong>depth 8 with 16+ CLI tools</strong>.</li>
+          </ul>
+        </div>
+      </li>
+        </ul>
+      </div>
+      <div id="publications" class="research-publications">
+        <h3 class="project-period-title">Selected Publications</h3>
       <ol class="bibliography">
         <li class="paper" id="paper-milestone">
           <div class="publication-row">
@@ -288,6 +258,69 @@
           </div>
         </li>
       </ol>
+      </div>
+    </section>
+    <section id="software" class="portfolio-panel" aria-labelledby="tab-software">
+      <h2 class="panel-title">Software</h2>
+      <ul class="software-list">
+        <li class="software-entry" id="software-bioworkflow-gym">
+          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/BioWorkflow-Gym" rel="noopener noreferrer" target="_blank">BioWorkflow-Gym</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/BioWorkflow-Gym" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
+          <p class="entry-description">A training and evaluation environment for long-horizon scientific agents constructing and executing verifiable bioinformatics workflows.</p>
+        </li>
+        <li class="software-entry" id="software-bioworkflow-bench">
+          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/Extended-BioAgentBench" rel="noopener noreferrer" target="_blank">BioWorkflow-Bench</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/Extended-BioAgentBench" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
+          <p class="entry-description">A benchmark for evaluating agents on complex, branching bioinformatics workflows with verifiable outputs.</p>
+        </li>
+        <li class="software-entry" id="software-csl">
+          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/csl-llm-sdk" rel="noopener noreferrer" target="_blank">csl-llm-sdk</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/csl-llm-sdk" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
+          <p class="entry-description">LLM execution on programmable wafer-scale hardware, with explicit control over computation, communication, and persistent model state.</p>
+        </li>
+        <li class="software-entry" id="software-dataflow">
+          <div class="project-heading"><h4 class="entry-title"><a href="https://github.com/lingzhi227/MIMD_dataflow" rel="noopener noreferrer" target="_blank">MIMD Dataflow</a></h4><div class="entry-links"><a class="resource-link" href="https://github.com/lingzhi227/MIMD_dataflow" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" viewbox="0 0 24 24"><use href="#icon-github"></use></svg>GitHub</a></div></div>
+          <p class="entry-description">A compiler and programming model for treating spatial dataflow architectures as general-purpose MIMD numerical accelerators.</p>
+        </li>
+      </ul>
+      <div class="software-fpga">
+        <h3 class="software-group-title">FPGA Accelerators</h3>
+      <div class="project-period" aria-labelledby="projects-spring-2024">
+        <h3 class="project-period-title" id="projects-spring-2024">2024 Spring</h3>
+        <ul class="research-list">
+      <li class="research-entry project project-placeholder" id="project-fpga-fused-kernel">
+        <div class="project-image-placeholder" aria-hidden="true"></div>
+        <div class="entry-content">
+          <div class="project-heading">
+            <h4 class="entry-title">Fused Kernel on FPGA Using HLS</h4>
+          </div>
+          <p class="entry-meta">AI accelerators · Compilers</p>
+          <ul class="entry-description project-points">
+            <li>Fused FPGA computation exposed as a custom instruction callable from software.</li>
+            <li>Added dedicated buffers around fixed systolic-array IP using <strong>HLS</strong>, exposing a fused custom instruction through an <strong>ARM C++ compiler</strong>; tested on <strong>Xilinx U280</strong>.</li>
+            <li><strong>1.5× device throughput (9 → 6 ms per invocation)</strong> and <strong>30% less off-chip traffic (40 → 28 MiB)</strong>. </li>
+          </ul>
+        </div>
+      </li>
+        </ul>
+      </div>
+      <div class="project-period" aria-labelledby="projects-spring-2023">
+        <h3 class="project-period-title" id="projects-spring-2023">2023 Spring</h3>
+        <ul class="research-list">
+      <li class="research-entry project project-placeholder" id="project-fpga-radon">
+        <div class="project-image-placeholder" aria-hidden="true"></div>
+        <div class="entry-content">
+          <div class="project-heading">
+            <h4 class="entry-title">Accelerated Radon Transformation on FPGA Using HLS</h4>
+          </div>
+          <p class="entry-meta">AI accelerators · Numerical Kernels</p>
+          <ul class="entry-description project-points">
+            <li>A stream-processing unit for hardware-accelerated Radon-transform computation.</li>
+            <li>Built and tested a stream-processing unit on <strong>Xilinx Zynq-7010</strong>, using <strong>HLS and HDL</strong> to connect spatially arranged PEs into a pipeline.</li>
+            <li><strong>6× transform throughput (180 → 30 ms/frame)</strong> and <strong>relative L2 error ≤ 0.001</strong> for the proposed 256 × 256, 180-angle workload. </li>
+          </ul>
+        </div>
+      </li>
+        </ul>
+      </div>
+      </div>
     </section>
   </main>
   <footer class="site-footer">© 2026 Lingzhi Yang</footer>
